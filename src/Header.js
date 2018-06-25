@@ -9,6 +9,10 @@ class Header extends Component {
     return (
       <div className='header'>
         <h1>Q-seum</h1>
+        <div className='header-subtitle'>
+          <div>Your QRCode</div>
+          <div>Profile</div>
+        </div>
       </div>
     )
   }
