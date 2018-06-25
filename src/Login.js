@@ -7,7 +7,22 @@ class Login extends Component {
   render () {
     return (
       <div className='Login'>
-        <h1>Hello</h1>
+        <h1>Login</h1>
+        <form>
+          <div>
+            <label>Username</label>
+            <input type='text' name='username' />
+          </div>
+          <div>
+            <label>Password</label>
+            <input type='password' name='password' />
+          </div>
+          <button type='submit'>Login</button>
+        </form>
+        <div>
+          New to Q-seum?
+        </div>
+        <button>Register</button>
       </div>
     )
   }
