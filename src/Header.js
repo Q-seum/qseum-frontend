@@ -8,7 +8,9 @@ class Header extends Component {
       <div className='Header'>
         <h1>Q-seum</h1>
         <div className='header-subtitle'>
-          <div>Your QRCode</div>
+          <Link to='/'>
+            <div>Your QRCode</div>
+          </Link>
           <Link to='/profile'>
             <div>Profile</div>
           </Link>
