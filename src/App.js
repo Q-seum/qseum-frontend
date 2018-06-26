@@ -9,6 +9,7 @@ import Register from './Register'
 import Dashboard from './Dashboard'
 import Profile from './Profile'
 import ScanProfile from './ScanProfile'
+import { Container } from 'bloomer'
 
 class App extends Component {
   constructor () {
@@ -40,7 +41,7 @@ class App extends Component {
       <Router>
         <div className='App'>
           <Header />
-          <div className='container'>
+          <Container>
             {this.state.token ? (
               <Route exact path='/' component={Dashboard} />
             ) : (
@@ -51,7 +52,8 @@ class App extends Component {
             <Route path='/register' component={Register} />
             <Route path='/profile' component={Profile} />
             <Route path={`/${localStorage.id}`} component={ScanProfile} />
-          </div>
+
+          </Container>
         </div>
       </Router>
     )

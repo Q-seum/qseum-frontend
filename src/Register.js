@@ -3,6 +3,7 @@ import './App.css'
 import { Link } from 'react-router-dom'
 // import QRCode from 'qrcode.react'
 import request from 'superagent'
+import { Title, Box, Field, Label, Control, Input, Button } from 'bloomer'
 
 class Register extends Component {
   constructor () {
@@ -46,27 +47,49 @@ class Register extends Component {
   render () {
     return (
       <div className='Register'>
-        <h1>Register</h1>
-        <form onSubmit={this.handleSubmit}>
-          <div className='input-field'>
-            <label htmlFor='username'>Username</label>
-            <input type='text' name='username' onChange={this.handleChange} id='username' />
-          </div>
-          <div className='input-field'>
-            <label htmlFor='password'>Password</label>
-            <input type='password' name='password' onChange={this.handleChange} id='password' />
-          </div>
-          <div className='input-field'>
-            <label htmlFor='accountNumber'>Museum Account Number</label>
-            <input type='text' name='account' id='account' onChange={this.handleChange} />
-          </div>
-          <div className='input-field'>
-            <label htmlFor='accountNumber'>Email Address</label>
-            <input type='email' name='email' id='email' onChange={this.handleChange} />
-          </div>
-          <button type='submit'>Register</button>
-          <Link to='/'><button className='button-danger'>Cancel</button></Link>
-        </form>
+        <Box>
+          <Title>Register</Title>
+          <form onSubmit={this.handleSubmit}>
+            <Field>
+              <Label htmlFor='username'>Username</Label>
+              <Control>
+                <Input type='text' name='username' onChange={this.handleChange} id='username' />
+              </Control>
+            </Field>
+
+            <Field>
+              <Label htmlFor='password'>Password</Label>
+              <Control>
+                <Input type='password' name='password' onChange={this.handleChange} id='password' />
+              </Control>
+            </Field>
+
+            <Field>
+              <Label htmlFor='account'>Museum Account Number</Label>
+              <Control>
+                <Input type='text' name='account' onChange={this.handleChange} id='account' />
+              </Control>
+            </Field>
+
+            <Field>
+              <Label htmlFor='email'>Email Address</Label>
+              <Control>
+                <Input type='email' name='email' onChange={this.handleChange} id='email' />
+              </Control>
+            </Field>
+
+            <Field isGrouped>
+              <Control>
+                <Button type='submit'>Register</Button>
+              </Control>
+              <Control>
+                <Link to='/'>
+                  <Button>Cancel</Button>
+                </Link>
+              </Control>
+            </Field>
+          </form>
+        </Box>
       </div>
     )
   }
