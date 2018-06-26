@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
-import { Button } from '@material-ui/core'
 
 class Login extends Component {
   constructor () {
@@ -61,7 +60,7 @@ class Login extends Component {
           New to Q-seum?
         </div>
         <Link to='/register'>
-          <Button variant='contained'>Register</Button>
+          <button variant='contained'>Register</button>
         </Link>
         <div>
           <a href='https://www.lifeandscience.org/purchase' target='_blank'>Sign up for a membership</a>
