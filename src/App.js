@@ -7,6 +7,7 @@ import Login from './Login'
 import Header from './Header'
 import Register from './Register'
 import Dashboard from './Dashboard'
+import { Container } from 'bloomer'
 
 class App extends Component {
   constructor () {
@@ -38,7 +39,7 @@ class App extends Component {
       <Router>
         <div className='App'>
           <Header />
-          <div className='container'>
+          <Container>
             {this.state.token ? (
               <Route exact path='/' component={Dashboard} />
             ) : (
@@ -47,7 +48,7 @@ class App extends Component {
               )} />
             )}
             <Route path='/register' component={Register} />
-          </div>
+          </Container>
         </div>
       </Router>
     )

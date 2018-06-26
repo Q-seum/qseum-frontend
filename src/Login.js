@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
+import { Title, Box, Field, Label, Control, Input, Button } from 'bloomer'
 
 class Login extends Component {
   constructor () {
@@ -44,27 +45,39 @@ class Login extends Component {
   render () {
     return (
       <div className='Login'>
-        <h1>Login</h1>
-        <form onSubmit={this.handleSubmit}>
-          <div className='input-field'>
-            <label htmlFor='username'>Username</label>
-            <input type='text' name='username' onChange={this.handleChange} id='username' />
-          </div>
-          <div className='input-field'>
-            <label htmlFor='password'>Password</label>
-            <input type='password' name='password' onChange={this.handleChange} id='password' />
-          </div>
-          <button type='submit'>Login</button>
-        </form>
-        <div>
+        <Box>
+          <Title>Login</Title>
+          <form onSubmit={this.handleSubmit}>
+            <Field>
+              <Label htmlFor='username'>Username</Label>
+              <Control>
+                <Input type='text' name='username' onChange={this.handleChange} id='username' />
+              </Control>
+            </Field>
+
+            <Field>
+              <Label htmlFor='password'>Password</Label>
+              <Control>
+                <Input type='password' name='password' onChange={this.handleChange} id='password' />
+              </Control>
+            </Field>
+
+            <Field>
+              <Control>
+                <Button type='submit'>Login</Button>
+              </Control>
+            </Field>
+          </form>
+          <div>
           New to Q-seum?
-        </div>
-        <Link to='/register'>
-          <button variant='contained'>Register</button>
-        </Link>
-        <div>
-          <a href='https://www.lifeandscience.org/purchase' target='_blank'>Sign up for a membership</a>
-        </div>
+          </div>
+          <Link to='/register'>
+            <Button>Register</Button>
+          </Link>
+          <div>
+            <a href='https://www.lifeandscience.org/purchase' target='_blank'>Sign up for a membership</a>
+          </div>
+        </Box>
       </div>
     )
   }
