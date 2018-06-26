@@ -8,6 +8,7 @@ import Header from './Header'
 import Register from './Register'
 import Dashboard from './Dashboard'
 import Profile from './Profile'
+import ScanProfile from './ScanProfile'
 
 class App extends Component {
   constructor () {
@@ -49,6 +50,7 @@ class App extends Component {
             )}
             <Route path='/register' component={Register} />
             <Route path='/profile' component={Profile} />
+            <Route path={`/${localStorage.id}`} component={ScanProfile} />
           </div>
         </div>
       </Router>

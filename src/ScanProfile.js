@@ -5,7 +5,7 @@ import './App.css'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
 
-class Profile extends Component {
+class ScanProfile extends Component {
   constructor () {
     super()
     this.state = {
@@ -39,8 +39,8 @@ class Profile extends Component {
 
   render () {
     return (
-      <div className='Profile'>
-        <h1>Your Profile</h1>
+      <div className='ScanProfile'>
+        <h1>{this.state.username}'s profile</h1>
         <div>Username: {this.state.username}</div>
         <div>Email: {this.state.email}</div>
       </div>
@@ -48,4 +48,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile
+export default ScanProfile
