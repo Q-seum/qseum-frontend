@@ -7,7 +7,6 @@ class Header extends Component {
     return (
       <div className='Header'>
         <h1>Q-seum</h1>
-<<<<<<< HEAD
         {this.props.token && (
           <div className='header-subtitle'>
             <div>Your QRCode</div>
@@ -16,16 +15,6 @@ class Header extends Component {
             </Link>
           </div>
         )}
-=======
-        <div className='header-subtitle'>
-          <Link to='/'>
-            <div>Your QRCode</div>
-          </Link>
-          <Link to='/profile'>
-            <div>Profile</div>
-          </Link>
-        </div>
->>>>>>> master
       </div>
     )
   }

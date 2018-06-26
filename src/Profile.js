@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
+import { Button } from 'bloomer'
 
 class Profile extends Component {
   constructor () {
@@ -17,14 +18,15 @@ class Profile extends Component {
       joinDate: '',
       expirationDate: ''
     }
-    // console.log(localStorage.id)
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+
+    this.handleLogout = this.handleLogout.bind(this)
   }
 
-  logout () {
+  handleLogout () {
     localStorage.clear()
     // update token?
+    this.props.updateState()
+    this.props.history.push('/')
   }
 
   componentDidMount () {
@@ -50,9 +52,7 @@ class Profile extends Component {
         <h1>Your Profile</h1>
         <div>Username: {this.state.username}</div>
         <div>Email: {this.state.email}</div>
-        <Link to='/'>
-          <button onClick={this.logout}>Logout</button>
-        </Link>
+        <Button onClick={this.handleLogout}>Logout</Button>
       </div>
     )
   }
