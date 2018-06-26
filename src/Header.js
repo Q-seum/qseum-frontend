@@ -1,21 +1,27 @@
 import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
+import { Navbar, NavbarItem, NavbarLink, NavbarStart, NavbarEnd } from 'bloomer'
 
 class Header extends Component {
   render () {
     return (
-      <div className='Header'>
-        <h1>Q-seum</h1>
+      <Navbar style={{ border: 'solid 1px #00D1B2', margin: '0' }} className='Header'>
+        <NavbarItem className='navtitle'>
+          <strong>Q-Seum</strong>
+        </NavbarItem>
+        <NavbarItem>Hop through the lines</NavbarItem>
         {this.props.token && (
-          <div className='header-subtitle'>
-            <div>Your QRCode</div>
-            <Link to='/profile'>
-              <div>Profile</div>
+          <NavbarEnd className='header-subtitle'>
+            <Link to='/'>
+              <NavbarLink>Your QRCode</NavbarLink>
             </Link>
-          </div>
+            <Link to='/profile'>
+              <NavbarLink>Profile</NavbarLink>
+            </Link>
+          </NavbarEnd>
         )}
-      </div>
+      </Navbar>
     )
   }
 }

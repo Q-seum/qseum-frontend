@@ -6418,3 +6418,13 @@ label.panel-block {
 .footer {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
+
+.Dashboard {
+  text-align: center;
+  margin: 3rem; }
+
+.QRCode-container {
+  padding: 1rem; }
+
+.Header {
+  text-align: center; }
