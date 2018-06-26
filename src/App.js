@@ -40,7 +40,7 @@ class App extends Component {
     return (
       <Router>
         <div className='App'>
-          <Header />
+          <Header token={this.state.token} />
           <Container>
             {this.state.token ? (
               <Route exact path='/' component={Dashboard} />
