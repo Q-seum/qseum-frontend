@@ -7,6 +7,7 @@ import Login from './Login'
 import Header from './Header'
 import Register from './Register'
 import Dashboard from './Dashboard'
+import Profile from './Profile'
 
 class App extends Component {
   constructor () {
@@ -47,6 +48,7 @@ class App extends Component {
               )} />
             )}
             <Route path='/register' component={Register} />
+            <Route path='/profile' component={Profile} />
           </div>
         </div>
       </Router>
