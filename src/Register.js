@@ -5,7 +5,6 @@ import './App.css'
 // import QRCode from 'qrcode.react'
 import request from 'superagent'
 
-
 class Register extends Component {
   constructor () {
     super()
@@ -43,7 +42,7 @@ class Register extends Component {
         console.log(err)
       })
 
-    // this.props.history.push('/')
+    this.props.history.push('/')
   }
 
   render () {
