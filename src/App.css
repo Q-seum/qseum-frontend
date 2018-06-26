@@ -6427,4 +6427,9 @@ label.panel-block {
   padding: 1rem; }
 
 .Header {
+  margin: auto; }
+
+.Profile {
+  margin: 2rem;
+  padding: 1rem;
   text-align: center; }
