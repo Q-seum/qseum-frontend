@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
-import { Title, Box, Field, Label, Control, Input, Button } from 'bloomer'
+import { Title, Box, Field, Label, Control, Input, Button, Content } from 'bloomer'
 
 class Login extends Component {
   constructor () {
@@ -62,21 +62,20 @@ class Login extends Component {
               </Control>
             </Field>
 
-            <Field>
+            <Field isGrouped>
               <Control>
                 <Button type='submit'>Login</Button>
               </Control>
+              <Control>
+                <Link to='/register'>
+                  <Button>New Account</Button>
+                </Link>
+              </Control>
             </Field>
           </form>
-          <div>
-          New to Q-seum?
-          </div>
-          <Link to='/register'>
-            <Button>Register</Button>
-          </Link>
-          <div>
+          <Content>
             <a href='https://www.lifeandscience.org/purchase' target='_blank'>Sign up for a membership</a>
-          </div>
+          </Content>
         </Box>
       </div>
     )

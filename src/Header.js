@@ -6,7 +6,7 @@ import { Navbar, NavbarItem, NavbarLink, NavbarStart, NavbarEnd } from 'bloomer'
 class Header extends Component {
   render () {
     return (
-      <Navbar style={{ border: 'solid 1px #00D1B2', margin: '0' }} className='Header'>
+      <Navbar style={{ border: 'solid 1px #FAAB35', margin: '0' }} className='Header'>
         <NavbarItem className='navtitle'>
           <strong>Q-Seum</strong>
         </NavbarItem>

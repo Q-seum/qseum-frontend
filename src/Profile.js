@@ -19,12 +19,13 @@ class Profile extends Component {
       joinDate: '',
       expirationDate: ''
     }
-    // console.log(localStorage.id)
-  }
+    this.handleLogout = this.handleLogout.bind(this)
+}
 
-  logout () {
+  handleLogout () {
     localStorage.clear()
-    // update token?
+    this.props.updateState()
+    this.props.history.push('/')
   }
 
   componentDidMount () {
@@ -53,7 +54,7 @@ class Profile extends Component {
             <div>Username: {this.state.username}</div>
             <div>Email: {this.state.email}</div>
             <Link to='/'>
-              <Button onClick={this.logout}>Logout</Button>
+              <Button onClick={this.handleLogout}>Logout</Button>
             </Link>
           </Content>
         </Box>
