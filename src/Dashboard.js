@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 import './App.css'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 import QRCode from 'qrcode.react'
 
 class Dashboard extends Component {
   render () {
     return (
-      <Router>
-        <div className='QRCode'>
-          <QRCode value='test'/>
-        </div>
-      </Router>
+      <div className='Dashboard'>
+        <div>Your fast pass into the museum!</div>
+        <QRCode value='https://www.google.com' />
+        <div>Show this to a museum employee to get checked in!</div>
+      </div>
     )
   }
 }

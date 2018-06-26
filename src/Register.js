@@ -31,15 +31,15 @@ class Register extends Component {
       <div className='Register'>
         <h1>Register</h1>
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div className='input-field'>
             <label for='username'>Username</label>
             <input type='text' name='username' onChange={this.handleChange} id='username' />
           </div>
-          <div>
+          <div className='input-field'>
             <label for='password'>Password</label>
             <input type='password' name='password' onChange={this.handleChange} id='password' />
           </div>
-          <div>
+          <div className='input-field'>
             <label for='accountNumber'>Museum Account Number</label>
             <input type='text' name='accountNumber' id='accountNumber' onChange={this.handleChange} />
           </div>

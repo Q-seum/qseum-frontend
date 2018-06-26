@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
-// import QRCode from 'qrcode.react'
 
 class Login extends Component {
   constructor () {
@@ -30,11 +29,11 @@ class Login extends Component {
       <div className='Login'>
         <h1>Login</h1>
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div className='input-field'>
             <label for='username'>Username</label>
             <input type='text' name='username' onChange={this.handleChange} id='username' />
           </div>
-          <div>
+          <div className='input-field'>
             <label for='password'>Password</label>
             <input type='password' name='password' onChange={this.handleChange} id='password' />
           </div>

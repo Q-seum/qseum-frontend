@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Login from './Login'
 import Header from './Header'
 import Register from './Register'
-// import QRCode from 'qrcode.react'
+import Dashboard from './Dashboard'
 
 class App extends Component {
   render () {
@@ -15,6 +15,7 @@ class App extends Component {
           <div className='container'>
             <Route exact path='/' component={Login} />
             <Route path='/register' component={Register} />
+            <Route path='/Dashboard' component={Dashboard} />
           </div>
         </div>
       </Router>
