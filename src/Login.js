@@ -1,6 +1,9 @@
+/* global localStorage */
+
 import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
+import request from 'superagent'
 
 class Login extends Component {
   constructor () {
@@ -21,7 +24,21 @@ class Login extends Component {
 
   handleSubmit (e) {
     e.preventDefault()
-    this.props.history.push('/')
+    request
+      .post('https://secure-temple-21963.herokuapp.com/api/v1/logins')
+      .send({
+        username: this.state.username,
+        password: this.state.password
+      })
+      .then(res => {
+        console.log(res)
+        localStorage.token = res.body.token
+        localStorage.id = res.body.id
+        this.props.updateState()
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   render () {
