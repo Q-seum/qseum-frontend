@@ -7,6 +7,8 @@ import Login from './Login'
 import Header from './Header'
 import Register from './Register'
 import Dashboard from './Dashboard'
+import Profile from './Profile'
+import ScanProfile from './ScanProfile'
 import { Container } from 'bloomer'
 
 class App extends Component {
@@ -48,6 +50,9 @@ class App extends Component {
               )} />
             )}
             <Route path='/register' component={Register} />
+            <Route path='/profile' component={Profile} />
+            <Route path={`/${localStorage.id}`} component={ScanProfile} />
+
           </Container>
         </div>
       </Router>
