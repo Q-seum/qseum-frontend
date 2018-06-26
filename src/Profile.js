@@ -18,6 +18,13 @@ class Profile extends Component {
       expirationDate: ''
     }
     // console.log(localStorage.id)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  logout () {
+    localStorage.clear()
+    // update token?
   }
 
   componentDidMount () {
@@ -43,6 +50,9 @@ class Profile extends Component {
         <h1>Your Profile</h1>
         <div>Username: {this.state.username}</div>
         <div>Email: {this.state.email}</div>
+        <Link to='/'>
+          <button onClick={this.logout}>Logout</button>
+        </Link>
       </div>
     )
   }
