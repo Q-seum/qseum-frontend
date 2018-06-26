@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
-// import { request } from 'https';
-// import { Router, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import QRCode from 'qrcode.react'
 import request from 'superagent'
 
@@ -37,12 +36,11 @@ class Register extends Component {
       })
       .then(res => {
         console.log(res)
+        this.props.history.push('/')
       })
       .catch(err => {
         console.log(err)
       })
-
-    this.props.history.push('/')
   }
 
   render () {
@@ -67,6 +65,7 @@ class Register extends Component {
             <input type='email' name='email' id='email' onChange={this.handleChange} />
           </div>
           <button type='submit'>Register</button>
+          <Link to='/'><button className='button-danger'>Cancel</button></Link>
         </form>
       </div>
     )
