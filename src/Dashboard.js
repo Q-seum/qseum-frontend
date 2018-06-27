@@ -11,7 +11,7 @@ class Dashboard extends Component {
           <Content>
             <div>Your fast pass into the museum!</div>
             <div className='QRCode-container'>
-              <QRCode value={`http://localhost:3000/${localStorage.id}`} />
+              <QRCode value={`http://localhost:3000/users/${localStorage.id}`} />
             </div>
             <div>Show this to a museum employee to get checked in!</div>
           </Content>
