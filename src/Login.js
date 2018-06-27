@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
-import { Title, Box, Field, Label, Control, Input, Button, Content } from 'bloomer'
+import { Title, Box, Field, Label, Control, Input, Button } from 'bloomer'
 
 class Login extends Component {
   constructor () {
@@ -35,6 +35,7 @@ class Login extends Component {
         console.log(res)
         localStorage.token = res.body.token
         localStorage.id = res.body.id
+        localStorage.admin = res.body.admin
         this.props.updateState()
       })
       .catch(err => {
@@ -55,7 +56,7 @@ class Login extends Component {
               </Control>
             </Field>
 
-            <Field>
+            <Field className='password-field'>
               <Label htmlFor='password'>Password</Label>
               <Control>
                 <Input type='password' name='password' onChange={this.handleChange} id='password' />
