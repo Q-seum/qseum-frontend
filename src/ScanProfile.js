@@ -52,7 +52,7 @@ class ScanProfile extends Component {
   handleSubmit (e) {
     e.preventDefault()
     request
-      .post('https://secure-temple-21963.herokuapp.com/api/v1/logins')
+      .post('https://secure-temple-21963.herokuapp.com/api/v1/visits')
       .send({
         user_id: this.state.id,
         account: this.state.account,
