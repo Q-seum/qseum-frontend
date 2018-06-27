@@ -1,3 +1,5 @@
+/* global localStorage */
+
 import React, { Component } from 'react'
 import './App.css'
 import QRCode from 'qrcode.react'
