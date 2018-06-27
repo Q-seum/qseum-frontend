@@ -6419,6 +6419,13 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+body {
+  background: url(https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+  height: 500px; }
+
+box {
+  background-color: rgba(0, 0, 0, 0.5); }
+
 a {
   color: #FAAB35; }
 
