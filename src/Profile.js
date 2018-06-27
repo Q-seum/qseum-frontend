@@ -47,7 +47,7 @@ class Profile extends Component {
   render () {
     return (
       <div className='Profile'>
-        <Box>
+        <Box className='transparent-box'>
           <Content>
             <h1>Your Profile</h1>
             <div>Username: {this.state.username}</div>
