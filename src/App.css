@@ -6440,6 +6440,9 @@ Button {
 .QRCode-container {
   padding: 1rem; }
 
+.logo {
+  margin-left: 1rem; }
+
 .Header {
   margin: 0 auto 0 auto;
   padding: 0 auto 0 auto;
@@ -6450,6 +6453,9 @@ Button {
 .header-links :hover {
   background-color: #FAAB35;
   transition: background-color 0.2s linear; }
+
+.navtitle {
+  align-items: center; }
 
 .Profile {
   margin: 2rem;
