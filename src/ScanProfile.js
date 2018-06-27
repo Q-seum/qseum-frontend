@@ -31,9 +31,9 @@ class ScanProfile extends Component {
       .then(res => {
         console.log(res)
         this.setState({
-          id: res.body.data.attributes.id,
+          id: res.body.data.id,
           username: res.body.data.attributes.username,
-          account: res.body.data.attributes.account,
+          account: res.body.data.attributes.accountNumber,
           membershipType: res.body.data.attributes.membershipType,
           email: res.body.data.attributes.email,
           accommodations: res.body.data.accommodations,
@@ -50,6 +50,7 @@ class ScanProfile extends Component {
   }
 
   handleSubmit (e) {
+    console.log(this.state.id, this.state.account, this.state.visitors)
     e.preventDefault()
     request
       .post('https://secure-temple-21963.herokuapp.com/api/v1/visits')
