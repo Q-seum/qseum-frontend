@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
-import { Title, Box, Field, Label, Control, Input, Button, Content } from 'bloomer'
+import { Title, Box, Field, Label, Control, Input, Button, Content, Help } from 'bloomer'
 
 class Login extends Component {
   constructor () {
@@ -24,23 +24,27 @@ class Login extends Component {
   }
 
   handleSubmit (e) {
-    e.preventDefault()
-    request
-      .post('https://secure-temple-21963.herokuapp.com/api/v1/logins')
-      .send({
-        username: this.state.username,
-        password: this.state.password
-      })
-      .then(res => {
-        console.log(res)
-        localStorage.token = res.body.token
-        localStorage.id = res.body.id
-        localStorage.admin = res.body.admin
-        this.props.updateState()
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    if (this.state.username && this.state.password) {
+      e.preventDefault()
+      request
+        .post('https://secure-temple-21963.herokuapp.com/api/v1/logins')
+        .send({
+          username: this.state.username,
+          password: this.state.password
+        })
+        .then(res => {
+          console.log(res)
+          localStorage.token = res.body.token
+          localStorage.id = res.body.id
+          localStorage.admin = res.body.admin
+          this.props.updateState()
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    } else {
+
+    }
   }
 
   render () {
@@ -56,7 +60,7 @@ class Login extends Component {
               </Control>
             </Field>
 
-            <Field>
+            <Field className='password-field'>
               <Label htmlFor='password'>Password</Label>
               <Control>
                 <Input type='password' name='password' onChange={this.handleChange} id='password' />
