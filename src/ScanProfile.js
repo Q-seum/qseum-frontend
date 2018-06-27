@@ -27,9 +27,10 @@ class ScanProfile extends Component {
   componentDidMount () {
     const userId = (this.props.location.pathname).slice(1)
     request
-      .get(`https://secure-temple-21963.herokuapp.com/api/v1/users/${userId}`)
+      .get(`https://secure-temple-21963.herokuapp.com/api/v1/users/${this.props.match.params.userId}`)
       .set('Authorization', `Bearer ${localStorage.token}`)
       .then(res => {
+        console.log(res)
         this.setState({
           id: res.body.data.attributes.id,
           username: res.body.data.attributes.username,
@@ -67,6 +68,7 @@ class ScanProfile extends Component {
   }
 
   render () {
+    console.log(this.props)
     return (
       <div className='ScanProfile'>
         <Box>
