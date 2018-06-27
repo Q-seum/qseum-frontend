@@ -24,27 +24,23 @@ class Login extends Component {
   }
 
   handleSubmit (e) {
-    if (this.state.username && this.state.password) {
-      e.preventDefault()
-      request
-        .post('https://secure-temple-21963.herokuapp.com/api/v1/logins')
-        .send({
-          username: this.state.username,
-          password: this.state.password
-        })
-        .then(res => {
-          console.log(res)
-          localStorage.token = res.body.token
-          localStorage.id = res.body.id
-          localStorage.admin = res.body.admin
-          this.props.updateState()
-        })
-        .catch(err => {
-          console.log(err)
-        })
-    } else {
-
-    }
+    e.preventDefault()
+    request
+      .post('https://secure-temple-21963.herokuapp.com/api/v1/logins')
+      .send({
+        username: this.state.username,
+        password: this.state.password
+      })
+      .then(res => {
+        console.log(res)
+        localStorage.token = res.body.token
+        localStorage.id = res.body.id
+        localStorage.admin = res.body.admin
+        this.props.updateState()
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   render () {

@@ -43,10 +43,12 @@ class App extends Component {
     return (
       <Router>
         <div className='App'>
-          <Header token={this.state.token} />
+          <Header token={this.state.token} admin={this.state.admin} />
           <Container>
             {this.state.token ? (
-              <Route exact path='/' component={Dashboard} />
+              <Route exact path='/' render={props => (
+                <Dashboard {...props} admin={this.state.admin} />
+              )} />
             ) : (
               <Route exact path='/' render={props => (
                 <Login {...props} updateState={this.updateState} />
