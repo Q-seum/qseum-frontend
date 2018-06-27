@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
-import { Navbar, NavbarItem, NavbarLink, NavbarStart, NavbarEnd } from 'bloomer'
+import { Navbar, NavbarItem, NavbarStart, NavbarEnd } from 'bloomer'
 
 class Header extends Component {
   render () {
