@@ -10,11 +10,11 @@ class Dashboard extends Component {
     return (
       <div className='Dashboard'>
         {this.props.admin === 'true' ? (
-          <Box>
+          <Box className='transparent-box'>
             <Title>Ready to start scanning!</Title>
           </Box>
         ) : (
-          <Box>
+          <Box className='transparent-box'>
             <Content>
               <div>Your fast pass into the museum!</div>
               <div className='QRCode-container'>

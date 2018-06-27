@@ -77,11 +77,20 @@ class ScanProfile extends Component {
         <div className='ScanProfile'>
           <Box>
             <Title>Check In {this.state.username}</Title>
+            <Content>
+              <div><strong>Username: </strong>{this.state.username}</div>
+              <div><strong>Email: </strong>{this.state.email}</div>
+              <div><strong>Account #: </strong>{this.state.account}</div>
+              <div><strong>Membership Type: </strong>{this.state.membershipType}</div>
+              <div><strong>Accommodations: </strong>{this.state.accommodations}</div>
+              <div><strong>Date Joined: </strong>{this.state.joinData}</div>
+              <div><strong>Membership Expiration Date: </strong>{this.state.expirationDate}</div>
+            </Content>
             <form onSubmit={this.handleSubmit}>
               <Field>
                 {Number(this.state.membershipType) === 2 && (
                   <Field>
-                    <Label>Number of visitors</Label>
+                    <Label>Number of visitors:</Label>
                     <Control>
                       <Button name='visitors' onClick={this.handleChange} id='visitors' value='1'>1</Button>
                       <Button name='visitors' onClick={this.handleChange} id='visitors' value='2'>2</Button>
@@ -134,16 +143,6 @@ class ScanProfile extends Component {
                 </Control>
               </Field>
             </form>
-            <Content>
-              <h1>{this.state.username}'s profile</h1>
-              <div>Username: {this.state.username}</div>
-              <div>Email: {this.state.email}</div>
-              <div>Account: {this.state.account}</div>
-              <div>MembershipType: {this.state.membershipType}</div>
-              <div>Accommodations: {this.state.accommodations}</div>
-              <div>Date Joined: {this.state.joinData}</div>
-              <div>Membership Expiration Date: {this.state.expirationDate}</div>
-            </Content>
           </Box>
         </div>
       )
