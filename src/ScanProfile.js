@@ -10,6 +10,7 @@ class ScanProfile extends Component {
   constructor () {
     super()
     this.state = {
+      id: '',
       username: '',
       account: '',
       membershipType: '',
@@ -58,7 +59,7 @@ class ScanProfile extends Component {
       .send({
         user_id: this.state.id,
         account: this.state.account,
-        visitors: this.state.visitors
+        visitors: Number(this.state.visitors)
       })
       .then(res => {
         console.log(res)
