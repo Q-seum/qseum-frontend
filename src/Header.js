@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
-<<<<<<< HEAD
 import { Navbar, NavbarItem, NavbarLink, NavbarStart, NavbarEnd } from 'bloomer'
 import logo from './logo3.png'
-=======
-import { Navbar, NavbarItem, NavbarStart, NavbarEnd } from 'bloomer'
->>>>>>> cd19e274a3b9abd673f561df85ad5bc18a0151ec
 
 class Header extends Component {
   render () {
