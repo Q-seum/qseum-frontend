@@ -35,6 +35,7 @@ class Login extends Component {
         console.log(res)
         localStorage.token = res.body.token
         localStorage.id = res.body.id
+        localStorage.admin = res.body.admin
         this.props.updateState()
       })
       .catch(err => {
