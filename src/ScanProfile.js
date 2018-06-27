@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
-import { Title, Box, Field, Label, Control, Input, Button } from 'bloomer'
+import { Title, Box, Field, Label, Control, Input, Button, Content } from 'bloomer'
 
 class ScanProfile extends Component {
   constructor () {
@@ -68,36 +68,32 @@ class ScanProfile extends Component {
   render () {
     return (
       <div className='ScanProfile'>
-        <div>
-          <h1>{this.state.username}'s profile</h1>
-          <div>Username: {this.state.username}</div>
-          <div>Email: {this.state.email}</div>
-          <div>Account: {this.state.account}</div>
-          <div>MembershipType: {this.state.membershipType}</div>
-          <div>Accommodations: {this.state.accommodations}</div>
-          <div>Date Joined: {this.state.joinData}</div>
-          <div>Membership Expiration Date: {this.state.expirationDate}</div>
-        </div>
-        <div>
-          <Box>
-            <Title>Check In {this.state.username}</Title>
-            <form onSubmit={this.handleSubmit}>
-              <Field>
-                <Label htmlFor='visitors'>Number of Visitors</Label>
-                <Control>
-                  <Input type='number' name='visitors' onChange={this.handleChange} id='visitors' />
-                </Control>
-              </Field>
-
-              <Field>
-                <Control>
-                  <Button type='submit'>Check In</Button>
-                </Control>
-              </Field>
-            </form>
-
-          </Box>
-        </div>
+        <Box>
+          <Title>Check In {this.state.username}</Title>
+          <form onSubmit={this.handleSubmit}>
+            <Field>
+              <Label htmlFor='visitors'>Number of Visitors</Label>
+              <Control>
+                <Input type='number' name='visitors' onChange={this.handleChange} id='visitors' />
+              </Control>
+            </Field>
+            <Field>
+              <Control>
+                <Button type='submit'>Check In</Button>
+              </Control>
+            </Field>
+          </form>
+          <Content>
+            <h1>{this.state.username}'s profile</h1>
+            <div>Username: {this.state.username}</div>
+            <div>Email: {this.state.email}</div>
+            <div>Account: {this.state.account}</div>
+            <div>MembershipType: {this.state.membershipType}</div>
+            <div>Accommodations: {this.state.accommodations}</div>
+            <div>Date Joined: {this.state.joinData}</div>
+            <div>Membership Expiration Date: {this.state.expirationDate}</div>
+          </Content>
+        </Box>
       </div>
     )
   }
