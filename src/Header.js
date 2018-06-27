@@ -16,7 +16,11 @@ class Header extends Component {
         {this.props.token && (
           <NavbarEnd className='header-links'>
             <Link to='/'>
-              <NavbarItem isHoverable>Your QRCode</NavbarItem>
+              {this.props.admin === 'true' ? (
+                <NavbarItem isHoverable>Home</NavbarItem>
+              ) : (
+                <NavbarItem isHoverable>Your QR Code</NavbarItem>
+              )}
             </Link>
             <Link to='/profile'>
               <NavbarItem isHoverable>Profile</NavbarItem>
