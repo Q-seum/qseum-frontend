@@ -53,10 +53,11 @@ class ScanProfile extends Component {
     e.preventDefault()
     request
       .post('https://secure-temple-21963.herokuapp.com/api/v1/visits')
+      .set('Authorization', `Bearer ${localStorage.token}`)
       .send({
         user_id: this.state.id,
         account: this.state.account,
-        visitors: this.state.visitors
+        visitors: Number(this.state.visitors)
       })
       .then(res => {
         console.log(res)
