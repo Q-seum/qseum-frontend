@@ -7,7 +7,7 @@ class Dashboard extends Component {
   render () {
     return (
       <div className='Dashboard'>
-        <Box>
+        <Box className='QRBox'>
           <Content>
             <div>Your fast pass into the museum!</div>
             <div className='QRCode-container'>

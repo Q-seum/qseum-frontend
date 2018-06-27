@@ -10,6 +10,7 @@ class ScanProfile extends Component {
   constructor () {
     super()
     this.state = {
+      id: '',
       username: '',
       account: '',
       membershipType: '',
