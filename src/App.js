@@ -53,7 +53,7 @@ class App extends Component {
             <Route path='/profile' render={props => (
               <Profile {...props} updateState={this.updateState} />
             )} />
-            <Route path={`/${localStorage.id}`} component={ScanProfile} />
+            <Route path={`/users/:userId`} component={ScanProfile} />
 
           </Container>
         </div>
