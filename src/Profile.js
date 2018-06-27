@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import request from 'superagent'
 import { Content, Box, Button } from 'bloomer'
 
-
 class Profile extends Component {
   constructor () {
     super()
@@ -20,7 +19,7 @@ class Profile extends Component {
       expirationDate: ''
     }
     this.handleLogout = this.handleLogout.bind(this)
-}
+  }
 
   handleLogout () {
     localStorage.clear()

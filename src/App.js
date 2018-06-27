@@ -16,7 +16,8 @@ class App extends Component {
     super()
     this.state = {
       token: null,
-      id: null
+      id: null,
+      admin: localStorage.admin
     }
 
     this.updateState = this.updateState.bind(this)
@@ -25,14 +26,16 @@ class App extends Component {
   componentDidMount () {
     this.setState({
       token: localStorage.token,
-      id: localStorage.id
+      id: localStorage.id,
+      admin: localStorage.admin
     })
   }
 
   updateState () {
     this.setState({
       token: localStorage.token,
-      id: localStorage.id
+      id: localStorage.id,
+      admin: localStorage.admin
     })
   }
 
@@ -53,7 +56,9 @@ class App extends Component {
             <Route path='/profile' render={props => (
               <Profile {...props} updateState={this.updateState} />
             )} />
-            <Route path={`/users/:userId`} component={ScanProfile} />
+            <Route path={`/users/:userId`} render={props => (
+              <ScanProfile {...props} admin={this.state.admin} />
+            )} />
 
           </Container>
         </div>
