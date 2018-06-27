@@ -6419,6 +6419,12 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+a {
+  color: #FAAB35; }
+
+Button {
+  margin: 1rem 0 1rem 0; }
+
 .Dashboard {
   text-align: center;
   margin: 2rem; }
@@ -6427,14 +6433,26 @@ label.panel-block {
   padding: 1rem; }
 
 .Header {
-  margin: auto; }
+  margin: 0 auto 0 auto;
+  padding: 0 auto 0 auto;
+  align-items: center;
+  border-bottom: solid 2px #FAAB35;
+  font-size: 1.1rem; }
+
+.header-links :hover {
+  background-color: #FAAB35;
+  transition: background-color 0.2s linear; }
 
 .Profile {
   margin: 2rem;
   text-align: center; }
 
-Button {
-  background-color: blue; }
-
 .Login {
   margin: 2rem; }
+
+.Register {
+  margin: 2rem; }
+
+.tagline {
+  color: #FAAB35;
+  font-style: italic; }

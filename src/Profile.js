@@ -54,7 +54,7 @@ class Profile extends Component {
             <div>Username: {this.state.username}</div>
             <div>Email: {this.state.email}</div>
             <Link to='/'>
-              <Button onClick={this.handleLogout}>Logout</Button>
+              <Button isColor='danger' onClick={this.handleLogout}>Logout</Button>
             </Link>
           </Content>
         </Box>

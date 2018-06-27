@@ -73,9 +73,9 @@ class Login extends Component {
               </Control>
             </Field>
           </form>
-          <Content>
+          <p>
             <a href='https://www.lifeandscience.org/purchase' target='_blank'>Sign up for a membership</a>
-          </Content>
+          </p>
         </Box>
       </div>
     )
