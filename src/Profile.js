@@ -53,6 +53,7 @@ class Profile extends Component {
             <h1>Your Profile</h1>
             <div>Username: {this.state.username}</div>
             <div>Email: {this.state.email}</div>
+            <div>Membership type: {this.state.membershipType}</div>
             <Link to='/'>
               <Button isColor='danger' onClick={this.handleLogout}>Logout</Button>
             </Link>
