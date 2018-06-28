@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 // import QRCode from 'qrcode.react'
 import request from 'superagent'
 import { Title, Box, Field, Label, Control, Input, Button } from 'bloomer'
+import firebase from './firebase'
 
 class Register extends Component {
   constructor () {
@@ -12,7 +13,8 @@ class Register extends Component {
       username: '',
       password: '',
       account: '',
-      email: ''
+      email: '',
+      photo: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -26,6 +28,9 @@ class Register extends Component {
 
   handleSubmit (e) {
     e.preventDefault()
+    var file = document.querySelector('input[type=file]').files[0]
+    console.log(file)
+    const ref = firebase.storage().ref()
     request
       .post('https://secure-temple-21963.herokuapp.com/api/v1/users')
       // .set('X-Requested-With', 'XMLHttpRequest')
@@ -77,6 +82,8 @@ class Register extends Component {
                 <Input type='email' name='email' onChange={this.handleChange} id='email' />
               </Control>
             </Field>
+
+            <input type='file' name='photo' accept='image/*;capture=camera' onChange={this.handleChange} />
 
             <Field isGrouped>
               <Control>
