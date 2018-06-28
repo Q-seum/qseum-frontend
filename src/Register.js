@@ -54,8 +54,8 @@ class Register extends Component {
         console.log(res)
         this.props.history.push('/')
       })
-      .catch(err => {
-        console.log(err)
+      .catch((err) => {
+        console.log(err.response)
       })
   }
 
