@@ -32,9 +32,12 @@ class Register extends Component {
     console.log(file.name)
     const ref = firebase.storage().ref()
     console.log(firebase.storage().ref())
-    const name = file.name
+    const name = (+new Date()) + '-' + file.name
+    // const downloadTokens= file.downloadTokens
     const metadata = { contentType: file.type }
     const task = ref.child(name).put(file, metadata)
+    console.log(`https://firebasestorage.googleapis.com/v0/b/q-seum.appspot.com/o/${file.name}?alt=media&token=d84cc00a-df11-4a4c-ba3d-d0f979456873`)
+
     task
       .then(snapshot => console.log(snapshot))
     request
@@ -44,7 +47,8 @@ class Register extends Component {
         username: this.state.username,
         password: this.state.password,
         account: this.state.account,
-        email: this.state.email
+        email: this.state.email,
+        photo: `https://firebasestorage.googleapis.com/v0/b/q-seum.appspot.com/o/{file.name}/?alt=media&token={file.downloadTokens}`
       })
       .then(res => {
         console.log(res)
