@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import QRCode from 'qrcode.react'
-import { Box, Content, Title } from 'bloomer'
+import { Box, Content, Title, Input } from 'bloomer'
 
 class Dashboard extends Component {
   render () {
@@ -12,6 +12,7 @@ class Dashboard extends Component {
         {this.props.admin === 'true' ? (
           <Box className='transparent-box'>
             <Title>Ready to start scanning!</Title>
+            {/* <Input type='file' accept='image/*' capture='camera' /> */}
           </Box>
         ) : (
           <Box className='transparent-box'>
