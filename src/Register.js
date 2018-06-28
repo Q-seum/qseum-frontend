@@ -31,6 +31,7 @@ class Register extends Component {
     var file = document.querySelector('input[type=file]').files[0]
     console.log(file.name)
     const ref = firebase.storage().ref()
+    console.log(firebase.storage().ref())
     const name = file.name
     const metadata = { contentType: file.type }
     const task = ref.child(name).put(file, metadata)
@@ -58,7 +59,7 @@ class Register extends Component {
     return (
       <div className='Register'>
         <Box className='transparent-box'>
-          <Title>Register</Title>
+          <Title>Register!</Title>
           <form onSubmit={this.handleSubmit}>
             <Field>
               <Label htmlFor='username'>Username</Label>
