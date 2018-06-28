@@ -39,7 +39,7 @@ class Login extends Component {
         this.props.updateState()
       })
       .catch(err => {
-        console.log(err)
+        console.log(err.response)
       })
   }
 
