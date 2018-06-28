@@ -53,7 +53,7 @@ class Profile extends Component {
             <div>Username: {this.state.username}</div>
             <div>Email: {this.state.email}</div>
             <div>Membership type: {this.state.membershipType} person pass</div>
-            <input type="file" accept="image/*;capture=camera"/>
+            <input type='file' accept='image/*;capture=camera' />
             <Link to='/'>
               <Button isColor='danger' onClick={this.handleLogout}>Logout</Button>
             </Link>
