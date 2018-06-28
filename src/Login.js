@@ -46,7 +46,7 @@ class Login extends Component {
   render () {
     return (
       <div className='Login'>
-        <Box>
+        <Box className='transparent-box'>
           <Title>Login</Title>
           <form onSubmit={this.handleSubmit}>
             <Field>

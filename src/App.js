@@ -9,6 +9,7 @@ import Register from './Register'
 import Dashboard from './Dashboard'
 import Profile from './Profile'
 import ScanProfile from './ScanProfile'
+import PageFooter from './PageFooter'
 import { Container } from 'bloomer'
 
 class App extends Component {
@@ -63,6 +64,7 @@ class App extends Component {
             )} />
 
           </Container>
+          {/* <PageFooter /> */}
         </div>
       </Router>
     )

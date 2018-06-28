@@ -45,8 +45,10 @@ class ScanProfile extends Component {
   }
 
   handleChange (e) {
+    console.log(e.target.name)
+    console.log(e.target.value)
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: Number(e.target.value)
     })
   }
 
@@ -73,14 +75,67 @@ class ScanProfile extends Component {
     if (this.props.admin === 'true') {
       return (
         <div className='ScanProfile'>
-          <Box>
+          <Box className='transparent-box'>
             <Title>Check In {this.state.username}</Title>
+            <Content>
+              <div><strong>Username: </strong>{this.state.username}</div>
+              <div><strong>Email: </strong>{this.state.email}</div>
+              <div><strong>Account #: </strong>{this.state.account}</div>
+              <div><strong>Membership Type: </strong>{this.state.membershipType}</div>
+              <div><strong>Accommodations: </strong>{this.state.accommodations}</div>
+              <div><strong>Date Joined: </strong>{this.state.joinData}</div>
+              <div><strong>Membership Expiration Date: </strong>{this.state.expirationDate}</div>
+            </Content>
             <form onSubmit={this.handleSubmit}>
               <Field>
-                <Label htmlFor='visitors'>Number of Visitors</Label>
-                <Control>
-                  <Input type='number' name='visitors' onChange={this.handleChange} id='visitors' />
-                </Control>
+                {Number(this.state.membershipType) === 2 && (
+                  <Field>
+                    <Label>Number of visitors:</Label>
+                    <Control>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='1'>1</Button>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='2'>2</Button>
+                    </Control>
+                  </Field>
+                )}
+                {Number(this.state.membershipType) === 4 && (
+                  <Field>
+                    <Label>Number of visitors</Label>
+                    <Control>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='1'>1</Button>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='2'>2</Button>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='3'>3</Button>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='4'>4</Button>
+                    </Control>
+                  </Field>
+                )}
+                {Number(this.state.membershipType) === 6 && (
+                  <Field>
+                    <Label>Number of visitors</Label>
+                    <Control>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='1'>1</Button>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='2'>2</Button>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='3'>3</Button>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='4'>4</Button>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='5'>5</Button>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='6'>6</Button>
+                    </Control>
+                  </Field>
+                )}
+                {Number(this.state.membershipType) === 8 && (
+                  <Field>
+                    <Label>Number of visitors</Label>
+                    <Control>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='1'>1</Button>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='2'>2</Button>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='3'>3</Button>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='4'>4</Button>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='5'>5</Button>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='6'>6</Button>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='7'>7</Button>
+                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='8'>8</Button>
+                    </Control>
+                  </Field>
+                )}
               </Field>
               <Field>
                 <Control>
@@ -88,16 +143,6 @@ class ScanProfile extends Component {
                 </Control>
               </Field>
             </form>
-            <Content>
-              <h1>{this.state.username}'s profile</h1>
-              <div>Username: {this.state.username}</div>
-              <div>Email: {this.state.email}</div>
-              <div>Account: {this.state.account}</div>
-              <div>MembershipType: {this.state.membershipType}</div>
-              <div>Accommodations: {this.state.accommodations}</div>
-              <div>Date Joined: {this.state.joinData}</div>
-              <div>Membership Expiration Date: {this.state.expirationDate}</div>
-            </Content>
           </Box>
         </div>
       )

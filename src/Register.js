@@ -47,7 +47,7 @@ class Register extends Component {
   render () {
     return (
       <div className='Register'>
-        <Box>
+        <Box className='transparent-box'>
           <Title>Register</Title>
           <form onSubmit={this.handleSubmit}>
             <Field>

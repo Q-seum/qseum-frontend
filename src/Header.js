@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
-import { Navbar, NavbarItem, NavbarStart, NavbarEnd } from 'bloomer'
+import { Navbar, NavbarItem, NavbarLink, NavbarStart, NavbarEnd } from 'bloomer'
+import logo from './logo3.png'
 
 class Header extends Component {
   render () {
     return (
       <Navbar className='Header'>
         <NavbarStart>
+          {/* <NavbarItem>
+            <img className='logo' src={logo} />
+          </NavbarItem> */}
           <NavbarItem className='navtitle'>
             <strong>Q-Seum</strong>
           </NavbarItem>

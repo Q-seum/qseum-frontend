@@ -47,12 +47,13 @@ class Profile extends Component {
   render () {
     return (
       <div className='Profile'>
-        <Box>
+        <Box className='transparent-box'>
           <Content>
             <h1>Your Profile</h1>
             <div>Username: {this.state.username}</div>
             <div>Email: {this.state.email}</div>
-            <div>Membership type: {this.state.membershipType}</div>
+            <div>Membership type: {this.state.membershipType} person pass</div>
+            <input type="file" accept="image/*;capture=camera"/>
             <Link to='/'>
               <Button isColor='danger' onClick={this.handleLogout}>Logout</Button>
             </Link>
