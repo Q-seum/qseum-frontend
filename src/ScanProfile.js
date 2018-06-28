@@ -30,7 +30,7 @@ class ScanProfile extends Component {
       .get(`https://secure-temple-21963.herokuapp.com/api/v1/users/${this.props.match.params.userId}`)
       .set('Authorization', `Bearer ${localStorage.token}`)
       .then(res => {
-        console.log(res)
+        // console.log(res)
         this.setState({
           id: res.body.data.id,
           username: res.body.data.attributes.username,
@@ -45,15 +45,15 @@ class ScanProfile extends Component {
   }
 
   handleChange (e) {
-    console.log(e.target.name)
-    console.log(e.target.value)
+    // console.log(e.target.name)
+    // console.log(e.target.value)
     this.setState({
       [e.target.name]: Number(e.target.value)
     })
   }
 
   handleSubmit (e) {
-    console.log(this.state.id, this.state.account, this.state.visitors)
+    // console.log(this.state.id, this.state.account, this.state.visitors)
     e.preventDefault()
     request
       .post('https://secure-temple-21963.herokuapp.com/api/v1/visits')
