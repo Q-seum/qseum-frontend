@@ -82,12 +82,12 @@ class ScanProfile extends Component {
               <div><strong>Email: </strong>{this.state.email}</div>
               <div><strong>Account #: </strong>{this.state.account}</div>
               <div><strong>Membership Type: </strong>{this.state.membershipType}</div>
-              <div><strong>Accommodations: </strong>{this.state.accommodations}</div>
-              <div><strong>Date Joined: </strong>{this.state.joinData}</div>
-              <div><strong>Membership Expiration Date: </strong>{this.state.expirationDate}</div>
+              {/* <div><strong>Accommodations: </strong>{this.state.accommodations}</div> */}
+              {/* <div><strong>Date Joined: </strong>{this.state.joinData}</div> */}
+              {/* <div><strong>Membership Expiration Date: </strong>{this.state.expirationDate}</div> */}
             </Content>
             <form onSubmit={this.handleSubmit}>
-              <Field>
+              <Field className='checkin'>
                 {Number(this.state.membershipType) === 2 && (
                   <Field>
                     <Label>Number of visitors:</Label>
