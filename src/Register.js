@@ -29,8 +29,13 @@ class Register extends Component {
   handleSubmit (e) {
     e.preventDefault()
     var file = document.querySelector('input[type=file]').files[0]
-    console.log(file)
+    console.log(file.name)
     const ref = firebase.storage().ref()
+    const name = file.name
+    const metadata = { contentType: file.type }
+    const task = ref.child(name).put(file, metadata)
+    task
+      .then(snapshot => console.log(snapshot))
     request
       .post('https://secure-temple-21963.herokuapp.com/api/v1/users')
       // .set('X-Requested-With', 'XMLHttpRequest')
