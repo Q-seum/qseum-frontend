@@ -6474,3 +6474,6 @@ Button {
 .tagline {
   color: #FAAB35;
   font-style: italic; }
+
+.checkin Button {
+  margin: 0 .5rem 0 0; }
