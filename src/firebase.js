@@ -1,6 +1,6 @@
 import firebase from 'firebase'
 // import firebase from 'firebase/app' is better
-import 'firebase/auth'
+// import 'firebase/auth'
 var config = {
   apiKey: 'AIzaSyAbsVvhLB-9MYtPCp5oQQ2eJuuz0SCRFAE',
   authDomain: 'q-seum.firebaseapp.com',
@@ -11,5 +11,5 @@ var config = {
 }
 
 firebase.initializeApp(config)
-export var storage = firebase.storage()
+// export var storage = firebase.storage()
 export default firebase
