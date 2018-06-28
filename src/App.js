@@ -11,6 +11,7 @@ import Profile from './Profile'
 import ScanProfile from './ScanProfile'
 import PageFooter from './PageFooter'
 import { Container } from 'bloomer'
+import firebase from './firebase'
 
 class App extends Component {
   constructor () {
