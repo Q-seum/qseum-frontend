@@ -6465,7 +6465,8 @@ Button {
 .Login {
   margin: 2rem; }
 
-.Register {
+.Register,
+.ReportAnIssue {
   margin: 2rem; }
 
 .ScanProfile {

@@ -181,8 +181,7 @@ class ScanProfile extends Component {
                     </Control>
                   </Field>
                 </div>
-              )}
-              
+              )}       
             </form>
           </Box>
         </div>
