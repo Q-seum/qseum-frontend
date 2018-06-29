@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import QRCode from 'qrcode.react'
-import { Box, Content, Title } from 'bloomer'
+import { Box, Content, Title, Image } from 'bloomer'
 
 class Map extends Component {
   render () {
@@ -11,11 +11,9 @@ class Map extends Component {
       <div className='Map'>
         <Box className='transparent-box'>
           <Title>Museum Map</Title>
-          <Content>
-            <div>Your fast pass into the museum!</div>
-          </Content>
+          <img src='museum-map1.jpg' />
+          <img src='logo3.png' />
         </Box>
-        )}
       </div>
     )
   }
