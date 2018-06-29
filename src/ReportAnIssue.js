@@ -13,6 +13,7 @@ class ReportAnIssue extends Component {
       text: ''
     }
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange (e) {
@@ -21,16 +22,47 @@ class ReportAnIssue extends Component {
     })
   }
 
+  handleSubmit (e) {
+    e.preventDefault()
+    e.preventDefault()
+    request
+      .post('https://secure-temple-21963.herokuapp.com/api/v1/issues')
+      .set('Authorization', `Bearer ${localStorage.token}`)
+      .send({
+        user_id: localStorage.id,
+        text: this.state.text
+      })
+      .then(res => {
+        console.log(res)
+        this.props.history.push('/')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   render () {
     return (
       <div className='ReportAnIssue'>
         <Box className='transparent-box'>
           <Title>Report an issue</Title>
-          <Field>
-            <Control>
-              <TextArea placeholder='report your issue here' name='text' onChange={this.handleChange} />
-            </Control>
-          </Field>
+          <form onSubmit={this.handleSubmit}>
+            <Field>
+              <Control>
+                <TextArea placeholder='report your issue here' name='text' onChange={this.handleChange} />
+              </Control>
+            </Field>
+            <Field isGrouped>
+              <Control>
+                <Button type='submit'>Submit Issue</Button>
+              </Control>
+              <Control>
+                <Link to='/'>
+                  <Button isColor='danger'>Cancel</Button>
+                </Link>
+              </Control>
+            </Field>
+          </form>
         </Box>
       </div>
     )
