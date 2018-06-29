@@ -72,6 +72,11 @@ class Login extends Component {
                   <Button>New Account</Button>
                 </Link>
               </Control>
+              <Control>
+                <Link to='/recover-password'>
+                  <Button>Forgot Password?</Button>
+                </Link>
+              </Control>
             </Field>
           </form>
           <p>
