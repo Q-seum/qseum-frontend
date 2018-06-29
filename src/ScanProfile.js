@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import './App.css'
 import { Redirect } from 'react-router-dom'
 import request from 'superagent'
-import { Title, Box, Field, Label, Control, Button, Content } from 'bloomer'
+import { Title, Box, Field, Label, Control, Button, Content, Checkbox } from 'bloomer'
 
 class ScanProfile extends Component {
   constructor () {
@@ -19,10 +19,12 @@ class ScanProfile extends Component {
       joinDate: '',
       expirationDate: '',
       visitors: '',
-      selfie: ''
+      selfie: '',
+      validSelfie: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.validateSelfie = this.validateSelfie.bind(this)
     // console.log(localStorage.id)
   }
 
@@ -31,7 +33,7 @@ class ScanProfile extends Component {
       .get(`https://secure-temple-21963.herokuapp.com/api/v1/users/${this.props.match.params.userId}`)
       .set('Authorization', `Bearer ${localStorage.token}`)
       .then(res => {
-        console.log(res)
+        // console.log(res)
         this.setState({
           id: res.body.data.id,
           username: res.body.data.attributes.username,
@@ -41,9 +43,16 @@ class ScanProfile extends Component {
           accommodations: res.body.data.accommodations,
           joinData: res.body.data.joinDate,
           expirationDate: res.body.data.expirationDate,
-          selfie: res.body.data.attributes.selfie
+          selfie: res.body.data.attributes.selfie,
+          validSelfie: res.body.data.attributes.validSelfie
         })
       })
+  }
+
+  validateSelfie () {
+    this.setState({
+      validSelfie: !this.state.validSelfie
+    })
   }
 
   handleChange (e) {
@@ -55,6 +64,7 @@ class ScanProfile extends Component {
   }
 
   handleSubmit (e) {
+    console.log(this.state.validSelfie)
     // console.log(this.state.id, this.state.account, this.state.visitors)
     e.preventDefault()
     request
@@ -64,6 +74,18 @@ class ScanProfile extends Component {
         user_id: this.state.id,
         account: this.state.account,
         visitors: Number(this.state.visitors)
+      })
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    request
+      .patch(`https://secure-temple-21963.herokuapp.com/api/v1/users/${this.props.match.params.userId}`)
+      .set('Authorization', `Bearer ${localStorage.token}`)
+      .send({
+        valid_selfie: this.state.validSelfie
       })
       .then(res => {
         console.log(res)
@@ -140,11 +162,27 @@ class ScanProfile extends Component {
                   </Field>
                 )}
               </Field>
-              <Field>
-                <Control>
-                  <Button type='submit'>Check In</Button>
-                </Control>
-              </Field>
+              {this.state.validSelfie == false ? (
+                <Field>
+                  <Control>
+                    <Label>Validate user identity by checking driver's license photo</Label>
+                    <Checkbox type='submit' onChange={this.validateSelfie}>Validate Selife</Checkbox>
+                  </Control>
+                </Field>
+              ) : (
+                <div>
+                  <div>
+                    <div>Selfie has been validated!</div>
+                    <Button onClick={this.validateSelfie}>Undo Validation</Button>
+                  </div>
+                  <Field>
+                    <Control>
+                      <Button type='submit'>Check In</Button>
+                    </Control>
+                  </Field>
+                </div>
+              )}
+              
             </form>
           </Box>
         </div>

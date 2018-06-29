@@ -14,7 +14,7 @@ class Register extends Component {
       password: '',
       account: '',
       email: '',
-      photo: ''
+      selfie: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
