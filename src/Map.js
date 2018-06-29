@@ -11,9 +11,9 @@ class Map extends Component {
       <div className='Map'>
         <Box className='transparent-box'>
           <Title>Museum Map</Title>
-          <img src={require('museum-map1.jpg')} />
-          <img src='logo3.png' />
-          <img src={require('logo3.png')} />
+          <img src={require('./museum-map1.jpg')} />
+          {/* <img src='logo3.png' /> */}
+          {/* <img src={require('logo3.png')} /> */}
         </Box>
       </div>
     )
