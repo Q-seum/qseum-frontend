@@ -9,6 +9,7 @@ import Register from './Register'
 import Dashboard from './Dashboard'
 import Profile from './Profile'
 import ScanProfile from './ScanProfile'
+import ReportAnIssue from './ReportAnIssue'
 // import PageFooter from './PageFooter'
 import { Container } from 'bloomer'
 // import firebase from './firebase'
@@ -62,6 +63,9 @@ class App extends Component {
             )} />
             <Route path={`/users/:userId`} render={props => (
               <ScanProfile {...props} admin={this.state.admin} />
+            )} />
+            <Route path='/report-issue' render={props => (
+              <ReportAnIssue {...props} />
             )} />
 
           </Container>

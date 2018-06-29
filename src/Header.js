@@ -26,6 +26,11 @@ class Header extends Component {
                 <NavbarItem isHoverable>Your QR Code</NavbarItem>
               )}
             </Link>
+            {this.props.admin !== 'true' && (
+              <Link to='/report-issue'>
+                <NavbarItem isHoverable>Report an issue</NavbarItem>
+              </Link>
+            )}
             <Link to='/profile'>
               <NavbarItem isHoverable>Profile</NavbarItem>
             </Link>
