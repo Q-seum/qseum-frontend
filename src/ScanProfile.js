@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import './App.css'
 import { Redirect } from 'react-router-dom'
 import request from 'superagent'
-import { Title, Box, Field, Label, Control, Input, Button, Content } from 'bloomer'
+import { Title, Box, Field, Label, Control, Button, Content } from 'bloomer'
 
 class ScanProfile extends Component {
   constructor () {
@@ -18,7 +18,8 @@ class ScanProfile extends Component {
       accommodations: '',
       joinDate: '',
       expirationDate: '',
-      visitors: ''
+      visitors: '',
+      selfie: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -30,7 +31,7 @@ class ScanProfile extends Component {
       .get(`https://secure-temple-21963.herokuapp.com/api/v1/users/${this.props.match.params.userId}`)
       .set('Authorization', `Bearer ${localStorage.token}`)
       .then(res => {
-        // console.log(res)
+        console.log(res)
         this.setState({
           id: res.body.data.id,
           username: res.body.data.attributes.username,
@@ -39,7 +40,8 @@ class ScanProfile extends Component {
           email: res.body.data.attributes.email,
           accommodations: res.body.data.accommodations,
           joinData: res.body.data.joinDate,
-          expirationDate: res.body.data.expirationDate
+          expirationDate: res.body.data.expirationDate,
+          selfie: res.body.data.attributes.selfie
         })
       })
   }
@@ -78,6 +80,7 @@ class ScanProfile extends Component {
           <Box className='transparent-box'>
             <Title>Check In {this.state.username}</Title>
             <Content>
+              <img src={this.state.selfie} className='avi' />
               <div><strong>Username: </strong>{this.state.username}</div>
               <div><strong>Email: </strong>{this.state.email}</div>
               <div><strong>Account #: </strong>{this.state.account}</div>

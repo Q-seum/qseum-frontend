@@ -16,7 +16,8 @@ class Profile extends Component {
       email: '',
       accommodations: '',
       joinDate: '',
-      expirationDate: ''
+      expirationDate: '',
+      selfie: ''
     }
     this.handleLogout = this.handleLogout.bind(this)
   }
@@ -32,6 +33,7 @@ class Profile extends Component {
       .get(`https://secure-temple-21963.herokuapp.com/api/v1/users/${localStorage.id}`)
       .set('Authorization', `Bearer ${localStorage.token}`)
       .then(res => {
+        console.log(res)
         this.setState({
           username: res.body.data.attributes.username,
           account: res.body.data.attributes.account,
@@ -39,7 +41,8 @@ class Profile extends Component {
           email: res.body.data.attributes.email,
           accommodations: res.body.data.accommodations,
           joinData: res.body.data.joinDate,
-          expirationData: res.body.data.expirationDate
+          expirationData: res.body.data.expirationDate,
+          selfie: res.body.data.attributes.selfie
         })
       })
   }
@@ -50,6 +53,7 @@ class Profile extends Component {
         <Box className='transparent-box'>
           <Content>
             <h1>Your Profile</h1>
+            <img src={this.state.selfie} className='avi' />
             <div>Username: {this.state.username}</div>
             <div>Email: {this.state.email}</div>
             <div>Membership type: {this.state.membershipType} person pass</div>

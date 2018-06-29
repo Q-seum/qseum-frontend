@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import QRCode from 'qrcode.react'
-import { Box, Content, Title, Input } from 'bloomer'
+import { Box, Content, Title } from 'bloomer'
 
 class Dashboard extends Component {
   render () {
