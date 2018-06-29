@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
-import { Content, Box, Button } from 'bloomer'
+import { Content, Box, Button, Field, Control } from 'bloomer'
 
 class Profile extends Component {
   constructor () {
@@ -20,6 +20,21 @@ class Profile extends Component {
       selfie: ''
     }
     this.handleLogout = this.handleLogout.bind(this)
+    this.updateSelfie = this.updateSelfie.bind(this)
+  }
+
+  updateSelfie (e) {
+    e.preventDefault()
+    const modal = document.getElementById('modal')
+    console.log(modal)
+    modal.innerHTML = 
+    `<div class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <Box><h1>hello</h1></Box>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>`
   }
 
   handleLogout () {
@@ -57,9 +72,17 @@ class Profile extends Component {
             <div>Username: {this.state.username}</div>
             <div>Email: {this.state.email}</div>
             <div>Membership type: {this.state.membershipType} person pass</div>
-            <Link to='/'>
-              <Button isColor='danger' onClick={this.handleLogout}>Logout</Button>
-            </Link>
+            <Field isGrouped hasAddons='centered'>
+              <Control>
+                <Link to='/'>
+                  <Button isColor='danger' onClick={this.handleLogout}>Logout</Button>
+                </Link>
+              </Control>
+              <Control>
+                <Button onClick={this.updateSelfie}>Update Selfie</Button>
+                <div id='modal' />
+              </Control>
+            </Field>
           </Content>
         </Box>
       </div>
