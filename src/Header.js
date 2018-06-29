@@ -31,6 +31,9 @@ class Header extends Component {
                 <NavbarItem isHoverable>Report an issue</NavbarItem>
               </Link>
             )}
+            <Link to='/Map'>
+              <NavbarItem isHoverable>Map</NavbarItem>
+            </Link>
             <Link to='/profile'>
               <NavbarItem isHoverable>Profile</NavbarItem>
             </Link>

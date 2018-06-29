@@ -10,6 +10,9 @@ import Dashboard from './Dashboard'
 import Profile from './Profile'
 import ScanProfile from './ScanProfile'
 import ReportAnIssue from './ReportAnIssue'
+import ResetPassword from './ResetPassword'
+import RecoverPassword from './RecoverPassword'
+import Map from './Map'
 // import PageFooter from './PageFooter'
 import { Container } from 'bloomer'
 // import firebase from './firebase'
@@ -66,6 +69,15 @@ class App extends Component {
             )} />
             <Route path='/report-issue' render={props => (
               <ReportAnIssue {...props} />
+            )} />
+            <Route path='/recover-password' render={props => (
+              <RecoverPassword {...props} />
+            )} />
+            <Route path='/reset-password' render={props => (
+              <ResetPassword {...props} />
+            )} />
+            <Route path='/map' render={props => (
+              <Map {...props} />
             )} />
 
           </Container>
