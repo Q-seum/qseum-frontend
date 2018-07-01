@@ -41,12 +41,12 @@ class Dashboard extends Component {
   }
 
   render () {
-    console.log(this.state.issues)
+    console.log(this.state.issues.length)
     return (
       <div className='Dashboard'>
         {this.props.admin === 'true' ? (
           <div className='issues'>
-            {this.state.issues === 0 && (
+            {this.state.issues.length === 0 && (
               <Box className='transparent-box'>
                 <Title>No issues at the moment</Title>
               </Box>

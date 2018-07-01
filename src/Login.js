@@ -79,13 +79,13 @@ class Login extends Component {
                   <Button>New Account</Button>
                 </Link>
               </Control>
-              <Control>
-                <Link to='/recover-password'>
-                  <Button>Forgot Password?</Button>
-                </Link>
-              </Control>
             </Field>
           </form>
+          <p className='recover'>
+            <Link to='/recover-password'>
+              <a>Forgot Password?</a>
+            </Link>
+          </p>
           <p>
             <a href='https://www.lifeandscience.org/purchase' target='_blank'>Sign up for a membership</a>
           </p>
