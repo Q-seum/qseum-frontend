@@ -13,14 +13,17 @@ class Dashboard extends Component {
     this.state = {
       issues: []
     }
+
+    this.apiCall = this.apiCall.bind(this)
   }
 
-  componentDidMount () {
+  apiCall () {
     if (this.props.admin === 'true') {
       reqeust
         .get('https://secure-temple-21963.herokuapp.com/api/v1/issues')
         .set('Authorization', `Bearer ${localStorage.token}`)
         .then(res => {
+          console.log(res)
           this.setState({
             issues: res.body
           })
@@ -28,11 +31,26 @@ class Dashboard extends Component {
     }
   }
 
+  componentDidMount () {
+    this.apiCall()
+    this.interval = setInterval(() => this.apiCall(), 1000)
+  }
+
+  componentWillUnmount () {
+    clearInterval(this.interval)
+  }
+
   render () {
+    console.log(this.state.issues)
     return (
       <div className='Dashboard'>
         {this.props.admin === 'true' ? (
           <div className='issues'>
+            {this.state.issues === 0 && (
+              <Box className='transparent-box'>
+                <Title>No issues at the moment</Title>
+              </Box>
+            )}
             {this.state.issues.map((issue, idx) => (
               <div className='issue' key={idx}>
                 <Box className='transparent-box'>
