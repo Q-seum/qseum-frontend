@@ -46,6 +46,11 @@ class Dashboard extends Component {
       <div className='Dashboard'>
         {this.props.admin === 'true' ? (
           <div className='issues'>
+            {this.state.issues === 0 && (
+              <Box className='transparent-box'>
+                <Title>No issues at the moment</Title>
+              </Box>
+            )}
             {this.state.issues.map((issue, idx) => (
               <div className='issue' key={idx}>
                 <Box className='transparent-box'>

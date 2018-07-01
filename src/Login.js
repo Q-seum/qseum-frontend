@@ -39,7 +39,12 @@ class Login extends Component {
         this.props.updateState()
       })
       .catch(err => {
-        console.log(err.response)
+        const inputs = document.querySelectorAll('Input')
+        const error = document.querySelector('.error-msg')
+        error.innerHTML = `<p class='help is-danger'>${err.response.body.error}</p>`
+        inputs.forEach(input => {
+          input.classList.add('is-danger')
+        })
       })
   }
 
@@ -62,6 +67,8 @@ class Login extends Component {
                 <Input type='password' name='password' onChange={this.handleChange} id='password' />
               </Control>
             </Field>
+
+            <div className='error-msg' />
 
             <Field isGrouped>
               <Control>
