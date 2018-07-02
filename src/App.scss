@@ -58,7 +58,7 @@ Button{
   margin:0 auto;
   text-align:center;
   // margin-top:150px;
-  margin-top:100px;
+  margin-top:50px;
 }
 
 .rounded-button{
@@ -66,7 +66,7 @@ Button{
   margin:.25rem;
   width:75%;
   padding: 20px 0;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 .rounded-button:hover {
@@ -87,7 +87,8 @@ Button{
 
 .LandingPage{
   margin:0 auto;
-  margin-top: 150px;
+  margin-top: 100px;
+  font-size:1.5rem;
 }
 
 .landingpage-title{
@@ -97,6 +98,10 @@ Button{
   font-family: 'Raleway', sans-serif;
 
 }
+
+// .signup{
+//   background-color:white;
+// }
 
 .logo-title{
   margin:0;
