@@ -37,6 +37,7 @@ class Login extends Component {
         localStorage.id = res.body.id
         localStorage.admin = res.body.admin
         this.props.updateState()
+        this.props.history.push('/')
       })
       .catch(err => {
         const inputs = document.querySelectorAll('Input')

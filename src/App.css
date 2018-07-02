@@ -6420,9 +6420,8 @@ label.panel-block {
   padding: 3rem 1.5rem 6rem; }
 
 html {
-  background: url(https://images.pexels.com/photos/67221/water-lily-flower-aquatic-plant-bloom-67221.jpeg?cs=srgb&dl=aquatic-plant-bloom-blossom-67221.jpg&fm=jpg);
+  background: linear-gradient(rgba(247, 240, 240, 0.5), rgba(247, 240, 240, 0.9)), no-repeat center center fixed url(./forestbg.jpg);
   background-size: cover;
-  background-repeat: repeat;
   height: 100%;
   background-color: #f7f0f0; }
 
@@ -6437,6 +6436,29 @@ a {
 
 Button {
   margin: 1rem 0 1rem 0; }
+
+.button-container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 100px; }
+
+.rounded-button {
+  border-radius: 50px;
+  margin: .25rem;
+  width: 75%; }
+
+.LandingPage {
+  margin: 0 auto;
+  margin-top: 200px; }
+
+.landingpage-title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 20px; }
+
+.logo-title {
+  margin: 0; }
 
 .Dashboard {
   text-align: center;
