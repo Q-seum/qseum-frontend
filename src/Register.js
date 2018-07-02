@@ -28,7 +28,7 @@ class Register extends Component {
 
   handleSubmit (e) {
     e.preventDefault()
-    if (this.state.photo) {
+    if (this.state.selfie) {
       var file = document.querySelector('input[type=file]').files[0]
       // console.log(file.name)
       const ref = firebase.storage().ref()
@@ -61,7 +61,7 @@ class Register extends Component {
   }
 
   render () {
-    console.log(this.state.photo)
+    console.log(this.state.selfie)
     return (
       <div className='Register'>
         <Box className='transparent-box'>
