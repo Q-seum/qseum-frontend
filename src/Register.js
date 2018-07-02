@@ -64,56 +64,55 @@ class Register extends Component {
     console.log(this.state.selfie)
     return (
       <div className='Register'>
-        {/* <Box className='transparent-box'> */}
-        <Title hasTextAlign='centered'>REGISTER</Title>
-        {/* <div className='register-title' /> */}
-        <form onSubmit={this.handleSubmit} className='register-form'>
-          <Field>
-            <Label htmlFor='username'>Username</Label>
-            <Control>
-              <Input type='text' name='username' onChange={this.handleChange} id='username' />
-            </Control>
-          </Field>
+        <Box className='transparent-box'>
+          <Title>Register!</Title>
+          <form onSubmit={this.handleSubmit} className='register-form'>
+            <Field>
+              <Label htmlFor='username'>Username</Label>
+              <Control>
+                <Input type='text' name='username' onChange={this.handleChange} id='username' />
+              </Control>
+            </Field>
 
-          <Field>
-            <Label htmlFor='password'>Password</Label>
-            <Control>
-              <Input type='password' name='password' onChange={this.handleChange} id='password' />
-            </Control>
-          </Field>
+            <Field>
+              <Label htmlFor='password'>Password</Label>
+              <Control>
+                <Input type='password' name='password' onChange={this.handleChange} id='password' />
+              </Control>
+            </Field>
 
-          <Field>
-            <Label htmlFor='account'>Museum Account Number</Label>
-            <Control>
-              <Input type='text' name='account' onChange={this.handleChange} id='account' />
-            </Control>
-          </Field>
+            <Field>
+              <Label htmlFor='account'>Museum Account Number</Label>
+              <Control>
+                <Input type='text' name='account' onChange={this.handleChange} id='account' />
+              </Control>
+            </Field>
 
-          <Field>
-            <Label htmlFor='email'>Email Address</Label>
-            <Control>
-              <Input type='email' name='email' onChange={this.handleChange} id='email' />
-            </Control>
-          </Field>
-          <Field>
-            <Label>Profile Picture</Label>
-            <Control>
-              <Input type='file' name='photo' accept='image/*;capture=camera' onChange={this.handleChange} />
-            </Control>
-          </Field>
+            <Field>
+              <Label htmlFor='email'>Email Address</Label>
+              <Control>
+                <Input type='email' name='email' onChange={this.handleChange} id='email' />
+              </Control>
+            </Field>
+            <Field>
+              <Label>Profile Picture</Label>
+              <Control>
+                <Input type='file' name='photo' accept='image/*;capture=camera' onChange={this.handleChange} />
+              </Control>
+            </Field>
 
-          <Field isGrouped>
-            <Control>
-              <Button isColor='primary' type='submit'>Register</Button>
-            </Control>
-            <Control>
-              <Link to='/'>
-                <Button isColor='danger'>Cancel</Button>
-              </Link>
-            </Control>
-          </Field>
-        </form>
-        {/* </Box> */}
+            <Field isGrouped>
+              <Control>
+                <Button isColor='primary' type='submit'>Register</Button>
+              </Control>
+              <Control>
+                <Link to='/'>
+                  <Button isColor='danger'>Cancel</Button>
+                </Link>
+              </Control>
+            </Field>
+          </form>
+        </Box>
       </div>
     )
   }
