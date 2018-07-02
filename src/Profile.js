@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
-import { Content, Box, Button, Field, Control } from 'bloomer'
+import { Content, Box, Button, Field, Control, Label, Input } from 'bloomer'
 
 class Profile extends Component {
   constructor () {
@@ -17,24 +17,24 @@ class Profile extends Component {
       accommodations: '',
       joinDate: '',
       expirationDate: '',
-      selfie: ''
+      selfie: '',
+      updateSelfie: false
     }
     this.handleLogout = this.handleLogout.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
     this.updateSelfie = this.updateSelfie.bind(this)
   }
 
   updateSelfie (e) {
     e.preventDefault()
-    const modal = document.getElementById('modal')
-    console.log(modal)
-    modal.innerHTML = 
-    `<div class="modal is-active">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-      <Box><h1>hello</h1></Box>
-    </div>
-    <button class="modal-close is-large" aria-label="close"></button>
-  </div>`
+    this.setState({
+      updateSelfie: !this.state.updateSelfie
+    })
+  }
+
+  handleSubmit (e) {
+    e.preventDefault()
+    console.log('submitting')
   }
 
   handleLogout () {
@@ -68,29 +68,57 @@ class Profile extends Component {
       <div className='Profile'>
         <Box className='transparent-box'>
           <Content>
-            <h1>Your Profile</h1>
-            <img src={this.state.selfie} className='avi' />
-            <div><strong>Username: </strong>{this.state.username}</div>
-            <div><strong>Email: </strong>{this.state.email}</div>
-            <div><strong>Membership type: </strong>{this.state.membershipType} person pass</div>
-            <div><strong>Membership Join Date: </strong>{this.state.joinDate}</div>
-            <div><strong>Membership Expiration Date: </strong>{this.state.expirationDate}</div>
-            {this.state.accommodations ? (
-              <div><strong>Accommodations: </strong>{this.state.accomodations}</div>
-            ) : (
-              <div><strong>Accommodations: </strong>None</div>
+            {!this.state.updateSelfie ? (
+              <div>
+                <h1>Your Profile</h1>
+                <img src={this.state.selfie} className='avi' />
+                <div><strong>Username: </strong>{this.state.username}</div>
+                <div><strong>Email: </strong>{this.state.email}</div>
+                <div><strong>Membership type: </strong>{this.state.membershipType} person pass</div>
+                <div><strong>Membership Join Date: </strong>{this.state.joinDate}</div>
+                <div><strong>Membership Expiration Date: </strong>{this.state.expirationDate}</div>
+                {this.state.accommodations ? (
+                  <div><strong>Accommodations: </strong>{this.state.accomodations}</div>
+                ) : (
+                  <div><strong>Accommodations: </strong>None</div>
+                )}
+              
+                <Field isGrouped hasAddons='centered'>
+                  <Control>
+                    <Link to='/'>
+                      <Button isColor='danger' onClick={this.handleLogout}>Logout</Button>
+                    </Link>
+                  </Control>
+                  <Control>
+                    <Button isColor='primary' onClick={this.updateSelfie}>Update Selfie</Button>
+                    <div id='modal' />
+                  </Control>
+                </Field>
+              </div>
+            ):(
+              <div>
+                <h1>Choose a new profile picture</h1>
+                <form onSubmit={this.handleSubmit}>
+                  <Field>
+                    <Label>Profile Picture</Label>
+                    <Control>
+                      <Input type='file' name='photo' accept='image/*;capture=camera' onChange={this.handleChange} />
+                    </Control>
+                  </Field>
+                  <Field isGrouped hasAddons='centered'>
+                    <Control>
+                      {/* <Link to='/'> */}
+                      <Button isColor='primary' type='submit' onClick={this.updateSelfie}>Save</Button>
+                      {/* </Link> */}
+                    </Control>
+                    <Control>
+                      <Button isColor='danger' onClick={this.updateSelfie}>Cancel</Button>
+                      <div id='modal' />
+                    </Control>
+                  </Field>
+                </form>
+              </div>
             )}
-            <Field isGrouped hasAddons='centered'>
-              <Control>
-                <Link to='/'>
-                  <Button isColor='danger' onClick={this.handleLogout}>Logout</Button>
-                </Link>
-              </Control>
-              <Control>
-                <Button isColor='primary' onClick={this.updateSelfie}>Update Selfie</Button>
-                <div id='modal' />
-              </Control>
-            </Field>
           </Content>
         </Box>
       </div>
