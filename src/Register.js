@@ -66,7 +66,7 @@ class Register extends Component {
       <div className='Register'>
         <Box className='transparent-box'>
           <Title>Register!</Title>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} className='register-form'>
             <Field>
               <Label htmlFor='username'>Username</Label>
               <Control>

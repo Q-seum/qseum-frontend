@@ -6430,9 +6430,6 @@ html {
 .transparent-box {
   background-color: #f7f0f0; }
 
-a {
-  color: #fd8204; }
-
 Button {
   margin: 1rem 0 1rem 0; }
 
@@ -6460,7 +6457,8 @@ Button {
 .register {
   background: #fff;
   color: #00d1b2;
-  border: #00d1b2 solid 1px; }
+  border: #00d1b2 solid 1px;
+  margin-bottom: 15px; }
 
 .LandingPage {
   margin: 0 auto;
@@ -6483,6 +6481,10 @@ Button {
 
 .QRCode-container {
   padding: 1rem; }
+
+.museum-membership {
+  font-size: 1rem;
+  color: #4a4a4a; }
 
 .logo {
   margin-left: 1rem; }

@@ -48,9 +48,9 @@ body{
   background-color: rgba(247,240,240,1);
 }
 
-a {
-  color: #fd8204;
-}
+// a {
+//   color: #fd8204;
+// }
 
 Button{
   margin:1rem 0 1rem 0;
@@ -86,6 +86,7 @@ Button{
   background: #fff;
   color: #00d1b2;
   border: #00d1b2 solid 1px;
+  margin-bottom: 15px;
 }
 
 .LandingPage{
@@ -124,6 +125,12 @@ Button{
 
 .QRCode-container{
   padding:1rem;
+}
+
+.museum-membership {
+  font-size: 1rem;
+  color: rgb(74, 74, 74);
+  // color: #fd8204;
 }
 
 .logo{
