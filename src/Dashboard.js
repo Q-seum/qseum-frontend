@@ -62,6 +62,7 @@ class Dashboard extends Component {
         ) : (
           <Box className='transparent-box'>
             <Content>
+              <Title>Membership QR-Code</Title>
               <div>Your fast pass into the museum!</div>
               <div className='QRCode-container'>
                 <QRCode value={`https://q-seum.firebaseapp.com/users/${localStorage.id}`} />

@@ -5,25 +5,51 @@
 @import "bulma/bulma";
 //FAAB35 light orange
 //FC6021 dark orange
-body{
+// 0099a8
+
+
+html{
   background:url(https://images.pexels.com/photos/67221/water-lily-flower-aquatic-plant-bloom-67221.jpeg?cs=srgb&dl=aquatic-plant-bloom-blossom-67221.jpg&fm=jpg);
   background-size:cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   height:100%;
+  background-color:#0099a8;
+}
+
+body{
+  // background:url(https://images.pexels.com/photos/67221/water-lily-flower-aquatic-plant-bloom-67221.jpeg?cs=srgb&dl=aquatic-plant-bloom-blossom-67221.jpg&fm=jpg);
+  // background-size:cover;
+  // background-repeat: no-repeat;
+  // height:100%;
   
 }
 
+.App{
+  height: 100%;
+  
+}
+
+.page-container{
+  // display:flex;
+  // align-items:center;
+  // align-content:center;
+  // justify-content:center;
+  // height:100%;
+}
+//0099a8
+//c8bfc7
 .transparent-box{
-  background-color: rgba(255,255,255,.95)
+  background-color: rgba(247,240,240,1);
 }
 
 a {
-  color: #FAAB35;
+  color: #fd8204;
 }
 
 Button{
   margin:1rem 0 1rem 0;
 }
+
 
 .Dashboard{
   text-align:center;
@@ -42,13 +68,17 @@ Button{
   margin:0 auto 0 auto;
   padding: 0 auto 0 auto;
   align-items:center;
-  border-bottom: solid 2px #FAAB35;
+  border-bottom: solid 2px #fd8204;
   font-size: 1.1rem;
+  // background-color: rgba(0,153,168,.95);
+  background-color: rgba(247,240,240,1);
+
+
 
 }
 
 .header-links :hover{
-  background-color: #FAAB35;
+  background-color: #fd8204;
   transition: background-color 0.2s linear;
 
 }
@@ -61,6 +91,7 @@ Button{
 .Profile{
   margin:2rem;
   text-align:center;
+
 }
 
 .Login{
@@ -77,9 +108,25 @@ Button{
   margin: 2rem;
 }
 
+.Map{
+  margin:2rem auto 2rem auto;
+  width:80%;
+  // height:700px;
+  // overflow:auto;
+}
+
+.RecoverPassword{
+  margin:2rem;
+
+}
+
 .tagline{
-  color: #FAAB35;
+  color: #fd8204;
   font-style:italic;
+}
+
+.issue-text{
+  margin-bottom:1rem;
 }
 
 .checkin Button{

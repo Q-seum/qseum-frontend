@@ -6419,17 +6419,21 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
-body {
+html {
   background: url(https://images.pexels.com/photos/67221/water-lily-flower-aquatic-plant-bloom-67221.jpeg?cs=srgb&dl=aquatic-plant-bloom-blossom-67221.jpg&fm=jpg);
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
+  height: 100%;
+  background-color: #0099a8; }
+
+.App {
   height: 100%; }
 
 .transparent-box {
-  background-color: rgba(255, 255, 255, 0.95); }
+  background-color: #f7f0f0; }
 
 a {
-  color: #FAAB35; }
+  color: #fd8204; }
 
 Button {
   margin: 1rem 0 1rem 0; }
@@ -6448,11 +6452,12 @@ Button {
   margin: 0 auto 0 auto;
   padding: 0 auto 0 auto;
   align-items: center;
-  border-bottom: solid 2px #FAAB35;
-  font-size: 1.1rem; }
+  border-bottom: solid 2px #fd8204;
+  font-size: 1.1rem;
+  background-color: #f7f0f0; }
 
 .header-links :hover {
-  background-color: #FAAB35;
+  background-color: #fd8204;
   transition: background-color 0.2s linear; }
 
 .navtitle {
@@ -6472,9 +6477,19 @@ Button {
 .ScanProfile {
   margin: 2rem; }
 
+.Map {
+  margin: 2rem auto 2rem auto;
+  width: 80%; }
+
+.RecoverPassword {
+  margin: 2rem; }
+
 .tagline {
-  color: #FAAB35;
+  color: #fd8204;
   font-style: italic; }
+
+.issue-text {
+  margin-bottom: 1rem; }
 
 .checkin Button {
   margin: 0 .5rem 0 0; }
