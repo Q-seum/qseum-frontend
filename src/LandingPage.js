@@ -52,10 +52,12 @@ class LandingPage extends Component {
     return (
       <div className='LandingPage'>
         <Container hasTextAlign='centered'>
-          <div className='logo-title'>
-            <img width='100px' src={require('./logo-separated.png')} />
-            <h1 className='landingpage-title'>Q-seum</h1>
-            <div>Hop through the lines</div>
+          <div>
+            <div className='logo-title'>
+              <img width='150px' src={require('./logo-separated.png')} />
+              <h1 className='landingpage-title'>Q-seum</h1>
+              <div>Hop through the lines</div>
+            </div>            
             <div className='button-container'>
               <Link to='/login'>
                 <button className='rounded-button login' isColor='primary'>Login</button>
