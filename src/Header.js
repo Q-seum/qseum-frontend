@@ -26,17 +26,17 @@ class Header extends Component {
                 <NavbarItem isHoverable>Your QR Code</NavbarItem>
               )}
             </Link>
+            <Link to='/Map'>
+              <NavbarItem isHoverable>Museum Map</NavbarItem>
+            </Link>
+            <Link to='/profile'>
+              <NavbarItem isHoverable>Your Profile</NavbarItem>
+            </Link>
             {this.props.admin !== 'true' && (
               <Link to='/report-issue'>
                 <NavbarItem isHoverable>Report an issue</NavbarItem>
               </Link>
             )}
-            <Link to='/Map'>
-              <NavbarItem isHoverable>Map</NavbarItem>
-            </Link>
-            <Link to='/profile'>
-              <NavbarItem isHoverable>Profile</NavbarItem>
-            </Link>
           </NavbarEnd>
         )}
       </Navbar>

@@ -48,15 +48,16 @@ class Profile extends Component {
       .get(`https://secure-temple-21963.herokuapp.com/api/v1/users/${localStorage.id}`)
       .set('Authorization', `Bearer ${localStorage.token}`)
       .then(res => {
-        console.log(res)
+        console.log('result',res)
+        console.log('expire',res.body.data.expirationDate)
         this.setState({
           username: res.body.data.attributes.username,
           account: res.body.data.attributes.account,
           membershipType: res.body.data.attributes.membershipType,
           email: res.body.data.attributes.email,
-          accommodations: res.body.data.accommodations,
-          joinData: res.body.data.joinDate,
-          expirationData: res.body.data.expirationDate,
+          accommodations: res.body.data.attributes.accommodations,
+          joinDate: res.body.data.attributes.joinDate,
+          expirationDate: res.body.data.attributes.expirationDate,
           selfie: res.body.data.attributes.selfie
         })
       })
@@ -72,6 +73,13 @@ class Profile extends Component {
             <div><strong>Username: </strong>{this.state.username}</div>
             <div><strong>Email: </strong>{this.state.email}</div>
             <div><strong>Membership type: </strong>{this.state.membershipType} person pass</div>
+            <div><strong>Membership Join Date: </strong>{this.state.joinDate}</div>
+            <div><strong>Membership Expiration Date: </strong>{this.state.expirationDate}</div>
+            {this.state.accommodations ? (
+              <div><strong>Accommodations: </strong>{this.state.accomodations}</div>
+            ) : (
+              <div><strong>Accommodations: </strong>None</div>
+            )}
             <Field isGrouped hasAddons='centered'>
               <Control>
                 <Link to='/'>
