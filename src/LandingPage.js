@@ -58,10 +58,10 @@ class LandingPage extends Component {
             <div>Hop through the lines</div>
             <div className='button-container'>
               <Link to='/login'>
-                <Button className='rounded-button' isColor='primary'>Login</Button>
+                <button className='rounded-button login' isColor='primary'>Login</button>
               </Link>
               <Link to='/register'>
-                <Button className='rounded-button'>Register</Button>
+                <button className='rounded-button register'>Register</button>
               </Link>
             </div>
           </div>
