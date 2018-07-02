@@ -6424,7 +6424,7 @@ html {
   background-size: cover;
   background-repeat: repeat;
   height: 100%;
-  background-color: #0099a8; }
+  background-color: #f7f0f0; }
 
 .App {
   height: 100%; }
@@ -6491,6 +6491,9 @@ Button {
 .issue-text {
   margin-bottom: 1rem; }
 
+.issues-box {
+  background-color: #c8bfc7; }
+
 .checkin Button {
   margin: 0 .5rem 0 0; }
 
@@ -6498,7 +6501,8 @@ Button {
   height: 200px; }
 
 .issue {
-  margin: 1rem 0; }
+  margin: 1rem 0;
+  text-align: left; }
 
 .help {
   font-size: 1rem; }

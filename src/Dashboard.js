@@ -51,13 +51,16 @@ class Dashboard extends Component {
                 <Title>No issues at the moment</Title>
               </Box>
             )}
-            {this.state.issues.map((issue, idx) => (
-              <div className='issue' key={idx}>
-                <Box className='transparent-box'>
-                  <Issue issue={issue} />
-                </Box>
-              </div>
-            ))}
+            <Box className='transparent-box issues-box'>
+              <Title>Current Issues</Title>
+              {this.state.issues.map((issue, idx) => (
+                <div className='issue' key={idx}>
+                  <Box className='transparent-box'>
+                    <Issue issue={issue} />
+                  </Box>
+                </div>
+              ))}
+            </Box>
           </div>
         ) : (
           <Box className='transparent-box'>
