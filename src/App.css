@@ -6422,13 +6422,16 @@ label.panel-block {
 html {
   background-size: cover;
   height: 100%;
-  background: linear-gradient(rgba(247, 240, 240, 0.8), rgba(247, 240, 240, 0.8)), no-repeat center center fixed url(./forestbg.jpg); }
+  background: linear-gradient(rgba(247, 240, 240, 0.8), rgba(247, 240, 240, 0.7)), no-repeat center center fixed url(./forestbg.jpg); }
 
 .App {
   height: 100%; }
 
 .transparent-box {
   background-color: #f7f0f0; }
+
+a {
+  color: #fd8204; }
 
 Button {
   margin: 1rem 0 1rem 0; }
@@ -6484,7 +6487,12 @@ Button {
 
 .museum-membership {
   font-size: 1rem;
-  color: #4a4a4a; }
+  color: #4a4a4a;
+  text-decoration: underline; }
+
+.museum-membership:hover {
+  font-size: 1rem;
+  color: #fd8204; }
 
 .logo {
   margin-left: 1rem; }
@@ -6497,7 +6505,7 @@ Button {
   font-size: 1.1rem;
   background-color: #f7f0f0; }
 
-.header-links :hover {
+.header-links:hover {
   background-color: #fd8204;
   transition: background-color 0.2s linear; }
 
