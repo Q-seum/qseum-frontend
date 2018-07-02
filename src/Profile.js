@@ -69,9 +69,9 @@ class Profile extends Component {
           <Content>
             <h1>Your Profile</h1>
             <img src={this.state.selfie} className='avi' />
-            <div>Username: {this.state.username}</div>
-            <div>Email: {this.state.email}</div>
-            <div>Membership type: {this.state.membershipType} person pass</div>
+            <div><strong>Username: </strong>{this.state.username}</div>
+            <div><strong>Email: </strong>{this.state.email}</div>
+            <div><strong>Membership type: </strong>{this.state.membershipType} person pass</div>
             <Field isGrouped hasAddons='centered'>
               <Control>
                 <Link to='/'>
@@ -79,7 +79,7 @@ class Profile extends Component {
                 </Link>
               </Control>
               <Control>
-                <Button onClick={this.updateSelfie}>Update Selfie</Button>
+                <Button isColor='primary' onClick={this.updateSelfie}>Update Selfie</Button>
                 <div id='modal' />
               </Control>
             </Field>

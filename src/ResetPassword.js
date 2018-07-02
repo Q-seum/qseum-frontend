@@ -20,9 +20,14 @@ class ResetPassword extends Component {
                 </Control>
               </Field>
 
-              <Field>
+              <Field isGrouped>
                 <Control>
                   <Button>Submit</Button>
+                </Control>
+                <Control>
+                  <Link to='/'>
+                    <Button>Cancel</Button>
+                  </Link>
                 </Control>
               </Field>
             </form>

@@ -94,16 +94,20 @@ class Register extends Component {
                 <Input type='email' name='email' onChange={this.handleChange} id='email' />
               </Control>
             </Field>
-
-            <input type='file' name='photo' accept='image/*;capture=camera' onChange={this.handleChange} />
+            <Field>
+              <Label>Profile Picture</Label>
+              <Control>
+                <Input type='file' name='photo' accept='image/*;capture=camera' onChange={this.handleChange} />
+              </Control>
+            </Field>
 
             <Field isGrouped>
               <Control>
-                <Button type='submit'>Register</Button>
+                <Button isColor='primary' type='submit'>Register</Button>
               </Control>
               <Control>
                 <Link to='/'>
-                  <Button>Cancel</Button>
+                  <Button isColor='danger'>Cancel</Button>
                 </Link>
               </Control>
             </Field>
