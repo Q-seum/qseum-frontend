@@ -66,7 +66,7 @@ class LandingPage extends Component {
                 <button className='rounded-button register'>Register</button>
               </Link>
               <div>
-                <a href='https://www.lifeandscience.org/purchase' target='_blank'>Sign up for a museum membership!</a>
+                <a href='https://www.lifeandscience.org/purchase' target='_blank' className='museum-membership'>Sign up for a museum membership here!</a>
               </div>
             </div>
           </div>
