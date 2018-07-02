@@ -4,8 +4,43 @@ import React, { Component } from 'react'
 import './App.css'
 import { Box, Content, Title, Field, Control, Input, Label, Button } from 'bloomer'
 import { Link } from 'react-router-dom'
+import request from 'superagent'
 
 class ResetPassword extends Component {
+  constructor () {
+    super()
+    this.state = {
+      password: '',
+      new_token: '',
+      used: ''
+    }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleSubmit (e) {
+    e.preventDefault()
+    request
+      .post('https://secure-temple-21963.herokuapp.com/api/v1/password_resets/(:id)')
+      // .set('X-Requested-With', 'XMLHttpRequest')
+      .send({
+        email: this.state.email,
+        new_token: this.state.new_token,
+        used: true
+      })
+      .then(res => {
+        console.log(res)
+        this.props.history.push('/')
+      })
+      .catch((err) => {
+        console.log(err.response)
+      })
+  }
+  handleChange (e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
   render () {
     return (
       <div className='ResetPassword'>
@@ -21,7 +56,7 @@ class ResetPassword extends Component {
 
               <Field isGrouped>
                 <Control>
-                  <Button>Submit</Button>
+                  <Button isColor='primary' type='submit'>Submit</Button>
                 </Control>
                 <Control>
                   <Link to='/'>

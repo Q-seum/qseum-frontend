@@ -75,11 +75,11 @@ class Login extends Component {
 
             <Field isGrouped>
               <Control>
-                <Button type='submit'>Login</Button>
+                <Button isColor='primary' type='submit'>Login</Button>
               </Control>
               <Control>
                 <Link to='/register'>
-                  <Button isColor='primary'>New Account</Button>
+                  <Button>New Account</Button>
                 </Link>
               </Control>
             </Field>
@@ -90,7 +90,7 @@ class Login extends Component {
             </Link>
           </p> */}
           <p>
-            <a href='https://www.lifeandscience.org/purchase' target='_blank'>Sign up for a membership</a>
+            <a href='https://www.lifeandscience.org/purchase' target='_blank'>Sign up for a museum membership!</a>
           </p>
         </Box>
       </div>

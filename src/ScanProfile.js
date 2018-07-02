@@ -148,7 +148,7 @@ class ScanProfile extends Component {
                 )}
                 {Number(this.state.membershipType) === 8 && (
                   <Field>
-                    <Label>Number of visitors</Label>
+                    <Label>Number of visitors:</Label>
                     <Control>
                       <Button name='visitors' onClick={this.handleChange} id='visitors' value='1'>1</Button>
                       <Button name='visitors' onClick={this.handleChange} id='visitors' value='2'>2</Button>
@@ -166,18 +166,18 @@ class ScanProfile extends Component {
                 <Field>
                   <Control>
                     <Label>Validate user identity by checking driver's license photo</Label>
-                    <Checkbox type='submit' onChange={this.validateSelfie}>Validate Selife</Checkbox>
+                    <Checkbox type='submit' onChange={this.validateSelfie}> Validate Selife</Checkbox>
                   </Control>
                 </Field>
               ) : (
                 <div>
                   <div>
                     <div>Selfie has been validated!</div>
-                    <Button onClick={this.validateSelfie}>Undo Validation</Button>
+                    <a onClick={this.validateSelfie}>Undo Validation</a>
                   </div>
                   <Field>
                     <Control>
-                      <Button type='submit'>Check In</Button>
+                      <Button type='submit' isColor='primary'>Check In</Button>
                     </Control>
                   </Field>
                 </div>

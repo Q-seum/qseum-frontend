@@ -20,7 +20,7 @@ class RecoverPassword extends Component {
   handleSubmit (e) {
     e.preventDefault()
     request
-      .post('https://secure-temple-21963.herokuapp.com/api/v1/users')
+      .post('https://secure-temple-21963.herokuapp.com/api/v1/password_resets')
       // .set('X-Requested-With', 'XMLHttpRequest')
       .send({
         email: this.state.email
