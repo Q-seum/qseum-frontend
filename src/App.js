@@ -13,6 +13,7 @@ import ReportAnIssue from './ReportAnIssue'
 import ResetPassword from './ResetPassword'
 import RecoverPassword from './RecoverPassword'
 import Map from './Map'
+import LandingPage from './LandingPage'
 // import PageFooter from './PageFooter'
 import { Container } from 'bloomer'
 // import firebase from './firebase'
@@ -49,17 +50,26 @@ class App extends Component {
     return (
       <Router>
         <div className='App'>
-          <Header token={this.state.token} admin={this.state.admin} />
+
+          {this.state.token ? (
+            <div>
+              <Header token={this.state.token} admin={this.state.admin} />
+              <Container className='page-container'>
+                <Route exact path='/' render={props => (
+                  <Dashboard {...props} admin={this.state.admin} />
+                )} />
+              </Container>
+            </div>
+          ) : (
+            <Route exact path='/' render={props => (
+              <LandingPage {...props} updateState={this.updateState} />
+            )} />
+          )}
+          {/* <Header token={this.state.token} admin={this.state.admin} /> */}
           <Container className='page-container'>
-            {this.state.token ? (
-              <Route exact path='/' render={props => (
-                <Dashboard {...props} admin={this.state.admin} />
-              )} />
-            ) : (
-              <Route exact path='/' render={props => (
-                <Login {...props} updateState={this.updateState} />
-              )} />
-            )}
+            <Route path='/login' render={props => (
+              <Login {...props} updateState={this.updateState} />
+            )} />
             <Route path='/register' component={Register} />
             <Route path='/profile' render={props => (
               <Profile {...props} updateState={this.updateState} />
