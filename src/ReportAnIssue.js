@@ -46,15 +46,19 @@ class ReportAnIssue extends Component {
       <div className='ReportAnIssue'>
         <Box className='transparent-box'>
           <Title>Report an issue</Title>
+          <p className='issue-text'>We always hope that your visit to the museum is perfect. 
+            If you notice something that needs our attention, please use this form to let us know. 
+            <strong> Remember to dial 911 in an emergency.</strong>
+          </p>
           <form onSubmit={this.handleSubmit}>
             <Field>
               <Control>
-                <TextArea placeholder='report your issue here' name='text' onChange={this.handleChange} />
+                <TextArea placeholder='Report your issue here' name='text' onChange={this.handleChange} />
               </Control>
             </Field>
             <Field isGrouped>
               <Control>
-                <Button type='submit'>Submit Issue</Button>
+                <Button isColor='primary' type='submit'>Submit Issue</Button>
               </Control>
               <Control>
                 <Link to='/'>

@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import './App.css'
 import QRCode from 'qrcode.react'
 import { Box, Content, Title, Field, Control, Input, Label, Button } from 'bloomer'
+import { Link } from 'react-router-dom'
 
 class RecoverPassword extends Component {
   render () {
@@ -19,9 +20,14 @@ class RecoverPassword extends Component {
                 </Control>
               </Field>
 
-              <Field>
+              <Field isGrouped>
                 <Control>
                   <Button>Submit</Button>
+                </Control>
+                <Control>
+                  <Link to='/'>
+                    <Button>Cancel</Button>
+                  </Link>
                 </Control>
               </Field>
             </form>

@@ -66,6 +66,9 @@ class Login extends Component {
               <Control>
                 <Input type='password' name='password' onChange={this.handleChange} id='password' />
               </Control>
+              <Link to='/recover-password'>
+                Forgot Password?
+              </Link>
             </Field>
 
             <div className='error-msg' />
@@ -76,12 +79,7 @@ class Login extends Component {
               </Control>
               <Control>
                 <Link to='/register'>
-                  <Button>New Account</Button>
-                </Link>
-              </Control>
-              <Control>
-                <Link to='/recover-password'>
-                  <Button>Forgot Password?</Button>
+                  <Button isColor='primary'>New Account</Button>
                 </Link>
               </Control>
             </Field>
