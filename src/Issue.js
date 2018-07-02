@@ -15,7 +15,7 @@ class Issue extends Component {
       <div className='Issue'>
         <p><strong>{issue.username}</strong> submitted an issue:</p>
         <p>Issue: <strong>{issue.text}</strong></p>
-        <p>Date asked: {moment(issue.created_at).format('MMMM Do YYYY, h:mm a')}</p>
+        <p>Date submitted: {moment(issue.created_at).format('MMMM Do YYYY, h:mm a')}</p>
       </div>
     )
   }

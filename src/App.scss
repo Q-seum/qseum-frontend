@@ -65,6 +65,24 @@ Button{
   border-radius:50px;
   margin:.25rem;
   width:75%;
+  padding: 20px 0;
+  font-size: 1rem;
+}
+
+.rounded-button:hover {
+  cursor: pointer;
+}
+
+.login {
+  background: #00d1b2;
+  color: rgb(247,240,240);
+  border: rgb(247,240,240) solid 1px;
+}
+
+.register {
+  background: #fff;
+  color: #00d1b2;
+  border: #00d1b2 solid 1px;
 }
 
 .LandingPage{

@@ -6446,7 +6446,22 @@ Button {
 .rounded-button {
   border-radius: 50px;
   margin: .25rem;
-  width: 75%; }
+  width: 75%;
+  padding: 20px 0;
+  font-size: 1rem; }
+
+.rounded-button:hover {
+  cursor: pointer; }
+
+.login {
+  background: #00d1b2;
+  color: #f7f0f0;
+  border: #f7f0f0 solid 1px; }
+
+.register {
+  background: #fff;
+  color: #00d1b2;
+  border: #00d1b2 solid 1px; }
 
 .LandingPage {
   margin: 0 auto;
