@@ -53,7 +53,7 @@ class RecoverPassword extends Component {
 
               <Field isGrouped>
                 <Control>
-                  <Button>Submit</Button>
+                  <Button type='submit'>Submit</Button>
                 </Control>
                 <Control>
                   <Link to='/'>

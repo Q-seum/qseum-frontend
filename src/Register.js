@@ -28,36 +28,36 @@ class Register extends Component {
 
   handleSubmit (e) {
     e.preventDefault()
-    if (this.state.selfie) {
-      var file = document.querySelector('input[type=file]').files[0]
-      // console.log(file.name)
-      const ref = firebase.storage().ref()
-      // console.log(firebase.storage().ref())
-      const name = (+new Date()) + '-' + file.name
-      // const downloadTokens= file.downloadTokens
-      const metadata = { contentType: file.type }
-      const task = ref.child(name).put(file, metadata).catch(err => console.log(err))
-      console.log(`https://firebasestorage.googleapis.com/v0/b/q-seum.appspot.com/o/${name}?alt=media&token=d84cc00a-df11-4a4c-ba3d-d0f979456873`)
-      task
-        .then(snapshot => console.log(snapshot))
-      request
-        .post('https://secure-temple-21963.herokuapp.com/api/v1/users')
-        // .set('X-Requested-With', 'XMLHttpRequest')
-        .send({
-          username: this.state.username,
-          password: this.state.password,
-          account: this.state.account,
-          email: this.state.email,
-          selfie: `https://firebasestorage.googleapis.com/v0/b/q-seum.appspot.com/o/${name}?alt=media&token=d84cc00a-df11-4a4c-ba3d-d0f979456873`
-        })
-        .then(res => {
-          console.log(res)
-          this.props.history.push('/')
-        })
-        .catch((err) => {
-          console.log(err.response)
-        })
-    }
+    // if (this.state.selfie) {
+    const file = document.querySelector('input[type=file]').files[0]
+    // console.log(file.name)
+    const ref = firebase.storage().ref()
+    // console.log(firebase.storage().ref())
+    const name = (+new Date()) + '-' + file.name
+    // const downloadTokens= file.downloadTokens
+    const metadata = { contentType: file.type }
+    const task = ref.child(name).put(file, metadata).catch(err => console.log(err))
+    console.log(`https://firebasestorage.googleapis.com/v0/b/q-seum.appspot.com/o/${name}?alt=media&token=d84cc00a-df11-4a4c-ba3d-d0f979456873`)
+    task
+      .then(snapshot => console.log(snapshot))
+    request
+      .post('https://secure-temple-21963.herokuapp.com/api/v1/users')
+      // .set('X-Requested-With', 'XMLHttpRequest')
+      .send({
+        username: this.state.username,
+        password: this.state.password,
+        account: this.state.account,
+        email: this.state.email,
+        selfie: `https://firebasestorage.googleapis.com/v0/b/q-seum.appspot.com/o/${name}?alt=media&token=d84cc00a-df11-4a4c-ba3d-d0f979456873`
+      })
+      .then(res => {
+        console.log(res)
+        this.props.history.push('/')
+      })
+      .catch((err) => {
+        console.log(err.response)
+      })
+    // }
   }
 
   render () {
