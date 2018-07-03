@@ -80,10 +80,10 @@ class App extends Component {
             <Route path='/report-issue' render={props => (
               <ReportAnIssue {...props} />
             )} />
-            <Route path='/recover-password' render={props => (
+            <Route path='/password-reset' render={props => (
               <RecoverPassword {...props} />
             )} />
-            <Route path='/reset-password' render={props => (
+            <Route path='/password-recover/:id/:new_token' render={props => (
               <ResetPassword {...props} />
             )} />
             <Route path='/map' render={props => (

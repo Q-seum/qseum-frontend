@@ -21,12 +21,12 @@ class ResetPassword extends Component {
   handleSubmit (e) {
     e.preventDefault()
     request
-      .post('https://secure-temple-21963.herokuapp.com/api/v1/password_resets/(:id)')
+      .post(`https://secure-temple-21963.herokuapp.com/api/v1/password_resets/${this.props.match.params.id}`)
       // .set('X-Requested-With', 'XMLHttpRequest')
       .send({
-        email: this.state.email,
-        new_token: this.state.new_token,
-        used: true
+        new_token: this.props.match.params.new_token,
+        used: true,
+        password: this.state.password
       })
       .then(res => {
         console.log(res)
@@ -42,6 +42,8 @@ class ResetPassword extends Component {
     })
   }
   render () {
+    console.log(this.props)
+    console.log(this.props.match.params.id)
     return (
       <div className='ResetPassword'>
         <Box className='transparent-box'>
@@ -50,7 +52,7 @@ class ResetPassword extends Component {
               <Field>
                 <Label htmlFor='password'>New Password</Label>
                 <Control>
-                  <Input type='text' name='password' onChange={this.handleChange} id='password' />
+                  <Input type='password' name='password' onChange={this.handleChange} id='password' />
                 </Control>
               </Field>
 
