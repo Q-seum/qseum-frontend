@@ -52,17 +52,17 @@ class Login extends Component {
   render () {
     return (
       <div className='Login'>
-        <Title className='raleway' >Login</Title>
+        <Title className='raleway'>Login</Title>
         <form onSubmit={this.handleSubmit}>
           <Field>
             <Label htmlFor='username' className='raleway'><i className="fas fa-user"></i> Username</Label>
             <Control>
-              <Input type='text' name='username' onChange={this.handleChange} id='username' />
+              <Input type='text' name='username' className='input' onChange={this.handleChange} id='username' />
             </Control>
           </Field>
 
           <Field className='password-field'>
-            <Label htmlFor='password' className='raleway'><i className='fas fa-key' /> Password</Label>
+            <Label htmlFor='password' className='label'><i className='fas fa-key' /> Password</Label>
             <Control>
               <Input type='password' name='password' onChange={this.handleChange} id='password' />
             </Control>

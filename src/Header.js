@@ -11,12 +11,18 @@ class Header extends Component {
       isActive: false
     }
     this.onClickNav = this.onClickNav.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   onClickNav () {
     this.setState({
       isActive: !this.state.isActive
     })
+  }
+
+  handleClick (e) {
+    console.log(e.target)
+    // e.target.classList.add('active')
   }
 
   render () {
@@ -46,11 +52,11 @@ class Header extends Component {
                 {this.props.admin === 'true' ? (
                   <NavbarItem isHoverable>Home</NavbarItem>
                 ) : (
-                  <NavbarItem isHoverable><i class='fas fa-qrcode' /> Your QR Code</NavbarItem>
+                  <NavbarItem isHoverable onClick={this.handleClick}><i className='fas fa-qrcode' /> Your QR Code</NavbarItem>
                 )}
               </Link>
               <Link to='/Map'>
-                <NavbarItem isHoverable><i class='fas fa-map' /> Museum Map</NavbarItem>
+                <NavbarItem isHoverable onClick={this.handleClick}><i className='fas fa-map' /> Museum Map</NavbarItem>
               </Link>
               <Link to='/profile'>
                 <NavbarItem isHoverable><i class='far fa-address-card' /> Your Profile</NavbarItem>

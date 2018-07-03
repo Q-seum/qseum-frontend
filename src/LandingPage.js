@@ -56,7 +56,7 @@ class LandingPage extends Component {
             <div className='logo-title'>
               <img width='150px' src={require('./logo-separated.png')} />
               <h1 className='landingpage-title'>Q-seum</h1>
-              <div>Hop through the lines</div>
+              <div className='slogan'>Hop through the lines</div>
             </div>            
             <div className='button-container'>
               <Link to='/login'>
