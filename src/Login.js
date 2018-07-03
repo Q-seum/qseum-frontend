@@ -52,10 +52,10 @@ class Login extends Component {
   render () {
     return (
       <div className='Login'>
-        <h1 className='login-title'>Login</h1>
+        <Title className='raleway' >Login</Title>
         <form onSubmit={this.handleSubmit}>
           <Field>
-            <Label htmlFor='username'><i className='fas fa-user' /> Username</Label>
+            <Label htmlFor='username' className='raleway'><i className="fas fa-user"></i> Username</Label>
             <Control>
               <Input type='text' name='username' onChange={this.handleChange} id='username' />
             </Control>

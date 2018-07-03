@@ -77,10 +77,10 @@ class Register extends Component {
     console.log(this.state.selfie)
     return (
       <div className='Register'>
-        <Title>Register!</Title>
+        <Title className='raleway'>Register!</Title>
         <form onSubmit={this.handleSubmit} className='register-form'>
           <Field>
-            <Label htmlFor='username'><i className='fas fa-user' /> Username</Label>
+            <Label htmlFor='username'><i class="fas fa-user"></i> Username</Label>
             <Control>
               <Input type='text' name='username' onChange={this.handleChange} id='username' />
             </Control>

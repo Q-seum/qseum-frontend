@@ -56,6 +56,13 @@ Button{
   margin:1rem 0 1rem 0;
 }
 
+.title{
+  margin:0;
+  font-weight:bold;
+  // font-size:40px;
+  font-family: 'Raleway', sans-serif;
+}
+
 .button-container{
   width:100%;
   margin:0 auto;
@@ -102,14 +109,16 @@ Label {
 }
 
 .login {
-  background: #00d1b2;
-  color: rgb(247,240,240);
+  background: rgba(0,208,178,.6);
+  // color: rgb(247,240,240);
+  color: #4a4a4a;
   border: rgb(247,240,240) solid 1px;
 }
 
 .register {
-  background: #fff;
-  color: #00d1b2;
+  background: rgba(247,240,240,.8);
+  // color: #00d1b2;
+  color: #4a4a4a;
   border: #00d1b2 solid 1px;
   margin-bottom: 15px;
 }
