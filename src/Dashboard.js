@@ -4,22 +4,31 @@ import React, { Component } from 'react'
 import './App.css'
 import QRCode from 'qrcode.react'
 import { Box, Content, Title } from 'bloomer'
-import reqeust from 'superagent'
+import request from 'superagent'
 import Issue from './Issue'
 
 class Dashboard extends Component {
   constructor () {
     super()
     this.state = {
-      issues: []
+      issues: [],
+      username: '',
+      account: '',
+      membershipType: '',
+      email: '',
+      accommodations: '',
+      joinDate: '',
+      expirationDate: '',
+      selfie: ''
     }
 
     this.apiCall = this.apiCall.bind(this)
+    this.handleLogout = this.handleLogout.bind(this)
   }
 
   apiCall () {
     if (this.props.admin === 'true') {
-      reqeust
+      request
         .get('https://secure-temple-21963.herokuapp.com/api/v1/issues')
         .set('Authorization', `Bearer ${localStorage.token}`)
         .then(res => {
@@ -32,12 +41,36 @@ class Dashboard extends Component {
   }
 
   componentDidMount () {
-    this.apiCall()
-    this.interval = setInterval(() => this.apiCall(), 1000)
+    if (this.props.admin === 'true') {
+      this.apiCall()
+      this.interval = setInterval(() => this.apiCall(), 1000)
+    } else {
+      request
+        .get(`https://secure-temple-21963.herokuapp.com/api/v1/users/${localStorage.id}`)
+        .set('Authorization', `Bearer ${localStorage.token}`)
+        .then(res => {
+          this.setState({
+            username: res.body.data.attributes.username,
+            account: res.body.data.attributes.account,
+            membershipType: res.body.data.attributes.membershipType,
+            email: res.body.data.attributes.email,
+            accommodations: res.body.data.attributes.accommodations,
+            joinDate: res.body.data.attributes.joinDate,
+            expirationDate: res.body.data.attributes.expirationDate,
+            selfie: res.body.data.attributes.selfie
+          })
+        })
+    }
   }
 
   componentWillUnmount () {
     clearInterval(this.interval)
+  }
+
+  handleLogout () {
+    localStorage.clear()
+    this.props.updateState()
+    this.props.history.push('/')
   }
 
   render () {
@@ -65,12 +98,17 @@ class Dashboard extends Component {
         ) : (
           <Box className='transparent-box'>
             <Content>
-              <Title>Membership QR-Code</Title>
-              <div>Your fast pass into the museum!</div>
+              <img src={this.state.selfie} className='avi' />
+              <div className='username'>{this.state.username}</div>
               <div className='QRCode-container'>
                 <QRCode value={`https://q-seum.firebaseapp.com/users/${localStorage.id}`} />
               </div>
-              <div>Show this to a museum employee to get checked in!</div>
+              <div>Present this code for scanning!</div>
+              <div className='user-info'>
+                <div>Membership: {this.state.membershipType} people membership</div>
+                <div>Expiration Date: {this.state.expirationDate}</div>
+              </div>
+              <button className='logout-button' onClick={this.handleLogout}>Logout</button>
             </Content>
           </Box>
         )}

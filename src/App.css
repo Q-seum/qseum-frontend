@@ -6449,6 +6449,15 @@ Button {
   padding: 20px 0;
   font-size: 1.25rem; }
 
+.logout-button {
+  border-radius: 50px;
+  margin-top: 25px;
+  width: 75%;
+  padding: 10px 0;
+  font-size: 1.25rem;
+  border: #00d1b2 solid 1px;
+  color: #00d1b2; }
+
 .rounded-button:hover {
   cursor: pointer; }
 
@@ -6547,7 +6556,14 @@ Button {
   margin: 0 .5rem 0 0; }
 
 .avi {
-  height: 200px; }
+  height: 110px;
+  border-radius: 100%; }
+
+.user-info {
+  margin-top: 20px; }
+
+.username {
+  margin-bottom: 20px; }
 
 .issue {
   margin: 1rem 0;

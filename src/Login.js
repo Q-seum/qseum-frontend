@@ -63,7 +63,7 @@ class Login extends Component {
             </Field>
 
             <Field className='password-field'>
-              <Label htmlFor='password'><i class="fas fa-key"></i> Password</Label>
+              <Label htmlFor='password'><i class='fas fa-key' /> Password</Label>
               <Control>
                 <Input type='password' name='password' onChange={this.handleChange} id='password' />
               </Control>
