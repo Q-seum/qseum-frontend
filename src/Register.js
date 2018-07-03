@@ -64,55 +64,53 @@ class Register extends Component {
     console.log(this.state.selfie)
     return (
       <div className='Register'>
-        <Box className='transparent-box'>
-          <Title>Register!</Title>
-          <form onSubmit={this.handleSubmit} className='register-form'>
-            <Field>
-              <Label htmlFor='username'><i class="fas fa-user"></i> Username</Label>
-              <Control>
-                <Input type='text' name='username' onChange={this.handleChange} id='username' />
-              </Control>
-            </Field>
+        <Title className='raleway'>Register!</Title>
+        <form onSubmit={this.handleSubmit} className='register-form'>
+          <Field>
+            <Label htmlFor='username'><i class="fas fa-user"></i> Username</Label>
+            <Control>
+              <Input type='text' name='username' onChange={this.handleChange} id='username' />
+            </Control>
+          </Field>
 
-            <Field>
-              <Label htmlFor='password'><i class="fas fa-key"></i> Password</Label>
-              <Control>
-                <Input type='password' name='password' onChange={this.handleChange} id='password' />
-              </Control>
-            </Field>
+          <Field>
+            <Label htmlFor='password'><i class="fas fa-key"></i> Password</Label>
+            <Control>
+              <Input type='password' name='password' onChange={this.handleChange} id='password' />
+            </Control>
+          </Field>
 
-            <Field>
-              <Label htmlFor='account'><i class="fas fa-address-card"></i> Museum Account Number</Label>
-              <Control>
-                <Input type='text' name='account' onChange={this.handleChange} id='account' />
-              </Control>
-            </Field>
+          <Field>
+            <Label htmlFor='account'><i class="fas fa-address-card"></i> Museum Account Number</Label>
+            <Control>
+              <Input type='text' name='account' onChange={this.handleChange} id='account' />
+            </Control>
+          </Field>
 
-            <Field>
-              <Label htmlFor='email'><i class="fas fa-envelope"></i> Email Address</Label>
-              <Control>
-                <Input type='email' name='email' onChange={this.handleChange} id='email' />
-              </Control>
-            </Field>
-            <Field>
-              <Label><i class="fas fa-camera"></i> Profile Picture</Label>
-              <Control>
-                <Input type='file' name='photo' accept='image/*;capture=camera' onChange={this.handleChange} />
-              </Control>
-            </Field>
+          <Field>
+            <Label htmlFor='email'><i class="fas fa-envelope"></i> Email Address</Label>
+            <Control>
+              <Input type='email' name='email' onChange={this.handleChange} id='email' />
+            </Control>
+          </Field>
+          <Field>
+            <Label><i class="fas fa-camera"></i> Profile Picture</Label>
+            <Control>
+              <Input type='file' name='photo' accept='image/*;capture=camera' onChange={this.handleChange} />
+            </Control>
+          </Field>
 
-            <Field isGrouped>
-              <Control>
-                <Button isColor='primary' type='submit'>Register</Button>
-              </Control>
-              <Control>
-                <Link to='/'>
-                  <Button isColor='danger'>Cancel</Button>
-                </Link>
-              </Control>
-            </Field>
-          </form>
-        </Box>
+          <Field isGrouped>
+            <Control>
+              <Button isColor='primary' type='submit'>Register</Button>
+            </Control>
+            <Control>
+              <Link to='/'>
+                <Button isColor='danger'>Cancel</Button>
+              </Link>
+            </Control>
+          </Field>
+        </form>
       </div>
     )
   }

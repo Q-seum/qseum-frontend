@@ -6436,6 +6436,11 @@ a {
 Button {
   margin: 1rem 0 1rem 0; }
 
+.title {
+  margin: 0;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif; }
+
 .button-container {
   width: 100%;
   margin: 0 auto;
@@ -6462,13 +6467,13 @@ Button {
   cursor: pointer; }
 
 .login {
-  background: #00d1b2;
-  color: #f7f0f0;
+  background: rgba(0, 208, 178, 0.6);
+  color: #4a4a4a;
   border: #f7f0f0 solid 1px; }
 
 .register {
-  background: #fff;
-  color: #00d1b2;
+  background: rgba(247, 240, 240, 0.8);
+  color: #4a4a4a;
   border: #00d1b2 solid 1px;
   margin-bottom: 15px; }
 

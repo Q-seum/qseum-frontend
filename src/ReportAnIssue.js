@@ -45,7 +45,7 @@ class ReportAnIssue extends Component {
     return (
       <div className='ReportAnIssue'>
         <Box className='transparent-box'>
-          <Title>Report an issue</Title>
+          <Title className='raleway'>Report an issue</Title>
           <p className='issue-text'>We always hope that your visit to the museum is perfect. 
             If you notice something that needs our attention, please use this form to let us know. 
             <strong> Remember to dial 911 in an emergency.</strong>

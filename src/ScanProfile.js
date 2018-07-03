@@ -100,7 +100,7 @@ class ScanProfile extends Component {
       return (
         <div className='ScanProfile'>
           <Box className='transparent-box'>
-            <Title>Check In {this.state.username}</Title>
+            <Title className='raleway'>Check In {this.state.username}</Title>
             <Content>
               <img src={this.state.selfie} className='avi' />
               <div><strong>Username: </strong>{this.state.username}</div>
