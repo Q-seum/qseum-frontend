@@ -21,8 +21,7 @@ class ResetPassword extends Component {
   handleSubmit (e) {
     e.preventDefault()
     request
-      .post(`https://secure-temple-21963.herokuapp.com/api/v1/password_resets/${this.props.match.params.id}`)
-      // .set('X-Requested-With', 'XMLHttpRequest')
+      .patch(`https://secure-temple-21963.herokuapp.com/api/v1/password_resets/${this.props.match.params.id}`)
       .send({
         new_token: this.props.match.params.new_token,
         used: true,
