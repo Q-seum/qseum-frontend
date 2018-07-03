@@ -109,7 +109,7 @@ class Register extends Component {
           <Field>
             <Label><i class='fas fa-camera' /> Profile Picture</Label>
             <Control>
-              <Input type='file' name='photo' accept='image/*;capture=camera' onChange={this.handleChange} />
+              <Input type='file' name='selfie' accept='image/*;capture=camera' onChange={this.handleChange} />
             </Control>
           </Field>
 
