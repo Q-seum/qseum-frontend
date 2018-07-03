@@ -8,7 +8,7 @@ class Header extends Component {
   constructor () {
     super()
     this.state = {
-      isActive: false,
+      isActive: false
     }
     this.onClickNav = this.onClickNav.bind(this)
   }
@@ -30,7 +30,7 @@ class Header extends Component {
           {/* <NavbarItem>
             <img className='logo' src={logo} />
           </NavbarItem> */}
-          <NavbarItem className='navtitle'>
+          <NavbarItem className='navtitle raleway'>
             <strong>Q-Seum</strong>
           </NavbarItem>
           <NavbarItem className='tagline'>Hop through the lines</NavbarItem>
@@ -46,18 +46,18 @@ class Header extends Component {
                 {this.props.admin === 'true' ? (
                   <NavbarItem isHoverable>Home</NavbarItem>
                 ) : (
-                  <NavbarItem isHoverable><i className='fas fa-qrcode' /> Your QR Code</NavbarItem>
+                  <NavbarItem isHoverable><i class='fas fa-qrcode' /> Your QR Code</NavbarItem>
                 )}
               </Link>
               <Link to='/Map'>
-                <NavbarItem isHoverable><i className='fas fa-map' /> Museum Map</NavbarItem>
+                <NavbarItem isHoverable><i class='fas fa-map' /> Museum Map</NavbarItem>
               </Link>
               <Link to='/profile'>
-                <NavbarItem isHoverable><i className='far fa-address-card' /> Your Profile</NavbarItem>
+                <NavbarItem isHoverable><i class='far fa-address-card' /> Your Profile</NavbarItem>
               </Link>
               {this.props.admin !== 'true' && (
                 <Link to='/report-issue'>
-                  <NavbarItem isHoverable><i className='far fa-comment' /> Report an issue</NavbarItem>
+                  <NavbarItem isHoverable><i class='far fa-comment' /> Report an issue</NavbarItem>
                 </Link>
               )}
             </NavbarEnd>

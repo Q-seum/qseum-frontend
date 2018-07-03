@@ -8,7 +8,7 @@ import { Box, Content, Title, Image } from 'bloomer'
 class Map extends Component {
   render () {
     return (
-      <div className='Map'>
+      <div className='Map raleway'>
         <Box className='transparent-box'>
           <Title>Museum Map</Title>
           <img src={require('./museum-map1.jpg')} />

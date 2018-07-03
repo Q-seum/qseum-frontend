@@ -52,48 +52,46 @@ class Login extends Component {
   render () {
     return (
       <div className='Login'>
-        <Box className='transparent-box'>
-          <Title>Login</Title>
-          <form onSubmit={this.handleSubmit}>
-            <Field>
-              <Label htmlFor='username'><i className="fas fa-user"></i> Username</Label>
-              <Control>
-                <Input type='text' name='username' onChange={this.handleChange} id='username' />
-              </Control>
-            </Field>
+        <Title className='raleway' >Login</Title>
+        <form onSubmit={this.handleSubmit}>
+          <Field>
+            <Label htmlFor='username' className='raleway'><i className="fas fa-user"></i> Username</Label>
+            <Control>
+              <Input type='text' name='username' onChange={this.handleChange} id='username' />
+            </Control>
+          </Field>
 
-            <Field className='password-field'>
-              <Label htmlFor='password'><i className='fas fa-key' /> Password</Label>
-              <Control>
-                <Input type='password' name='password' onChange={this.handleChange} id='password' />
-              </Control>
-              <Link to='/password-reset'>
-                Forgot Password?
-              </Link>
-            </Field>
-
-            <div className='error-msg' />
-
-            <Field isGrouped>
-              <Control>
-                <Button isColor='primary' type='submit'>Login</Button>
-              </Control>
-              <Control>
-                <Link to='/register'>
-                  <Button>New Account</Button>
-                </Link>
-              </Control>
-            </Field>
-          </form>
-          {/* <p className='recover'>
-            <Link to='/recover-password'>
-              <a>Forgot Password?</a>
+          <Field className='password-field'>
+            <Label htmlFor='password' className='raleway'><i className='fas fa-key' /> Password</Label>
+            <Control>
+              <Input type='password' name='password' onChange={this.handleChange} id='password' />
+            </Control>
+            <Link to='/password-reset'>
+              Forgot Password?
             </Link>
-          </p> */}
-          <p>
-            <a href='https://www.lifeandscience.org/purchase' target='_blank'>Sign up for a museum membership!</a>
-          </p>
-        </Box>
+          </Field>
+
+          <div className='error-msg' />
+
+          <Field isGrouped>
+            <Control>
+              <Button isColor='primary' type='submit'>Login</Button>
+            </Control>
+            <Control>
+              <Link to='/register'>
+                <Button>New Account</Button>
+              </Link>
+            </Control>
+          </Field>
+        </form>
+        {/* <p className='recover'>
+          <Link to='/recover-password'>
+            <a>Forgot Password?</a>
+          </Link>
+        </p> */}
+        <p>
+          <a href='https://www.lifeandscience.org/purchase' target='_blank'>Sign up for a museum membership!</a>
+        </p>
       </div>
     )
   }
