@@ -6422,7 +6422,16 @@ label.panel-block {
 html {
   background-size: cover;
   height: 100%;
-  background: linear-gradient(rgba(0, 209, 178, 0.7), rgba(0, 209, 178, 0.7)), no-repeat center center fixed url(./forestbg.jpg); }
+  background: linear-gradient(rgba(0, 145, 122, 0.7), rgba(0, 145, 122, 0.7)), no-repeat center center fixed url(./forestbg.jpg); }
+
+.label {
+  color: #f7f7f0;
+  font-weight: 500;
+  font-size: 1.1rem; }
+
+.input {
+  border-radius: 25px;
+  opacity: .5; }
 
 .App {
   height: 100%; }
@@ -6431,7 +6440,7 @@ html {
   background-color: #f7f0f0; }
 
 a {
-  color: #fd8204; }
+  color: #f7f7f0; }
 
 Button {
   margin: 1rem 0 1rem 0; }
@@ -6439,7 +6448,9 @@ Button {
 .title {
   margin: 0;
   font-weight: bold;
-  font-family: 'Raleway', sans-serif; }
+  font-family: 'Raleway', sans-serif;
+  color: #f7f7f0;
+  text-align: center; }
 
 .button-container {
   width: 100%;
@@ -6479,8 +6490,8 @@ Label {
   color: white; }
 
 .login {
-  background: rgba(0, 208, 178, 0.6);
-  color: #4a4a4a;
+  background: rgba(0, 208, 178, 0.4);
+  color: #f7f0f0;
   border: #f7f0f0 solid 1px; }
 
 .register {
