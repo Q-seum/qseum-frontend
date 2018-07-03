@@ -68,34 +68,34 @@ class Register extends Component {
           <Title>Register!</Title>
           <form onSubmit={this.handleSubmit} className='register-form'>
             <Field>
-              <Label htmlFor='username'>Username</Label>
+              <Label htmlFor='username'><i class="fas fa-user"></i> Username</Label>
               <Control>
                 <Input type='text' name='username' onChange={this.handleChange} id='username' />
               </Control>
             </Field>
 
             <Field>
-              <Label htmlFor='password'>Password</Label>
+              <Label htmlFor='password'><i class="fas fa-key"></i> Password</Label>
               <Control>
                 <Input type='password' name='password' onChange={this.handleChange} id='password' />
               </Control>
             </Field>
 
             <Field>
-              <Label htmlFor='account'>Museum Account Number</Label>
+              <Label htmlFor='account'><i class="fas fa-address-card"></i> Museum Account Number</Label>
               <Control>
                 <Input type='text' name='account' onChange={this.handleChange} id='account' />
               </Control>
             </Field>
 
             <Field>
-              <Label htmlFor='email'>Email Address</Label>
+              <Label htmlFor='email'><i class="fas fa-envelope"></i> Email Address</Label>
               <Control>
                 <Input type='email' name='email' onChange={this.handleChange} id='email' />
               </Control>
             </Field>
             <Field>
-              <Label>Profile Picture</Label>
+              <Label><i class="fas fa-camera"></i> Profile Picture</Label>
               <Control>
                 <Input type='file' name='photo' accept='image/*;capture=camera' onChange={this.handleChange} />
               </Control>

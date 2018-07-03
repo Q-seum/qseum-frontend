@@ -56,14 +56,14 @@ class Login extends Component {
           <Title>Login</Title>
           <form onSubmit={this.handleSubmit}>
             <Field>
-              <Label htmlFor='username'>Username</Label>
+              <Label htmlFor='username'><i class="fas fa-user"></i> Username</Label>
               <Control>
                 <Input type='text' name='username' onChange={this.handleChange} id='username' />
               </Control>
             </Field>
 
             <Field className='password-field'>
-              <Label htmlFor='password'>Password</Label>
+              <Label htmlFor='password'><i class="fas fa-key"></i> Password</Label>
               <Control>
                 <Input type='password' name='password' onChange={this.handleChange} id='password' />
               </Control>
