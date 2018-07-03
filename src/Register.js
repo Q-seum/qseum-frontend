@@ -28,7 +28,7 @@ class Register extends Component {
 
   handleSubmit (e) {
     e.preventDefault()
-    if (this.state.photo) {
+    if (this.state.selfie) {
       const file = document.querySelector('input[type=file]').files[0]
       const ref = firebase.storage().ref()
       const name = (+new Date()) + '-' + file.name
