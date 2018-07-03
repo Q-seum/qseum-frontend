@@ -11,7 +11,8 @@ class RecoverPassword extends Component {
   constructor () {
     super()
     this.state = {
-      email: ''
+      email: '',
+      recoverPassword: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -27,7 +28,10 @@ class RecoverPassword extends Component {
       })
       .then(res => {
         console.log(res)
-        this.props.history.push('/')
+        // this.props.history.push('/')
+        this.setState({
+          recoverPassword: true
+        })
       })
       .catch((err) => {
         console.log(err.response)
@@ -42,27 +46,41 @@ class RecoverPassword extends Component {
     return (
       <div className='RecoverPassword'>
         <Box className='transparent-box'>
-          <Content>
-            <form onSubmit={this.handleSubmit}>
-              <Field>
-                <Label htmlFor='email'>Enter your email to reset password</Label>
-                <Control>
-                  <Input type='email' name='email' onChange={this.handleChange} id='email' />
-                </Control>
-              </Field>
+          {!this.state.recoverPassword ? (
+            <Content>
+              <form onSubmit={this.handleSubmit}>
+                <Field>
+                  <Label htmlFor='email'>Enter your email to reset password</Label>
+                  <Control>
+                    <Input type='email' name='email' onChange={this.handleChange} id='email' />
+                  </Control>
+                </Field>
 
-              <Field isGrouped>
-                <Control>
-                  <Button type='submit'>Submit</Button>
-                </Control>
-                <Control>
-                  <Link to='/'>
-                    <Button isColor='danger'>Cancel</Button>
-                  </Link>
-                </Control>
-              </Field>
-            </form>
-          </Content>
+                <Field isGrouped>
+                  <Control>
+                    <Button type='submit'>Submit</Button>
+                  </Control>
+                  <Control>
+                    <Link to='/'>
+                      <Button isColor='danger'>Cancel</Button>
+                    </Link>
+                  </Control>
+                </Field>
+              </form>
+            </Content>
+          ) : (
+            <Content>
+              <div>
+                <p>
+                  You should recieve an email from the Q-seum team within a few minutes.
+                  Click the link in the email to reset your password!
+                </p>
+                <Link to='/'>
+                  <Button isColor='primary'>Back</Button>
+                </Link>
+              </div>
+            </Content>
+          )}
         </Box>
       </div>
     )

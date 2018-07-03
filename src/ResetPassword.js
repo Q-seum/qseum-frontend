@@ -12,7 +12,8 @@ class ResetPassword extends Component {
     this.state = {
       password: '',
       new_token: '',
-      used: ''
+      used: '',
+      clickReset: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -20,8 +21,9 @@ class ResetPassword extends Component {
 
   handleSubmit (e) {
     e.preventDefault()
+    
     request
-      .post(`https://secure-temple-21963.herokuapp.com/api/v1/password_resets/${this.props.match.params.id}`)
+      .patch(`https://secure-temple-21963.herokuapp.com/api/v1/password_resets/${this.props.match.params.id}`)
       // .set('X-Requested-With', 'XMLHttpRequest')
       .send({
         new_token: this.props.match.params.new_token,
@@ -30,7 +32,10 @@ class ResetPassword extends Component {
       })
       .then(res => {
         console.log(res)
-        this.props.history.push('/')
+        // this.props.history.push('/')
+        this.setState({
+          clickReset: true
+        })
       })
       .catch((err) => {
         console.log(err.response)
@@ -47,27 +52,40 @@ class ResetPassword extends Component {
     return (
       <div className='ResetPassword'>
         <Box className='transparent-box'>
-          <Content>
-            <form onSubmit={this.handleSubmit}>
-              <Field>
-                <Label htmlFor='password'>New Password</Label>
-                <Control>
-                  <Input type='password' name='password' onChange={this.handleChange} id='password' />
-                </Control>
-              </Field>
+          {!this.state.clickReset ? (
+            <Content>
+              <form onSubmit={this.handleSubmit}>
+                <Field>
+                  <Label htmlFor='password'>New Password</Label>
+                  <Control>
+                    <Input type='password' name='password' onChange={this.handleChange} id='password' />
+                  </Control>
+                </Field>
 
-              <Field isGrouped>
-                <Control>
-                  <Button isColor='primary' type='submit'>Submit</Button>
-                </Control>
-                <Control>
-                  <Link to='/'>
-                    <Button isColor='danger'>Cancel</Button>
-                  </Link>
-                </Control>
-              </Field>
-            </form>
-          </Content>
+                <Field isGrouped>
+                  <Control>
+                    <Button isColor='primary' type='submit'>Submit</Button>
+                  </Control>
+                  <Control>
+                    <Link to='/'>
+                      <Button isColor='danger'>Cancel</Button>
+                    </Link>
+                  </Control>
+                </Field>
+              </form>
+            </Content>
+          ) : (
+            <Content>
+              <div>
+                <p>
+                  Your password has been reset!
+                </p>
+                <Link to='/'>
+                  <Button isColor='primary'>Go back to login</Button>
+                </Link>
+              </div>
+            </Content>
+          )}
         </Box>
       </div>
     )
