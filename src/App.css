@@ -6483,6 +6483,13 @@ Button {
   text-align: center;
   font-weight: bold; }
 
+.danger-input {
+  border: 2px solid #2e5767; }
+
+.danger-text {
+  color: #2e5767;
+  font-weight: 700; }
+
 Label {
   color: #f7f7f0; }
 

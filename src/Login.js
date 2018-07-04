@@ -42,9 +42,9 @@ class Login extends Component {
       .catch(err => {
         const inputs = document.querySelectorAll('Input')
         const error = document.querySelector('.error-msg')
-        error.innerHTML = `<p class='help is-danger'>${err.response.body.error}</p>`
+        error.innerHTML = `<Box className='transparent-box'><p class='danger-text'>${err.response.body.error}</p></Box>`
         inputs.forEach(input => {
-          input.classList.add('is-danger')
+          input.classList.add('danger-input')
         })
       })
   }
@@ -66,9 +66,6 @@ class Login extends Component {
             <Control>
               <Input type='password' name='password' onChange={this.handleChange} id='password' />
             </Control>
-            {/* <Link to='/password-reset'>
-              Forgot Password?
-            </Link> */}
           </Field>
 
           <div className='error-msg' />
