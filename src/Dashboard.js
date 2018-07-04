@@ -97,18 +97,17 @@ class Dashboard extends Component {
         ) : (
           <Box className='transparent-box'>
             <Content>
-              <div>Memember of the Museum of Life and Science</div>
-              <div>Durham, North Carolina</div>
               <img src={this.state.selfie} className='avi' />
-              <div className='username'>{this.state.username}</div>
-              <div className='QRCode-container'>
-                <QRCode value={`https://q-seum.firebaseapp.com/users/${localStorage.id}`} />
+              <div><strong>Member of the Museum of Life and Science</strong></div>
+              <div>Durham, North Carolina</div>
+              <div>
+                <QRCode className='QRCode-container' value={`https://q-seum.firebaseapp.com/users/${localStorage.id}`} />
               </div>
-              <div>Present this code for scanning!</div>
-              <div className='user-info'>
-                <div>Membership type: {this.state.membershipType} person admission</div>
-                <div>Expiration Date: {this.state.expirationDate}</div>
-              </div>
+              <div>Hi, <strong>{this.state.username}!</strong> Present this code to a museum employee to enter the museum!</div>
+              {/* <div className='user-info'>
+                <div>Membership type: <strong>{this.state.membershipType} person admission</strong></div>
+                <div>Expiration Date: <strong>{this.state.expirationDate}</strong></div>
+              </div> */}
             </Content>
           </Box>
         )}

@@ -55,6 +55,7 @@ body{
 }
 //0099a8
 //c8bfc7
+
 .transparent-box{
   background-color: rgba(247,247,240,.4);
 }
@@ -174,11 +175,17 @@ Label {
 .Dashboard{
   text-align:center;
   margin:2rem;
+  font-weight:500;
 }
 
 .QRCode-container{
-  padding:1rem;
+  // padding:1rem;
+  margin:.5rem;
 }
+
+// QRCode{
+//   width:700px;
+// }
 
 .museum-membership {
   font-size: 1rem;
@@ -273,6 +280,15 @@ i{
   font-weight:500;
 }
 
+.Profile .title{
+  margin:.5rem;
+  color:white;
+}
+
+.Profile .Label{
+  padding:0;
+}
+
 .Login {
   margin: 2rem;
 }
@@ -294,8 +310,13 @@ i{
 .Map{
   margin:2rem auto 2rem auto;
   width:95%;
+  text-align:center;
   // height:700px;
   // overflow:auto;
+}
+
+.Map .title{
+  margin:.25rem;
 }
 
 .RecoverPassword{
