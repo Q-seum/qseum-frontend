@@ -59,7 +59,7 @@ class Register extends Component {
         if (!input.value) {
           input.classList.add('is-danger')
           console.log(input.name)
-          
+
           const error = document.createElement('p')
           error.classList.add('help')
           error.classList.add('is-danger')
@@ -77,10 +77,10 @@ class Register extends Component {
     console.log(this.state.selfie)
     return (
       <div className='Register'>
-        <Title className='raleway'>Register!</Title>
+        <Title className='raleway login-title'>Register</Title>
         <form onSubmit={this.handleSubmit} className='register-form'>
           <Field>
-            <Label htmlFor='username'><i class="fas fa-user"></i> Username</Label>
+            <Label htmlFor='username'><i class='fas fa-user' /> Username</Label>
             <Control>
               <Input type='text' name='username' onChange={this.handleChange} id='username' />
             </Control>
