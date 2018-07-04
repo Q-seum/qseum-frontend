@@ -268,6 +268,10 @@ i{
   text-align:center;
 }
 
+.profile-details{
+  text-align:left;
+  font-weight:500;
+}
 
 .Login {
   margin: 2rem;
@@ -275,9 +279,12 @@ i{
 
 
 
-.Register,
+.Register{
+  margin:2rem;
+}
 .ReportAnIssue{
   margin:2rem;
+  font-weight:500;
 }
 
 .ScanProfile{

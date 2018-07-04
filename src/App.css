@@ -6580,12 +6580,19 @@ i {
   margin: 2rem;
   text-align: center; }
 
+.profile-details {
+  text-align: left;
+  font-weight: 500; }
+
 .Login {
   margin: 2rem; }
 
-.Register,
-.ReportAnIssue {
+.Register {
   margin: 2rem; }
+
+.ReportAnIssue {
+  margin: 2rem;
+  font-weight: 500; }
 
 .ScanProfile {
   margin: 2rem; }

@@ -97,6 +97,8 @@ class Dashboard extends Component {
         ) : (
           <Box className='transparent-box'>
             <Content>
+              <div>Memember of the Museum of Life and Science</div>
+              <div>Durham, North Carolina</div>
               <img src={this.state.selfie} className='avi' />
               <div className='username'>{this.state.username}</div>
               <div className='QRCode-container'>
