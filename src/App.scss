@@ -56,7 +56,7 @@ body{
 //0099a8
 //c8bfc7
 .transparent-box{
-  background-color: rgba(247,240,240,1);
+  background-color: rgba(247,247,240,.4);
 }
 
 a {
@@ -114,7 +114,7 @@ Button{
 }
 
 Label {
-  color: rgb(247,240,240);
+  color: rgb(247,247,240);
 }
 
 .Login {
@@ -124,12 +124,12 @@ Label {
 .login {
   background: rgba(0,208,178,.4);
   // color: rgb(247,240,240);
-  color: rgb(247,240,240);
-  border: rgb(247,240,240) solid 1px;
+  color: rgb(247,247,240);
+  border: rgb(247,247,240) solid 1px;
 }
 
 .register {
-  background: rgba(247,240,240,.8);
+  background: rgba(247,247,240,.8);
   // color: #00d1b2;
   color: #4a4a4a;
   border: #00d1b2 solid 1px;
@@ -147,13 +147,13 @@ Label {
   font-weight:bold;
   font-size:40px;
   font-family: 'Raleway', sans-serif;
-  color: rgb(247,240,240);
+  color: rgb(247,247,240);
 
 }
 
 .slogan {
   font-style: italic;
-  color: rgb(247,240,240);
+  color: rgb(247,247,240);
 }
 
 // .signup{
@@ -182,7 +182,7 @@ Label {
 
 .museum-membership {
   font-size: 1rem;
-  color: rgb(247,240,240);
+  color: rgb(247,247,240);
   // text-decoration: underline;
   // color: #fd8204;
 }
@@ -190,7 +190,7 @@ Label {
 
 .museum-membership:hover{
   font-size: 1rem;  
-  color: rgb(247,240,240)
+  color: rgb(247,247,240)
   // color:#fd8204
   // color: #fd8204;
 }
@@ -203,7 +203,7 @@ Label {
   font-size: 1.25rem;
   // background: rgb(247,240,240);
   background: #00d1b2;
-  color: rgb(247,240,240);
+  color: rgb(247,247,240);
   opacity: .9;
   // color: #00d1b2;
   border: none;
@@ -230,7 +230,7 @@ Label {
   border-bottom: solid 2px #fd8204;
   font-size: 1.1rem;
   // background-color: rgba(0,153,168,.95);
-  background-color: rgba(247,240,240,1);
+  background-color: rgba(247,247,240,1);
 
 
 
@@ -246,16 +246,28 @@ Label {
   background-color: #fd8204;
 }
 
+.icon{
+  
+}
+
+i{
+  margin-right:.25rem;
+}
 .navtitle{
   align-items:center;
+  font-size: 1.5rem;
+  font-family: 'Raleway', sans-serif;
+  margin-left:0;
+
 
 }
+
 
 .Profile{
   margin:2rem;
   text-align:center;
-
 }
+
 
 .Login {
   margin: 2rem;
@@ -274,7 +286,7 @@ Label {
 
 .Map{
   margin:2rem auto 2rem auto;
-  width:80%;
+  width:95%;
   // height:700px;
   // overflow:auto;
 }
@@ -287,6 +299,7 @@ Label {
 .tagline{
   color: #fd8204;
   font-style:italic;
+  font-weight:550;
 }
 
 .issue-text{
@@ -303,7 +316,7 @@ Label {
 
 .avi {
   height: 110px;
-  border-radius: 100%;
+  border-radius: 10%;
 }
 
 .user-info {

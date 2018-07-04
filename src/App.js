@@ -53,7 +53,7 @@ class App extends Component {
 
           {this.state.token ? (
             <div>
-              <Header token={this.state.token} admin={this.state.admin} />
+              <Header token={this.state.token} admin={this.state.admin} updateState={this.updateState} />
               <Container className='page-container'>
                 <Route exact path='/' render={props => (
                   <Dashboard {...props} admin={this.state.admin} updateState={this.updateState} />
