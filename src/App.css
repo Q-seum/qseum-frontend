@@ -6567,6 +6567,9 @@ Label {
 .active {
   background-color: #fd8204; }
 
+i {
+  margin-right: .25rem; }
+
 .navtitle {
   align-items: center;
   font-size: 1.5rem;
