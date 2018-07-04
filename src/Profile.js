@@ -21,13 +21,13 @@ class Profile extends Component {
       updateSelfie: false
     }
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.updateSelfie = this.updateSelfie.bind(this)
+    this.editProfile = this.editProfile.bind(this)
   }
 
-  updateSelfie (e) {
+  editProfile (e) {
     e.preventDefault()
     this.setState({
-      updateSelfie: !this.state.updateSelfie
+      updateSelfie: !this.state.editProfile
     })
   }
 
@@ -61,24 +61,26 @@ class Profile extends Component {
       <div className='Profile'>
         <Box className='transparent-box'>
           <Content>
-            {!this.state.updateSelfie ? (
+            {!this.state.editProfile ? (
               <div>
                 <h1>Your Profile</h1>
                 <img src={this.state.selfie} className='avi' />
-                <div><strong>Username: </strong>{this.state.username}</div>
-                <div><strong>Email: </strong>{this.state.email}</div>
-                <div><strong>Membership type: </strong>{this.state.membershipType} person pass</div>
-                <div><strong>Membership Join Date: </strong>{this.state.joinDate}</div>
-                <div><strong>Membership Expiration Date: </strong>{this.state.expirationDate}</div>
-                {this.state.accommodations ? (
-                  <div><strong>Accommodations: </strong>{this.state.accomodations}</div>
-                ) : (
-                  <div><strong>Accommodations: </strong>None</div>
-                )}
+                <div className='profile-details'>
+                  <div><strong>Username: </strong>{this.state.username}</div>
+                  <div><strong>Email: </strong>{this.state.email}</div>
+                  <div><strong>Membership type: </strong>{this.state.membershipType} person pass</div>
+                  <div><strong>Join Date: </strong>{this.state.joinDate}</div>
+                  <div><strong>Expiration Date: </strong>{this.state.expirationDate}</div>
+                  {this.state.accommodations ? (
+                    <div><strong>Accommodations: </strong>{this.state.accomodations}</div>
+                  ) : (
+                    <div><strong>Accommodations: </strong>None</div>
+                  )}
+                </div>
               
                 <Field isGrouped hasAddons='centered'>
                   <Control>
-                    <Button isColor='primary' onClick={this.updateSelfie}>Update Selfie</Button>
+                    <Button isColor='primary' onClick={this.editProfile}>Edit Profile</Button>
                     <div id='modal' />
                   </Control>
                 </Field>
