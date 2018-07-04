@@ -20,7 +20,6 @@ class Profile extends Component {
       selfie: '',
       updateSelfie: false
     }
-    this.handleLogout = this.handleLogout.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.updateSelfie = this.updateSelfie.bind(this)
   }
@@ -35,12 +34,6 @@ class Profile extends Component {
   handleSubmit (e) {
     e.preventDefault()
     
-  }
-
-  handleLogout () {
-    localStorage.clear()
-    this.props.updateState()
-    this.props.history.push('/')
   }
 
   componentDidMount () {
@@ -84,11 +77,6 @@ class Profile extends Component {
                 )}
               
                 <Field isGrouped hasAddons='centered'>
-                  <Control>
-                    <Link to='/'>
-                      <Button isColor='danger' onClick={this.handleLogout}>Logout</Button>
-                    </Link>
-                  </Control>
                   <Control>
                     <Button isColor='primary' onClick={this.updateSelfie}>Update Selfie</Button>
                     <div id='modal' />

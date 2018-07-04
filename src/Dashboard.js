@@ -107,7 +107,6 @@ class Dashboard extends Component {
                 <div>Membership: {this.state.membershipType} people membership</div>
                 <div>Expiration Date: {this.state.expirationDate}</div>
               </div>
-              <button className='logout-button' onClick={this.handleLogout}>Logout</button>
             </Content>
           </Box>
         )}
