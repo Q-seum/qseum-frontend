@@ -6437,7 +6437,7 @@ html {
   height: 100%; }
 
 .transparent-box {
-  background-color: #f7f0f0; }
+  background-color: rgba(247, 240, 240, 0.4); }
 
 a {
   color: #f7f7f0; }
@@ -6613,7 +6613,7 @@ i {
 
 .avi {
   height: 110px;
-  border-radius: 100%; }
+  border-radius: 10%; }
 
 .user-info {
   margin-top: 20px; }

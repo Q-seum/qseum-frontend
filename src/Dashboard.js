@@ -104,7 +104,7 @@ class Dashboard extends Component {
               </div>
               <div>Present this code for scanning!</div>
               <div className='user-info'>
-                <div>Membership: {this.state.membershipType} people membership</div>
+                <div>Membership type: {this.state.membershipType} person admission</div>
                 <div>Expiration Date: {this.state.expirationDate}</div>
               </div>
             </Content>
