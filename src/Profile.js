@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
-import { Content, Box, Button, Field, Control, Label, Input, Text } from 'bloomer'
+import { Content, Box, Button, Field, Control, Label, Input, Title } from 'bloomer'
 import firebase from './firebase'
 
 class Profile extends Component {
@@ -122,7 +122,7 @@ class Profile extends Component {
           <Content>
             {!this.state.editProfile ? (
               <div>
-                <h1 className='title'>Your Profile</h1>
+                <Title className='Raleway'>Your Profile</Title>
                 <img src={this.state.selfie} className='avi' />
                 <div className='profile-details'>
                   <Field>
@@ -171,7 +171,7 @@ class Profile extends Component {
             ) : (
               <div>
                 <form onSubmit={this.handleSubmit}>
-                  <h1 className='title'>Edit Profile</h1>
+                  <Title className='Raleway'>Edit Profile</Title>
                   <img src={this.state.selfie} className='avi' />
                   <div className='profile-details'>
                     <Field>
