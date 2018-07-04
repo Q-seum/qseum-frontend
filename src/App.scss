@@ -246,8 +246,16 @@ Label {
   background-color: #fd8204;
 }
 
+.icon{
+  
+}
+
 .navtitle{
   align-items:center;
+  font-size: 1.5rem;
+  font-family: 'Raleway', sans-serif;
+  margin-left:0;
+
 
 }
 
@@ -287,6 +295,7 @@ Label {
 .tagline{
   color: #fd8204;
   font-style:italic;
+  font-weight:550;
 }
 
 .issue-text{

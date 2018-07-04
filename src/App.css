@@ -6568,7 +6568,10 @@ Label {
   background-color: #fd8204; }
 
 .navtitle {
-  align-items: center; }
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: 'Raleway', sans-serif;
+  margin-left: 0; }
 
 .Profile {
   margin: 2rem;
@@ -6593,7 +6596,8 @@ Label {
 
 .tagline {
   color: #fd8204;
-  font-style: italic; }
+  font-style: italic;
+  font-weight: 550; }
 
 .issue-text {
   margin-bottom: 1rem; }
