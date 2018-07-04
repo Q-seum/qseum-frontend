@@ -113,16 +113,14 @@ class Register extends Component {
             </Control>
           </Field>
 
-          <Field isGrouped>
-            <Control>
-              <Button isColor='primary' type='submit'>Register</Button>
-            </Control>
-            <Control>
-              <Link to='/'>
-                <Button isColor='danger'>Cancel</Button>
-              </Link>
-            </Control>
-          </Field>
+          <div className='button-container'>
+            <button className='login-button' type='submit'>Register</button>
+          </div>
+          {/* <Control>
+            <Link to='/'>
+              <Button isColor='danger'>Cancel</Button>
+            </Link>
+          </Control> */}
         </form>
       </div>
     )
