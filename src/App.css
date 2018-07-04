@@ -6529,12 +6529,29 @@ Label {
 
 .museum-membership {
   font-size: 1rem;
-  color: #f7f0f0;
-  text-decoration: underline; }
+  color: #f7f0f0; }
 
 .museum-membership:hover {
   font-size: 1rem;
-  color: #fd8204; }
+  color: #f7f0f0; }
+
+.login-button {
+  border-radius: 50px;
+  margin: 0;
+  width: 75%;
+  padding: 15px 0;
+  font-size: 1.25rem;
+  background: #00d1b2;
+  color: #f7f0f0;
+  opacity: .9;
+  border: none; }
+
+.link-container {
+  text-align: center;
+  margin-top: 30px; }
+
+.login-links {
+  font-weight: 600; }
 
 .logo {
   margin-left: 1rem; }

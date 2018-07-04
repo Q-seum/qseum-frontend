@@ -183,15 +183,40 @@ Label {
 .museum-membership {
   font-size: 1rem;
   color: rgb(247,240,240);
-  text-decoration: underline;
+  // text-decoration: underline;
   // color: #fd8204;
 }
 
 
 .museum-membership:hover{
   font-size: 1rem;  
-  color:#fd8204
+  color: rgb(247,240,240)
+  // color:#fd8204
   // color: #fd8204;
+}
+
+.login-button {
+  border-radius:50px;
+  margin: 0;
+  width:75%;
+  padding: 15px 0;
+  font-size: 1.25rem;
+  // background: rgb(247,240,240);
+  background: #00d1b2;
+  color: rgb(247,240,240);
+  opacity: .9;
+  // color: #00d1b2;
+  border: none;
+}
+
+.link-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.login-links {
+  // color: #00d1b2;
+  font-weight: 600;
 }
 
 .logo{
@@ -232,10 +257,11 @@ Label {
 
 }
 
-.Login{
-  margin:2rem;
-
+.Login {
+  margin: 2rem;
 }
+
+
 
 .Register,
 .ReportAnIssue{

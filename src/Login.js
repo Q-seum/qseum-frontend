@@ -52,10 +52,10 @@ class Login extends Component {
   render () {
     return (
       <div className='Login'>
-        <Title className='raleway'>Login</Title>
-        <form onSubmit={this.handleSubmit}>
+        <Title className='raleway login-title'>Login</Title>
+        <form onSubmit={this.handleSubmit} className='login-form'>
           <Field>
-            <Label htmlFor='username' className='raleway'><i className="fas fa-user"></i> Username</Label>
+            <Label htmlFor='username' className='raleway'><i className='fas fa-user' /> Username</Label>
             <Control>
               <Input type='text' name='username' className='input' onChange={this.handleChange} id='username' />
             </Control>
@@ -66,32 +66,21 @@ class Login extends Component {
             <Control>
               <Input type='password' name='password' onChange={this.handleChange} id='password' />
             </Control>
-            <Link to='/password-reset'>
+            {/* <Link to='/password-reset'>
               Forgot Password?
-            </Link>
+            </Link> */}
           </Field>
 
           <div className='error-msg' />
 
-          <Field isGrouped>
-            <Control>
-              <Button isColor='primary' type='submit'>Login</Button>
-            </Control>
-            <Control>
-              <Link to='/register'>
-                <Button>New Account</Button>
-              </Link>
-            </Control>
-          </Field>
+          <div className='button-container'>
+            <button isColor='primary' type='submit' className='login-button'>Login</button>
+          </div>
+
+          <div className='link-container'>
+            <Link to='/password-reset'><a className='login-links'>Forgot Password?</a></Link> | <Link to='/register'><a className='login-links'>Sign up for Q-seum</a></Link>
+          </div>
         </form>
-        {/* <p className='recover'>
-          <Link to='/recover-password'>
-            <a>Forgot Password?</a>
-          </Link>
-        </p> */}
-        <p>
-          <a href='https://www.lifeandscience.org/purchase' target='_blank'>Sign up for a museum membership!</a>
-        </p>
       </div>
     )
   }
