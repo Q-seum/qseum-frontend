@@ -6437,7 +6437,7 @@ html {
   height: 100%; }
 
 .transparent-box {
-  background-color: #f7f0f0; }
+  background-color: rgba(247, 247, 240, 0.4); }
 
 a {
   color: #f7f7f0; }
@@ -6484,18 +6484,18 @@ Button {
   font-weight: bold; }
 
 Label {
-  color: #f7f0f0; }
+  color: #f7f7f0; }
 
 .Login {
   color: white; }
 
 .login {
   background: rgba(0, 208, 178, 0.4);
-  color: #f7f0f0;
-  border: #f7f0f0 solid 1px; }
+  color: #f7f7f0;
+  border: #f7f7f0 solid 1px; }
 
 .register {
-  background: rgba(247, 240, 240, 0.8);
+  background: rgba(247, 247, 240, 0.8);
   color: #4a4a4a;
   border: #00d1b2 solid 1px;
   margin-bottom: 15px; }
@@ -6510,11 +6510,11 @@ Label {
   font-weight: bold;
   font-size: 40px;
   font-family: 'Raleway', sans-serif;
-  color: #f7f0f0; }
+  color: #f7f7f0; }
 
 .slogan {
   font-style: italic;
-  color: #f7f0f0; }
+  color: #f7f7f0; }
 
 .logo-title {
   margin: 0;
@@ -6529,11 +6529,11 @@ Label {
 
 .museum-membership {
   font-size: 1rem;
-  color: #f7f0f0; }
+  color: #f7f7f0; }
 
 .museum-membership:hover {
   font-size: 1rem;
-  color: #f7f0f0; }
+  color: #f7f7f0; }
 
 .login-button {
   border-radius: 50px;
@@ -6542,7 +6542,7 @@ Label {
   padding: 15px 0;
   font-size: 1.25rem;
   background: #00d1b2;
-  color: #f7f0f0;
+  color: #f7f7f0;
   opacity: .9;
   border: none; }
 
@@ -6562,13 +6562,19 @@ Label {
   align-items: center;
   border-bottom: solid 2px #fd8204;
   font-size: 1.1rem;
-  background-color: #f7f0f0; }
+  background-color: #f7f7f0; }
 
 .active {
   background-color: #fd8204; }
 
+i {
+  margin-right: .25rem; }
+
 .navtitle {
-  align-items: center; }
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: 'Raleway', sans-serif;
+  margin-left: 0; }
 
 .Profile {
   margin: 2rem;
@@ -6586,14 +6592,15 @@ Label {
 
 .Map {
   margin: 2rem auto 2rem auto;
-  width: 80%; }
+  width: 95%; }
 
 .RecoverPassword {
   margin: 2rem; }
 
 .tagline {
   color: #fd8204;
-  font-style: italic; }
+  font-style: italic;
+  font-weight: 550; }
 
 .issue-text {
   margin-bottom: 1rem; }
@@ -6606,7 +6613,7 @@ Label {
 
 .avi {
   height: 110px;
-  border-radius: 100%; }
+  border-radius: 10%; }
 
 .user-info {
   margin-top: 20px; }

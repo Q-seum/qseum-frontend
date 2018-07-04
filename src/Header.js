@@ -12,6 +12,13 @@ class Header extends Component {
     }
     this.onClickNav = this.onClickNav.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    this.handleLogout = this.handleLogout.bind(this)
+  }
+
+  handleLogout () {
+    localStorage.clear()
+    this.props.updateState()
+    // this.props.history.push('/')
   }
 
   onClickNav () {
@@ -29,43 +36,47 @@ class Header extends Component {
     return (
       <Navbar className='Header'>
         <NavbarBrand>
-          <NavbarItem>
+          {/* <NavbarItem className='navicon'>
             <img src={require('./logo-separated.png')} />
-          </NavbarItem>
+          </NavbarItem> */}
         
           {/* <NavbarItem>
             <img className='logo' src={logo} />
           </NavbarItem> */}
           <NavbarItem className='navtitle raleway'>
+            <img className='icon'src={require('./logo-separated.png')} />
             <strong>Q-Seum</strong>
           </NavbarItem>
-          <NavbarItem className='tagline'>Hop through the lines</NavbarItem>
-        
           <NavbarBurger isActive={this.state.isActive} onClick={this.onClickNav} />
         </NavbarBrand>
         <NavbarMenu isActive={this.state.isActive} onClick={this.onClickNav}>
           <NavbarStart>
+            <NavbarItem className='tagline'>Hop through the lines</NavbarItem>
           </NavbarStart>
           {this.props.token && (
             <NavbarEnd className='header-links'>
+              
               <Link to='/'>
                 {this.props.admin === 'true' ? (
-                  <NavbarItem isHoverable>Home</NavbarItem>
+                  <NavbarItem isHoverable><i className='fas fa-home' /> Home</NavbarItem>
                 ) : (
-                  <NavbarItem isHoverable onClick={this.handleClick}><i className='fas fa-qrcode' /> Your QR Code</NavbarItem>
+                  <NavbarItem isHoverable onClick={this.handleClick}><i className='fas fa-home' /> Home</NavbarItem>
                 )}
               </Link>
               <Link to='/Map'>
                 <NavbarItem isHoverable onClick={this.handleClick}><i className='fas fa-map' /> Museum Map</NavbarItem>
-              </Link>
-              <Link to='/profile'>
-                <NavbarItem isHoverable><i class='far fa-address-card' /> Your Profile</NavbarItem>
               </Link>
               {this.props.admin !== 'true' && (
                 <Link to='/report-issue'>
                   <NavbarItem isHoverable><i class='far fa-comment' /> Report an issue</NavbarItem>
                 </Link>
               )}
+              <Link to='/profile'>
+                <NavbarItem isHoverable><i class='far fa-address-card' /> Your Profile</NavbarItem>
+              </Link>
+              <Link to='/'>
+                <NavbarItem isHoverable onClick={this.handleLogout}><i class='fas fa-sign-out-alt' /> Logout</NavbarItem>
+              </Link>
             </NavbarEnd>
           
           )}
