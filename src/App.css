@@ -6532,10 +6532,11 @@ Label {
 
 .Dashboard {
   text-align: center;
-  margin: 2rem; }
+  margin: 2rem;
+  font-weight: 500; }
 
 .QRCode-container {
-  padding: 1rem; }
+  margin: .5rem; }
 
 .museum-membership {
   font-size: 1rem;
@@ -6594,6 +6595,13 @@ i {
   text-align: left;
   font-weight: 500; }
 
+.Profile .title {
+  margin: .5rem;
+  color: white; }
+
+.Profile .Label {
+  padding: 0; }
+
 .Login {
   margin: 2rem; }
 
@@ -6609,7 +6617,11 @@ i {
 
 .Map {
   margin: 2rem auto 2rem auto;
-  width: 95%; }
+  width: 95%;
+  text-align: center; }
+
+.Map .title {
+  margin: .25rem; }
 
 .RecoverPassword {
   margin: 2rem; }
