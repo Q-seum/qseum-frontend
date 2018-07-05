@@ -7,7 +7,6 @@ import './App.css'
 import { Title, Box, Field, Label, Control, Input, Button, Container } from 'bloomer'
 
 class PrePurchase extends Component {
-
   render () {
     return (
       <div className='PrePurchase'>
