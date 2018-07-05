@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import './App.css'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 // import QRCode from 'qrcode.react'
 import request from 'superagent'
-import { Title, Box, Field, Label, Control, Input, Button } from 'bloomer'
+import { Title, Field, Label, Control, Input } from 'bloomer'
 import firebase from './firebase'
 
 class Register extends Component {
@@ -70,7 +70,7 @@ class Register extends Component {
         this.props.history.push('/')
       })
       .catch((err) => {
-        console.log(err.response.body.account[0])
+        console.log(err.response.body)
         if (err.response.body.username && err.response.body.username[0] === 'has already been taken') {
           usernameError.classList.remove('hidden')
           username.classList.add('danger-input')
@@ -85,6 +85,7 @@ class Register extends Component {
           account.classList.add('danger-input')
         } else if (this.state.account) {
           account.classList.remove('danger-input')
+          accountError.classList.add('hidden')
         } else {
           accountError.classList.add('hidden')
         }

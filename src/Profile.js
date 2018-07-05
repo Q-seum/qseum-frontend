@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import './App.css'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import request from 'superagent'
 import { Content, Box, Button, Field, Control, Label, Input, Title } from 'bloomer'
 import firebase from './firebase'
@@ -21,7 +21,6 @@ class Profile extends Component {
       selfie: '',
       editProfile: false
       // newSelfie: ''
-      
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.editProfile = this.editProfile.bind(this)
@@ -69,7 +68,7 @@ class Profile extends Component {
         console.log(err.response)
       })
   // }
-}
+  }
 
   handleSubmit (e) {
     e.preventDefault()
@@ -126,7 +125,7 @@ class Profile extends Component {
                 <img src={this.state.selfie} className='avi' />
                 <div className='profile-details'>
                   <Field>
-                    <Label htmlFor='username'><i class='fas fa-user' /> Username</Label>
+                    <Label htmlFor='username'><i className='fas fa-user' /> Username</Label>
                     <div>{this.state.username}</div>
                   </Field>
 
@@ -136,7 +135,7 @@ class Profile extends Component {
                   </Field>
 
                   <Field className='accommodations-field'>
-                    <Label className='label'><i class="fas fa-wheelchair" /> Accommodations</Label>
+                    <Label className='label'><i className='fas fa-wheelchair' /> Accommodations</Label>
                     {this.state.accommodations ? (
                       <div>{this.state.accommodations}</div>
                     ) : (
@@ -196,7 +195,7 @@ class Profile extends Component {
                     </Field>
 
                     <Field className='accommodations-field'>
-                      <Label htmlFor='accommodations' className='label'><i class="fas fa-wheelchair" /> Accommodations</Label>
+                      <Label htmlFor='accommodations' className='label'><i class='fas fa-wheelchair' /> Accommodations</Label>
                       <Control>
                         <Input value={this.state.accommodations} type='text' name='accommodations' onChange={this.handleChange} id='accommodations' />
                       </Control>
