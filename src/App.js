@@ -14,6 +14,7 @@ import ResetPassword from './ResetPassword'
 import RecoverPassword from './RecoverPassword'
 import Map from './Map'
 import LandingPage from './LandingPage'
+import PrePurchase from './PrePurchase'
 // import PageFooter from './PageFooter'
 import { Container } from 'bloomer'
 // import firebase from './firebase'
@@ -88,6 +89,9 @@ class App extends Component {
             )} />
             <Route path='/map' render={props => (
               <Map {...props} />
+            )} />
+            <Route path='/pre-purchase' render={props => (
+              <PrePurchase {...props} />
             )} />
 
           </Container>
