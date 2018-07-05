@@ -145,24 +145,24 @@ class Profile extends Component {
                   </Field>
 
                   <Field>
-                    <Label><i className='fas fa-camera' /> Membership Type</Label>
+                    <Label><i className='fas fa-users' /> Membership Type</Label>
                     <div>{this.state.membershipType} person admission</div>
                   </Field>
 
                   <Field>
-                    <Label><i className='fas fa-camera' /> Join Date</Label>
+                    <Label><i className='far fa-calendar-alt' /> Join Date</Label>
                     <div>{this.state.joinDate}</div>
                   </Field>
 
                   <Field>
-                    <Label><i className='fas fa-camera' /> Expiration Date</Label>
+                    <Label><i className='far fa-calendar-times' /> Expiration Date</Label>
                     <div>{this.state.joinDate}</div>
                   </Field>
                 </div>
 
                 <Field isGrouped hasAddons='centered'>
                   <Control>
-                    <Button isColor='primary' onClick={this.editProfile}>Edit Profile</Button>
+                    <Button isColor='primary' onClick={this.editProfile}><i class='fas fa-edit' /> Edit Profile</Button>
                     <div id='modal' />
                   </Control>
                 </Field>
