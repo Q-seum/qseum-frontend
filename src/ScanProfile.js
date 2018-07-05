@@ -100,7 +100,7 @@ class ScanProfile extends Component {
   }
 
   render () {
-    console.log(this.state.lastVisit)
+    // console.log(this.state.lastVisit)
     let lastVisit
     if (this.state.lastVisit[0]) {
       lastVisit = moment(this.state.lastVisit[0].date).format('MMMM Do YYYY, h:mm a')

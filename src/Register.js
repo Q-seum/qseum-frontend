@@ -76,6 +76,7 @@ class Register extends Component {
           username.classList.add('danger-input')
         } else if (this.state.username) {
           username.classList.remove('danger-input')
+          usernameError.classList.add('hidden')
         } else {
           usernameError.classList.add('hidden')
         }
