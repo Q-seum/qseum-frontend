@@ -6483,6 +6483,13 @@ Button {
   text-align: center;
   font-weight: bold; }
 
+.danger-input {
+  border: 2px solid #2e5767; }
+
+.danger-text {
+  color: #2e5767;
+  font-weight: 700; }
+
 Label {
   color: #f7f7f0; }
 
@@ -6499,6 +6506,9 @@ Label {
   color: #4a4a4a;
   border: #00d1b2 solid 1px;
   margin-bottom: 15px; }
+
+.hidden {
+  display: none; }
 
 .LandingPage {
   margin: 0 auto;
