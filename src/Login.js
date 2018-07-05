@@ -42,7 +42,7 @@ class Login extends Component {
       .catch(err => {
         const inputs = document.querySelectorAll('Input')
         const error = document.querySelector('.error-msg')
-        error.innerHTML = `<Box className='transparent-box'><p class='danger-text'>${err.response.body.error}</p></Box>`
+        error.innerHTML = `<p class='danger-text'>${err.response.body.error}</p>`
         inputs.forEach(input => {
           input.classList.add('danger-input')
         })

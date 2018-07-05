@@ -112,7 +112,7 @@ class Register extends Component {
             <Control>
               <Input type='text' name='username' onChange={this.handleChange} id='username' />
               <div className='error-msg hidden danger-text'>username is required</div>
-              <div className='danger-text hidden username-taken'>username already taken</div>
+              <div className='error-msg danger-text hidden username-taken'>username already taken</div>
             </Control>
           </Field>
 
@@ -129,8 +129,8 @@ class Register extends Component {
             <Control>
               <Input type='text' name='account' onChange={this.handleChange} id='account' />
               <div className='error-msg hidden danger-text'>account number is required</div>
-              <div className='danger-text hidden account-taken'>2 users already exist for this membership account</div>
-              <div className='danger-text hidden account-invalid'>not a valid account number</div>
+              <div className='error-msg danger-text hidden account-taken'>2 users already exist for this membership account</div>
+              <div className='error-msg danger-text hidden account-invalid'>not a valid account number</div>
             </Control>
           </Field>
 

@@ -6510,6 +6510,9 @@ Label {
 .hidden {
   display: none; }
 
+.error-msg {
+  margin-left: .5rem; }
+
 .LandingPage {
   margin: 0 auto;
   margin-top: 100px;
