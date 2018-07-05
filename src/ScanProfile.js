@@ -5,6 +5,7 @@ import './App.css'
 import { Redirect } from 'react-router-dom'
 import request from 'superagent'
 import { Title, Box, Field, Label, Control, Button, Content, Checkbox } from 'bloomer'
+import moment from 'moment'
 
 class ScanProfile extends Component {
   constructor () {
@@ -20,7 +21,8 @@ class ScanProfile extends Component {
       expirationDate: '',
       visitors: '',
       selfie: '',
-      validSelfie: false
+      validSelfie: false,
+      lastVisit: []
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -33,7 +35,7 @@ class ScanProfile extends Component {
       .get(`https://secure-temple-21963.herokuapp.com/api/v1/users/${this.props.match.params.userId}`)
       .set('Authorization', `Bearer ${localStorage.token}`)
       .then(res => {
-        // console.log(res)
+        console.log(res)
         this.setState({
           id: res.body.data.id,
           username: res.body.data.attributes.username,
@@ -44,7 +46,9 @@ class ScanProfile extends Component {
           joinData: res.body.data.joinDate,
           expirationDate: res.body.data.expirationDate,
           selfie: res.body.data.attributes.selfie,
-          validSelfie: res.body.data.attributes.validSelfie
+          validSelfie: res.body.data.attributes.validSelfie,
+          // lastVisit: moment(res.body.data.attributes.visits[0].date).format('MMMM Do YYYY, h:mm a')
+          lastVisit: res.body.data.attributes.visits
         })
       })
   }
@@ -96,6 +100,13 @@ class ScanProfile extends Component {
   }
 
   render () {
+    console.log(this.state.lastVisit)
+    let lastVisit
+    if (this.state.lastVisit[0]) {
+      lastVisit = moment(this.state.lastVisit[0].date).format('MMMM Do YYYY, h:mm a')
+    } else {
+      lastVisit = 'First time visiting'
+    }
     if (this.props.admin === 'true') {
       return (
         <div className='ScanProfile'>
@@ -107,6 +118,7 @@ class ScanProfile extends Component {
               <div><strong>Email: </strong>{this.state.email}</div>
               <div><strong>Account #: </strong>{this.state.account}</div>
               <div><strong>Membership Type: </strong>{this.state.membershipType}</div>
+              <div><strong>Last Visit: </strong>{lastVisit}</div>
               {/* <div><strong>Accommodations: </strong>{this.state.accommodations}</div> */}
               {/* <div><strong>Date Joined: </strong>{this.state.joinData}</div> */}
               {/* <div><strong>Membership Expiration Date: </strong>{this.state.expirationDate}</div> */}
