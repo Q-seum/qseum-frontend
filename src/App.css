@@ -6581,6 +6581,9 @@ Label {
 .active {
   background-color: #fd8204; }
 
+.icon {
+  height: 100px; }
+
 i {
   margin-right: .25rem; }
 

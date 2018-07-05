@@ -1,3 +1,5 @@
+/* global localStorage */
+
 import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
@@ -39,7 +41,7 @@ class Header extends Component {
           {/* <NavbarItem className='navicon'>
             <img src={require('./logo-separated.png')} />
           </NavbarItem> */}
-        
+
           {/* <NavbarItem>
             <img className='logo' src={logo} />
           </NavbarItem> */}
@@ -55,7 +57,6 @@ class Header extends Component {
           </NavbarStart>
           {this.props.token && (
             <NavbarEnd className='header-links'>
-              
               <Link to='/'>
                 {this.props.admin === 'true' ? (
                   <NavbarItem isHoverable><i className='fas fa-home' /> Home</NavbarItem>
@@ -75,10 +76,9 @@ class Header extends Component {
                 <NavbarItem isHoverable><i class='far fa-address-card' /> Your Profile</NavbarItem>
               </Link>
               <Link to='/'>
-                <NavbarItem isHoverable onClick={this.handleLogout}><i class='fas fa-sign-out-alt' /> Logout</NavbarItem>
+                <NavbarItem isHoverable onClick={this.handleLogout}><i className='fas fa-sign-out-alt' /> Logout</NavbarItem>
               </Link>
             </NavbarEnd>
-          
           )}
         </NavbarMenu>
       </Navbar>
