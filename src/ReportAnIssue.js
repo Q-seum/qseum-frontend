@@ -56,7 +56,7 @@ class ReportAnIssue extends Component {
                 <TextArea placeholder='Report your issue here' name='text' onChange={this.handleChange} />
               </Control>
             </Field>
-            <Field isGrouped>
+            <Field isGrouped hasAddons='centered'>
               <Control>
                 <Button isColor='primary' type='submit'>Submit Issue</Button>
               </Control>
