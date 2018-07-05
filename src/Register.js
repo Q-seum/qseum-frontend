@@ -70,13 +70,14 @@ class Register extends Component {
         this.props.history.push('/')
       })
       .catch((err) => {
-        console.log(err.response.body.username)
-        if (err.response.body.username) {
+        console.log(err.response)
+        if (err.response.body.username && err.response.body.username[0] === 'has already been taken') {
           usernameError.classList.remove('hidden')
           username.classList.add('danger-input')
         } else if (this.state.username) {
-          usernameError.classList.add('hidden')
           username.classList.remove('danger-input')
+        } else {
+          usernameError.classList.add('hidden')
         }
 
         if (err.response.body.account) {
