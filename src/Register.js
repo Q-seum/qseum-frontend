@@ -70,7 +70,7 @@ class Register extends Component {
         this.props.history.push('/')
       })
       .catch((err) => {
-        console.log(err.response)
+        console.log(err.response.body.account[0])
         if (err.response.body.username && err.response.body.username[0] === 'has already been taken') {
           usernameError.classList.remove('hidden')
           username.classList.add('danger-input')
@@ -80,7 +80,7 @@ class Register extends Component {
           usernameError.classList.add('hidden')
         }
 
-        if (err.response.body.account) {
+        if (err.response.body.account && err.response.body.account[0] === '2 users already exist for this membership account') {
           accountError.classList.remove('hidden')
           account.classList.add('danger-input')
         } else if (this.state.account) {
@@ -89,7 +89,7 @@ class Register extends Component {
           accountError.classList.add('hidden')
         }
 
-        if (err.response.body.error && this.state.account) {
+        if (err.response.body.account && err.response.body.account[0] === 'Not a valid account number' && this.state.account) {
           accountInvalid.classList.remove('hidden')
           account.classList.add('danger-input')
         } else if (this.state.account) {
@@ -112,7 +112,7 @@ class Register extends Component {
             <Control>
               <Input type='text' name='username' onChange={this.handleChange} id='username' />
               <div className='error-msg hidden danger-text'>username is required</div>
-              <div className='danger-text hidden username-taken'>username already taken</div>
+              <div className='error-msg danger-text hidden username-taken'>username already taken</div>
             </Control>
           </Field>
 
@@ -129,8 +129,8 @@ class Register extends Component {
             <Control>
               <Input type='text' name='account' onChange={this.handleChange} id='account' />
               <div className='error-msg hidden danger-text'>account number is required</div>
-              <div className='danger-text hidden account-taken'>2 users already exist for this membership account</div>
-              <div className='danger-text hidden account-invalid'>not a valid account number</div>
+              <div className='error-msg danger-text hidden account-taken'>2 users already exist for this membership account</div>
+              <div className='error-msg danger-text hidden account-invalid'>not a valid account number</div>
             </Control>
           </Field>
 
