@@ -48,6 +48,7 @@ class App extends Component {
   }
 
   render () {
+    console.log(process.env.apiKey)
     return (
       <Router>
         <div className='App'>
