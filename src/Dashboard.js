@@ -32,7 +32,7 @@ class Dashboard extends Component {
         .get('https://secure-temple-21963.herokuapp.com/api/v1/issues')
         .set('Authorization', `Bearer ${localStorage.token}`)
         .then(res => {
-          console.log(res)
+          // console.log(res)
           this.setState({
             issues: res.body
           })
@@ -87,9 +87,7 @@ class Dashboard extends Component {
               <Title>Current Issues</Title>
               {this.state.issues.map((issue, idx) => (
                 <div className='issue' key={idx}>
-                  <Box className='transparent-box'>
-                    <Issue issue={issue} />
-                  </Box>
+                  <Issue issue={issue} />
                 </div>
               ))}
             </Box>

@@ -47,7 +47,8 @@ class ReportAnIssue extends Component {
         <Box className='transparent-box'>
           <Title className='raleway'>Report an issue</Title>
           <p className='issue-text'>We always hope that your visit to the museum is perfect. 
-            If you notice something that needs our attention, please use this form to let us know. 
+            If you notice something that needs our attention, please use this form to let us know.
+            The museum is a big place, so be sure to be specific about the location of your issue. 
             <strong> Remember to dial 911 in an emergency.</strong>
           </p>
           <form onSubmit={this.handleSubmit}>
@@ -56,7 +57,7 @@ class ReportAnIssue extends Component {
                 <TextArea placeholder='Report your issue here' name='text' onChange={this.handleChange} />
               </Control>
             </Field>
-            <Field isGrouped>
+            <Field isGrouped hasAddons='centered'>
               <Control>
                 <Button isColor='primary' type='submit'>Submit Issue</Button>
               </Control>
