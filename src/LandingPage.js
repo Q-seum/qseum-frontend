@@ -65,6 +65,9 @@ class LandingPage extends Component {
               <Link to='/register'>
                 <button className='rounded-button register'>Register</button>
               </Link>
+              <Link to='/pre-purchase'>
+                <button className='rounded-button register'>Pre-purchase Admission</button>
+              </Link>
               <div>
                 <a href='https://www.lifeandscience.org/purchase' target='_blank' className='museum-membership'>Sign up for a museum membership here!</a>
               </div>
