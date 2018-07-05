@@ -10,9 +10,23 @@ class Issue extends Component {
   constructor () {
     super()
     this.state = {
-      resolved: false
+      resolved: false,
+      showIssue: true
     }
     this.resolveIssue = this.resolveIssue.bind(this)
+  }
+
+  componentDidMount () {
+    request
+      .get(`https://secure-temple-21963.herokuapp.com/api/v1/issues/${this.props.issue.id}`)
+      .set('Authorization', `Bearer ${localStorage.token}`)
+      .then(res => {
+        console.log(res.body.data.attributes)
+        this.setState({
+          showIssue: res.body.data.attributes
+        })
+        // })
+      })
   }
 
   resolveIssue (e) {
