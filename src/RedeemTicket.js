@@ -15,7 +15,8 @@ class RedeemTicket extends Component {
       genTickets: '',
       milTickets: '',
       senTickets: '',
-      recipEmail: ''
+      recipEmail: '',
+      redeemed: false
     }
 
     this.confirmVisit = this.confirmVisit.bind(this)
