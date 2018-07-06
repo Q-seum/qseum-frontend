@@ -30,7 +30,7 @@ class PrePurchase extends Component {
   handleChange (e) {
     this.setState({
       [e.target.name]: e.target.value,
-      total: e.target.value
+      total: (this.state.generalAdmission * 20) + (this.state.seniors * 18) + (this.state.kids * 15)
     })
   }
 
@@ -66,14 +66,14 @@ class PrePurchase extends Component {
             <Field>
               <Label htmlFor='seniors'><i class='fas fa-user' />Senior Ticket: $18</Label>
               <Control>
-                <Input type='number' name='seniors' id='seniors' onInput={this.handleChange} />
+                <Input type='number' pattern='[0-9]*' name='seniors' id='seniors' onInput={this.handleChange} />
               </Control>
             </Field>
 
             <Field>
               <Label htmlFor='kids'><i class='fas fa-user' />Kids Ticket: $15</Label>
               <Control>
-                <Input type='number' name='kids' id='kids' onInput={this.handleChange} />
+                <Input type='number' step='0.01' name='kids' id='kids' onInput={this.handleChange} />
               </Control>
             </Field>
 
