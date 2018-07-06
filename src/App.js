@@ -15,6 +15,7 @@ import RecoverPassword from './RecoverPassword'
 import Map from './Map'
 import LandingPage from './LandingPage'
 import PrePurchase from './PrePurchase'
+import RedeemTicket from './RedeemTicket'
 import { Elements } from 'react-stripe-elements'
 // import PageFooter from './PageFooter'
 import { Container } from 'bloomer'
@@ -96,6 +97,9 @@ class App extends Component {
               <Elements>
                 <PrePurchase {...props} />
               </Elements>
+            )} />
+            <Route path='/tickets/:id' render={props => (
+              <RedeemTicket {...props} admin={this.state.admin} />
             )} />
 
           </Container>
