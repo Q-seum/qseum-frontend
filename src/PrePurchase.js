@@ -12,17 +12,17 @@ class PrePurchase extends Component {
   constructor () {
     super()
     this.state = {
-      general: 0,
-      seniors: 0,
-      child: 0,
-      military: 0,
+      general: null,
+      senior: null,
+      child: null,
+      military: null,
       total: 0,
-      name: '',
-      email: '',
-      new_token: '',
+      name: null,
+      email: null,
+      new_token: null,
       gift: false,
-      recip_name: '',
-      recip_email: ''
+      recip_name: null,
+      recip_email: null
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -39,7 +39,7 @@ class PrePurchase extends Component {
         new_token: token.id
       })
       console.log('token', this.state.new_token)
-      console.log(((Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.seniors) * 18) + (Number(this.state.military) * 18)) * 100)
+      console.log(((Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.senior) * 18) + (Number(this.state.military) * 18)) * 100)
     })
       .catch(err => {
         console.log(err)
@@ -51,7 +51,7 @@ class PrePurchase extends Component {
           .send({
             name: this.state.name,
             email: this.state.email,
-            amount: (((Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.seniors) * 18) + (Number(this.state.military) * 18)) * 100),
+            amount: (((Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.senior) * 18) + (Number(this.state.military) * 18)) * 100),
             source: this.state.new_token,
             general: Number(this.state.general),
             senior: Number(this.state.senior),
@@ -59,14 +59,13 @@ class PrePurchase extends Component {
             child: Number(this.state.child),
             recip_email: this.state.recip_email
           })
-      
           .then(res => {
             console.log(res)
           })
           .catch(err => {
             console.log(err)
           })
-        })
+      })
   }
 
   handleChange (e) {
@@ -113,7 +112,7 @@ class PrePurchase extends Component {
             <Field>
               <Label htmlFor='seniors'>Senior Ticket ($18)</Label>
               <Control>
-                <Input className='numberInput' pattern='[0-9]*' name='seniors' id='seniors' onChange={this.handleChange} />
+                <Input className='numberInput' pattern='[0-9]*' name='senior' id='seniors' onChange={this.handleChange} />
               </Control>
             </Field>
 
@@ -132,7 +131,7 @@ class PrePurchase extends Component {
               </Control>
             </Field> */}
             <Field>
-              <Label className='raleway totalCost'>Total: ${(Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.seniors) * 18) + (Number(this.state.military) * 18)}</Label>
+              <Label className='raleway totalCost'>Total: ${(Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.senior) * 18) + (Number(this.state.military) * 18)}</Label>
             </Field>
             <Checkbox className='checkbox' onChange={this.gift}> Is this a gift?</Checkbox>
             {this.state.gift && (
