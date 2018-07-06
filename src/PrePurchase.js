@@ -75,7 +75,7 @@ class PrePurchase extends Component {
   handleChange (e) {
     this.setState({
       [e.target.name]: e.target.value
-      // total: (Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.seniors) * 18)
+      // total: (Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.senior) * 18)
 
     })
   }
@@ -88,7 +88,7 @@ class PrePurchase extends Component {
 
   // updateTotal () {
   //   this.setState({
-  //     total: (Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.seniors) * 18)
+  //     total: (Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.senior) * 18)
   //   })
   // }
 
@@ -114,9 +114,9 @@ class PrePurchase extends Component {
 
 
             <Field>
-              <Label htmlFor='seniors'>Senior Ticket ($18)</Label>
+              <Label htmlFor='senior'>Senior Ticket ($18)</Label>
               <Control>
-                <Input className='numberInput' pattern='[0-9]*' name='senior' id='seniors' onChange={this.handleChange} />
+                <Input className='numberInput' pattern='[0-9]*' name='senior' id='senior' onChange={this.handleChange} />
               </Control>
             </Field>
 
