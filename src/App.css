@@ -6503,17 +6503,20 @@ Label {
 
 .login {
   background: rgba(0, 208, 178, 0.9);
-  color: rgba(247, 247, 240, 0.8);
+  color: #f7f7f0;
+  font-weight: 600;
   border: rgba(247, 247, 240, 0.8) solid 1px; }
 
 .register {
   background: rgba(247, 247, 240, 0.8);
   color: #4a4a4a;
+  font-weight: 600;
   border: #00d1b2 solid 1px; }
 
 .prepurchase {
   background: #00917a;
-  color: rgba(247, 247, 240, 0.8);
+  color: #f7f7f0;
+  font-weight: 600;
   border: rgba(247, 247, 240, 0.8) solid 1px; }
 
 .hidden {

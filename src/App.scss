@@ -140,7 +140,7 @@ Label {
 .login {
   background: rgba(0,208,178,.9);
   // color: rgb(247,240,240);
-  color: rgba(247,247,240);
+  color: rgb(247,247,240);
   font-weight: 600;
   border: rgba(247,247,240, .8) solid 1px;
 }
@@ -149,6 +149,7 @@ Label {
   background: rgba(247,247,240,.8);
   // color: #00d1b2;
   color: #4a4a4a;
+  font-weight: 600;
   border: #00d1b2 solid 1px;
   // margin-bottom: 15px;
 }
@@ -156,7 +157,8 @@ Label {
 .prepurchase {
   background: rgba(0, 145, 122, 1);
   // color: #00d1b2;
-  color: rgba(247,247,240,.8);
+  color: rgba(247,247,240, 1);
+  font-weight: 600;
   border: rgba(247,247,240, .8) solid 1px;
     // margin-bottom: 15px;
 }
