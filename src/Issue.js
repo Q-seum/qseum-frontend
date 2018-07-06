@@ -10,8 +10,7 @@ class Issue extends Component {
   constructor () {
     super()
     this.state = {
-      resolved: false,
-      showIssue: false
+      showIssue: true
     }
     this.resolveIssue = this.resolveIssue.bind(this)
   }
@@ -21,9 +20,8 @@ class Issue extends Component {
       .get(`https://secure-temple-21963.herokuapp.com/api/v1/issues/${this.props.issue.id}`)
       .set('Authorization', `Bearer ${localStorage.token}`)
       .then(res => {
-        console.log(res.body.data.attributes)
         this.setState({
-          showIssue: res.body.data.attributes.resolved
+          showIssue: !res.body.data.attributes.resolved
         })
         // })
       })
@@ -31,16 +29,19 @@ class Issue extends Component {
 
   resolveIssue (e) {
     e.preventDefault()
-    console.log('element', this.props.issue.id)
+    console.log('element', this.props.issue)
+    this.setState({
+      showIssue: false
+    })
     request
       .patch(`https://secure-temple-21963.herokuapp.com/api/v1/issues/${this.props.issue.id}`)
       .set('Authorization', `Bearer ${localStorage.token}`)
       .send({
         resolved: true
       })
-    this.setState({
-      resolved: true
-    })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   render () {
@@ -49,7 +50,7 @@ class Issue extends Component {
     const issue = this.props.issue
     return (
       <div>
-        {!this.state.resolved && (
+        {this.state.showIssue && (
           <div className='Issue'>
             <Box className='transparent-box'>
               <p><strong>{issue.username}</strong> submitted an issue:</p>

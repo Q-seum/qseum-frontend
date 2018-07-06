@@ -24,7 +24,6 @@ class ReportAnIssue extends Component {
 
   handleSubmit (e) {
     e.preventDefault()
-    e.preventDefault()
     request
       .post('https://secure-temple-21963.herokuapp.com/api/v1/issues')
       .set('Authorization', `Bearer ${localStorage.token}`)

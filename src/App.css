@@ -6467,7 +6467,7 @@ Button {
   border-radius: 50px;
   margin: .25rem;
   width: 75%;
-  padding: 20px 0;
+  padding: 10px 0;
   font-size: 1.25rem; }
 
 .logout-button {
@@ -6502,15 +6502,19 @@ Label {
   color: white; }
 
 .login {
-  background: rgba(0, 208, 178, 0.4);
-  color: #f7f7f0;
-  border: #f7f7f0 solid 1px; }
+  background: rgba(0, 208, 178, 0.9);
+  color: rgba(247, 247, 240, 0.8);
+  border: rgba(247, 247, 240, 0.8) solid 1px; }
 
 .register {
   background: rgba(247, 247, 240, 0.8);
   color: #4a4a4a;
-  border: #00d1b2 solid 1px;
-  margin-bottom: 15px; }
+  border: #00d1b2 solid 1px; }
+
+.prepurchase {
+  background: #00917a;
+  color: rgba(247, 247, 240, 0.8);
+  border: rgba(247, 247, 240, 0.8) solid 1px; }
 
 .hidden {
   display: none; }
@@ -6520,7 +6524,7 @@ Label {
 
 .LandingPage {
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 75px;
   font-size: 1.5rem; }
 
 .landingpage-title {
@@ -6682,6 +6686,3 @@ i {
 
 .totalCost {
   text-align: left; }
-
-.PrePurchase {
-  margin-top: 20px; }

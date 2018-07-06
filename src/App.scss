@@ -95,7 +95,7 @@ Button{
   border-radius:50px;
   margin:.25rem;
   width:75%;
-  padding: 20px 0;
+  padding: 10px 0;
   font-size: 1.25rem;
 }
 
@@ -138,10 +138,11 @@ Label {
 }
 
 .login {
-  background: rgba(0,208,178,.4);
+  background: rgba(0,208,178,.9);
   // color: rgb(247,240,240);
-  color: rgb(247,247,240);
-  border: rgb(247,247,240) solid 1px;
+  color: rgba(247,247,240);
+  font-weight: 600;
+  border: rgba(247,247,240, .8) solid 1px;
 }
 
 .register {
@@ -149,7 +150,15 @@ Label {
   // color: #00d1b2;
   color: #4a4a4a;
   border: #00d1b2 solid 1px;
-  margin-bottom: 15px;
+  // margin-bottom: 15px;
+}
+
+.prepurchase {
+  background: rgba(0, 145, 122, 1);
+  // color: #00d1b2;
+  color: rgba(247,247,240,.8);
+  border: rgba(247,247,240, .8) solid 1px;
+    // margin-bottom: 15px;
 }
 
 .hidden {
@@ -162,7 +171,7 @@ Label {
 
 .LandingPage{
   margin:0 auto;
-  margin-top: 100px;
+  margin-top: 75px;
   font-size:1.5rem;
 }
 
@@ -407,7 +416,7 @@ i{
 }
 
 .PrePurchase {
-  margin-top:20px;
+  // margin-top:20px;
 }
 
 // .emailGift{
