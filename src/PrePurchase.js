@@ -29,8 +29,9 @@ class PrePurchase extends Component {
 
   handleChange (e) {
     this.setState({
-      [e.target.name]: e.target.value,
-      total: e.target.value
+      [e.target.name]: e.target.value
+      // total: (Number(this.state.generalAdmission) * 20) + (Number(this.state.kids) * 15) + (Number(this.state.seniors) * 18)
+
     })
   }
 
@@ -43,37 +44,27 @@ class PrePurchase extends Component {
   render () {
     return (
       <div>
-        <div className='PrePurchase'>
-          <Container hasTextAlign='centered'>
-            <Box className='transparent-box'>
-              <form onSubmit={this.handleSubmit}>
-                Card details
-                <CardElement style={{base: {fontSize: '18px'}}} />
-                <button type='submit'>Submit payment</button>
-              </form>
-            </Box>
-          </Container>
-        </div>
         <div className='ticketForm'>
+          <Title>Pre-Purchase Tickets</Title>
           <form>
             <Field>
-              <Label htmlFor='generalAdmission'><i class='fas fa-user' />General Admission: $20</Label>
+              <Label htmlFor='generalAdmission'>General Admission: $20</Label>
               <Control>
-                <Input type='number' name='generalAdmission' id='generalAdmission' onInput={this.handleChange} />
+                <Input pattern='[0-9]*' name='generalAdmission' id='generalAdmission' onChange={this.handleChange} />
               </Control>
             </Field>
 
             <Field>
-              <Label htmlFor='seniors'><i class='fas fa-user' />Senior Ticket: $18</Label>
+              <Label htmlFor='seniors'>Senior Ticket: $18</Label>
               <Control>
-                <Input type='number' name='seniors' id='seniors' onInput={this.handleChange} />
+                <Input pattern='[0-9]*' name='seniors' id='seniors' onChange={this.handleChange} />
               </Control>
             </Field>
 
             <Field>
-              <Label htmlFor='kids'><i class='fas fa-user' />Kids Ticket: $15</Label>
+              <Label htmlFor='kids'>Kids Ticket: $15</Label>
               <Control>
-                <Input type='number' name='kids' id='kids' onInput={this.handleChange} />
+                <Input pattern='[0-9]*' name='kids' id='kids' onChange={this.handleChange} />
               </Control>
             </Field>
 
@@ -86,11 +77,21 @@ class PrePurchase extends Component {
             </Field> */}
             <Field>
               <Label><i className='fas fa-key' /> Total Cost</Label>
-              <div>${this.state.total}</div>
+              <Title className='totalCost'>${(Number(this.state.generalAdmission) * 20) + (Number(this.state.kids) * 15) + (Number(this.state.seniors) * 18)}</Title>
             </Field>
-
-            <Checkbox> Is this a gift?</Checkbox>
+            <Checkbox> <strong>Is this a gift?</strong></Checkbox>
           </form>
+        </div>
+        <div className='PrePurchase'>
+          <Container hasTextAlign='centered'>
+            <Box className='transparent-box'>
+              <form onSubmit={this.handleSubmit}>
+                Card details
+                <CardElement style={{base: {fontSize: '18px'}}} />
+                <button type='submit'>Submit payment</button>
+              </form>
+            </Box>
+          </Container>
         </div>
       </div>
     )
