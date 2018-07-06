@@ -12,17 +12,24 @@ class PrePurchase extends Component {
   constructor () {
     super()
     this.state = {
+<<<<<<< HEAD
       general: 0,
       senior: 0,
       child: 0,
       military: 0,
+=======
+      general: null,
+      senior: null,
+      child: null,
+      military: null,
+>>>>>>> b36b649974dd61d250228431b134242bf0d377dc
       total: 0,
-      name: '',
-      email: '',
-      new_token: '',
+      name: null,
+      email: null,
+      new_token: null,
       gift: false,
-      recip_name: '',
-      recip_email: ''
+      recip_name: null,
+      recip_email: null
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -59,7 +66,6 @@ class PrePurchase extends Component {
             child: Number(this.state.child),
             recip_email: this.state.recip_email
           })
-      
           .then(res => {
             console.log(res)
           })
@@ -113,7 +119,11 @@ class PrePurchase extends Component {
             <Field>
               <Label htmlFor='senior'>Senior Ticket ($18)</Label>
               <Control>
+<<<<<<< HEAD
                 <Input className='numberInput' pattern='[0-9]*' name='senior' id='senior' onChange={this.handleChange} />
+=======
+                <Input className='numberInput' pattern='[0-9]*' name='senior' id='seniors' onChange={this.handleChange} />
+>>>>>>> b36b649974dd61d250228431b134242bf0d377dc
               </Control>
             </Field>
 

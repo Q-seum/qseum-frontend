@@ -6576,6 +6576,9 @@ Label {
 .login-links {
   font-weight: 600; }
 
+.login-links:hover {
+  color: #f7f7f0; }
+
 .logo {
   margin-left: 1rem; }
 
