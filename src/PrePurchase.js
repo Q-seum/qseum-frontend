@@ -41,26 +41,32 @@ class PrePurchase extends Component {
       console.log('token', this.state.new_token)
       console.log(((Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.seniors) * 18) + (Number(this.state.military) * 18)) * 100)
     })
-    request
-      .post('https://secure-temple-21963.herokuapp.com/api/v1/charges')
-      // .set('Authorization', `Bearer ${localStorage.token}`)
-      .send({
-        name: this.state.name,
-        email: this.state.email,
-        amount: (((Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.seniors) * 18) + (Number(this.state.military) * 18)) * 100),
-        source: this.state.new_token,
-        general: Number(this.state.general),
-        senior: Number(this.state.senior),
-        military: Number(this.state.military),
-        child: Number(this.state.child),
-        recip_email: this.state.recip_email
-      })
-      .then(res => {
-        console.log(res)
-      })
       .catch(err => {
         console.log(err)
       })
+      .then(() => {
+        request
+          .post('https://secure-temple-21963.herokuapp.com/api/v1/charges')
+          // .set('Authorization', `Bearer ${localStorage.token}`)
+          .send({
+            name: this.state.name,
+            email: this.state.email,
+            amount: (((Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.seniors) * 18) + (Number(this.state.military) * 18)) * 100),
+            source: this.state.new_token,
+            general: Number(this.state.general),
+            senior: Number(this.state.senior),
+            military: Number(this.state.military),
+            child: Number(this.state.child),
+            recip_email: this.state.recip_email
+          })
+      
+          .then(res => {
+            console.log(res)
+          })
+          .catch(err => {
+            console.log(err)
+          })
+        })
   }
 
   handleChange (e) {
