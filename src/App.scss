@@ -33,6 +33,12 @@ html{
   opacity: .5;
 }
 
+.checkbox {
+  color:rgb(247,247,240);
+  font-weight:600;
+  margin-bottom:1rem;
+}
+
 body{
   // background:url(https://images.pexels.com/photos/67221/water-lily-flower-aquatic-plant-bloom-67221.jpeg?cs=srgb&dl=aquatic-plant-bloom-blossom-67221.jpg&fm=jpg);
   // background-size:cover;
@@ -387,9 +393,23 @@ i{
 }
 
 .ticketForm {
-  width:50%;
+  width:80%;
+  margin:auto;
+  text-align:left;
 }
 
-.ticketForm .input {
-  width:20%;
+.numberInput{
+  width:60px;
 }
+
+.totalCost {
+  text-align:left;
+}
+
+.PrePurchase {
+  margin-top:20px;
+}
+
+// .emailGift{
+//   width:80%
+// }
