@@ -11,7 +11,7 @@ class Issue extends Component {
     super()
     this.state = {
       resolved: false,
-      showIssue: true
+      showIssue: false
     }
     this.resolveIssue = this.resolveIssue.bind(this)
   }
@@ -23,7 +23,7 @@ class Issue extends Component {
       .then(res => {
         console.log(res.body.data.attributes)
         this.setState({
-          showIssue: res.body.data.attributes
+          showIssue: res.body.data.attributes.resolved
         })
         // })
       })
