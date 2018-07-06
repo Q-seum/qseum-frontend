@@ -14,10 +14,14 @@ class PrePurchase extends Component {
       generalAdmission: 0,
       seniors: 0,
       kids: 0,
-      total: 0
+      total: 0,
+      gift: false,
+      recipientName:'',
+      recipientEmail: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.gift = this.gift.bind(this)
     // this.updateTotal = this.updateTotal.bind(this)
   }
 
@@ -35,6 +39,12 @@ class PrePurchase extends Component {
     })
   }
 
+  gift () {
+    this.setState({
+      gift: !this.state.gift
+    })
+  }
+
   // updateTotal () {
   //   this.setState({
   //     total: (Number(this.state.generalAdmission) * 20) + (Number(this.state.kids) * 15) + (Number(this.state.seniors) * 18)
@@ -45,26 +55,26 @@ class PrePurchase extends Component {
     return (
       <div>
         <div className='ticketForm'>
-          <Title>Pre-Purchase Tickets</Title>
+          <Title className='raleway'>Pre-Purchase Tickets</Title>
           <form>
             <Field>
               <Label htmlFor='generalAdmission'>General Admission: $20</Label>
               <Control>
-                <Input pattern='[0-9]*' name='generalAdmission' id='generalAdmission' onChange={this.handleChange} />
+                <Input className='numberInput' pattern='[0-9]*' name='generalAdmission' id='generalAdmission' onChange={this.handleChange} />
               </Control>
             </Field>
 
             <Field>
               <Label htmlFor='seniors'>Senior Ticket: $18</Label>
               <Control>
-                <Input pattern='[0-9]*' name='seniors' id='seniors' onChange={this.handleChange} />
+                <Input className='numberInput' pattern='[0-9]*' name='seniors' id='seniors' onChange={this.handleChange} />
               </Control>
             </Field>
 
             <Field>
               <Label htmlFor='kids'>Kids Ticket: $15</Label>
               <Control>
-                <Input pattern='[0-9]*' name='kids' id='kids' onChange={this.handleChange} />
+                <Input className='numberInput' pattern='[0-9]*' name='kids' id='kids' onChange={this.handleChange} />
               </Control>
             </Field>
 
@@ -76,10 +86,17 @@ class PrePurchase extends Component {
               </Control>
             </Field> */}
             <Field>
-              <Label><i className='fas fa-key' /> Total Cost</Label>
-              <Title className='totalCost'>${(Number(this.state.generalAdmission) * 20) + (Number(this.state.kids) * 15) + (Number(this.state.seniors) * 18)}</Title>
+              <Label className='raleway totalCost'>Total: ${(Number(this.state.generalAdmission) * 20) + (Number(this.state.kids) * 15) + (Number(this.state.seniors) * 18)}</Label>
             </Field>
-            <Checkbox> <strong>Is this a gift?</strong></Checkbox>
+            <Checkbox className='checkbox' onChange={this.gift}> Is this a gift?</Checkbox>
+            {this.state.gift && (
+              <div className='emailGift'>
+                <Label>Recipient Name</Label>
+                <Input type='text' name='recipientName' id='recipientName' onChange={this.handleChange} />
+                <Label>Recipient Email</Label>
+                <Input type='email' name='recipientEmail' id='recipientEmail' onChange={this.handleChange} />
+              </div>
+            )}
           </form>
         </div>
         <div className='PrePurchase'>

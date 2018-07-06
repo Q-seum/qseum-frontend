@@ -6433,6 +6433,11 @@ html {
   border-radius: 25px;
   opacity: .5; }
 
+.checkbox {
+  color: #f7f7f0;
+  font-weight: 600;
+  margin-bottom: 1rem; }
+
 .App {
   height: 100%; }
 
@@ -6672,8 +6677,11 @@ i {
   margin: auto;
   text-align: left; }
 
-.ticketForm .input {
-  width: 80px; }
+.numberInput {
+  width: 60px; }
 
 .totalCost {
   text-align: left; }
+
+.PrePurchase {
+  margin-top: 20px; }
