@@ -57,7 +57,7 @@ class LandingPage extends Component {
               <img width='150px' src={require('./logo-separated.png')} />
               <h1 className='landingpage-title'>Q-seum</h1>
               <div className='slogan'>Hop through the lines</div>
-            </div>            
+            </div>
             <div className='button-container'>
               <Link to='/login'>
                 <button className='rounded-button login' isColor='primary'>Login</button>
@@ -66,7 +66,7 @@ class LandingPage extends Component {
                 <button className='rounded-button register'>Register</button>
               </Link>
               <Link to='/pre-purchase'>
-                <button className='rounded-button register'>Pre-purchase Admission</button>
+                <button className='rounded-button prepurchase'>Pre-purchase Admission</button>
               </Link>
               <div>
                 <a href='https://www.lifeandscience.org/purchase' target='_blank' className='museum-membership'>Sign up for a museum membership here!</a>
