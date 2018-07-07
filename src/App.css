@@ -6638,6 +6638,9 @@ i {
 .ScanProfile {
   margin: 2rem; }
 
+.PrePurchase {
+  margin: 1rem; }
+
 .Map {
   margin: 2rem auto 2rem auto;
   width: 95%;
@@ -6693,4 +6696,8 @@ i {
   width: 60px; }
 
 .totalCost {
-  text-align: left; }
+  text-align: left;
+  font-weight: 600; }
+
+.totalCost-summary {
+  margin-top: 1rem; }
