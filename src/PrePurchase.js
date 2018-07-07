@@ -27,6 +27,14 @@ class PrePurchase extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.gift = this.gift.bind(this)
+    this.addGeneralTicket = this.addGeneralTicket.bind(this)
+    this.subtractGeneralTicket = this.subtractGeneralTicket.bind(this)
+    this.addChildTicket = this.addChildTicket.bind(this)
+    this.subtractChildTicket = this.subtractChildTicket.bind(this)
+    this.addSeniorTicket = this.addSeniorTicket.bind(this)
+    this.subtractSeniorTicket = this.subtractSeniorTicket.bind(this)
+    this.addMilitaryTicket = this.addMilitaryTicket.bind(this)
+    this.subtractMilitaryTicket = this.subtractMilitaryTicket.bind(this)
     // this.updateTotal = this.updateTotal.bind(this)
   }
 
@@ -82,6 +90,63 @@ class PrePurchase extends Component {
     })
   }
 
+  addGeneralTicket () {
+    this.setState({
+      general: this.state.general + 1
+    })
+  }
+
+  subtractGeneralTicket () {
+    if (this.state.general > 0) {
+      this.setState({
+        general: this.state.general - 1
+      })
+    }
+  }
+
+  addSeniorTicket () {
+    this.setState({
+      senior: this.state.senior + 1
+    })
+  }
+
+  subtractSeniorTicket () {
+    if (this.state.senior > 0) {
+      this.setState({
+        senior: this.state.senior - 1
+      })
+    }
+  }
+
+  addChildTicket () {
+    this.setState({
+      child: this.state.child + 1
+    })
+  }
+
+  subtractChildTicket () {
+    if (this.state.child > 0) {
+      this.setState({
+        child: this.state.child - 1
+      })
+    }
+  }
+
+  addMilitaryTicket () {
+    this.setState({
+      military: this.state.military + 1
+    })
+  }
+
+  subtractMilitaryTicket () {
+    if (this.state.military > 0) {
+      this.setState({
+        military: this.state.military - 1
+      })
+    }
+  }
+
+
   // updateTotal () {
   //   this.setState({
   //     total: (Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.senior) * 18)
@@ -90,21 +155,35 @@ class PrePurchase extends Component {
 
   render () {
     return (
-      <div>
+      <div className='PrePurchase'>
         <div className='ticketForm'>
           <Title className='raleway'>Pre-Purchase Tickets</Title>
           <form>
             <Field>
               <Label htmlFor='general'>General Admission ($20)</Label>
               <Control>
-                <Input className='numberInput' pattern='[0-9]*' name='general' id='general' onChange={this.handleChange} />
+                {/* <Input className='numberInput' pattern='[0-9]*' name='general' id='general' onChange={this.handleChange} /> */}
+                {this.state.general ? (
+                  <div>{this.state.general}</div>
+                ) : (
+                  <div>0</div>
+                )}
+                <Button onClick={this.addGeneralTicket}>+</Button>
+                <Button onClick={this.subtractGeneralTicket}>-</Button>
               </Control>
             </Field>
 
             <Field>
               <Label htmlFor='child'>Children ages 3-12 ($15)</Label>
               <Control>
-                <Input className='numberInput' pattern='[0-9]*' name='child' id='child' onChange={this.handleChange} />
+                {this.state.child ? (
+                  <div>{this.state.child}</div>
+                ) : (
+                  <div>0</div>
+                )}
+                <Button onClick={this.addChildTicket}>+</Button>
+                <Button onClick={this.subtractChildTicket}>-</Button>
+                {/* <Input className='numberInput' pattern='[0-9]*' name='child' id='child' onChange={this.handleChange} /> */}
               </Control>
             </Field>
 
@@ -112,14 +191,28 @@ class PrePurchase extends Component {
             <Field>
               <Label htmlFor='senior'>Senior Ticket ($18)</Label>
               <Control>
-                <Input className='numberInput' pattern='[0-9]*' name='senior' id='senior' onChange={this.handleChange} />
+                {this.state.senior ? (
+                  <div>{this.state.senior}</div>
+                ) : (
+                  <div>0</div>
+                )}
+                <Button onClick={this.addSeniorTicket}>+</Button>
+                <Button onClick={this.subtractSeniorTicket}>-</Button>
+                {/* <Input className='numberInput' pattern='[0-9]*' name='senior' id='senior' onChange={this.handleChange} /> */}
               </Control>
             </Field>
 
             <Field>
-              <Label htmlFor='military'>Military Ticket: ($18)</Label>
+              <Label htmlFor='military'>Military Ticket ($18)</Label>
               <Control>
-                <Input className='numberInput' pattern='[0-9]*' name='military' id='military' onChange={this.handleChange} />
+                {this.state.miltary ? (
+                  <div>{this.state.miltary}</div>
+                ) : (
+                  <div>0</div>
+                )}
+                <Button onClick={this.addMilitaryTicket}>+</Button>
+                <Button onClick={this.subtractMilitaryTicket}>-</Button>
+                {/* <Input className='numberInput' pattern='[0-9]*' name='military' id='military' onChange={this.handleChange} /> */}
               </Control>
             </Field>
 
@@ -133,6 +226,12 @@ class PrePurchase extends Component {
             <Field>
               <Label className='raleway totalCost'>Total: ${(Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.senior) * 18) + (Number(this.state.military) * 18)}</Label>
             </Field>
+            <Field>
+              <Label>Your Name</Label>
+              <Input type='text' name='name' id='name' onChange={this.handleChange} />
+              <Label>Your Email</Label>
+              <Input type='email' name='email' id='email' onChange={this.handleChange} />
+            </Field>
             <Checkbox className='checkbox' onChange={this.gift}> Is this a gift?</Checkbox>
             {this.state.gift && (
               <div className='emailGift'>
@@ -144,21 +243,16 @@ class PrePurchase extends Component {
                 </Field>
               </div>
             )}
-            <Field>
-              <Label>Your Name</Label>
-              <Input type='text' name='name' id='name' onChange={this.handleChange} />
-              <Label>Your email</Label>
-              <Input type='email' name='email' id='email' onChange={this.handleChange} />
-            </Field>
           </form>
         </div>
         <div className='PrePurchase'>
           <Container hasTextAlign='centered'>
             <Box className='transparent-box'>
               <form onSubmit={this.handleSubmit}>
-                Card details
+                <Title>Card details</Title>
                 <CardElement style={{base: {fontSize: '18px'}}} />
-                <button type='submit'>Submit payment</button>
+                <Label className='raleway totalCost-summary'>Your card will be charged ${(Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.senior) * 18) + (Number(this.state.military) * 18)}.00</Label>
+                <Button type='submit'>Submit payment</Button>
               </form>
             </Box>
           </Container>

@@ -61,9 +61,15 @@ class ResetPassword extends Component {
                 </Field>
 
                 <Field isGrouped>
-                  <Control>
-                    <Button isColor='primary' type='submit'>Submit</Button>
-                  </Control>
+                  {this.state.password ? (
+                    <Control>
+                      <Button isColor='primary' type='submit'>Submit</Button>
+                    </Control>
+                  ) : (
+                    <Control>
+                      <Button isColor='primary' disabled>Submit</Button>
+                    </Control>
+                  )}
                   <Control>
                     <Link to='/'>
                       <Button isColor='danger'>Cancel</Button>

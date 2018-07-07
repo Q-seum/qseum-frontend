@@ -48,7 +48,7 @@ class ReportAnIssue extends Component {
           <p className='issue-text'>We always hope that your visit to the museum is perfect. 
             If you notice something that needs our attention, please use this form to let us know.
             The museum is a big place, so be sure to be specific about the location of your issue. 
-            <strong> Remember to dial 911 in an emergency.</strong>
+          <strong> Remember to dial 911 in an emergency.</strong>
           </p>
           <form onSubmit={this.handleSubmit}>
             <Field>
@@ -57,9 +57,15 @@ class ReportAnIssue extends Component {
               </Control>
             </Field>
             <Field isGrouped hasAddons='centered'>
-              <Control>
-                <Button isColor='primary' type='submit'>Submit Issue</Button>
-              </Control>
+              {this.state.text ? (
+                <Control>
+                  <Button isColor='primary' type='submit'>Submit Issue</Button>
+                </Control>
+              ) : (
+                <Control>
+                  <Button isColor='primary' disabled>Submit Issue</Button>
+                </Control>
+              )}
               <Control>
                 <Link to='/'>
                   <Button isColor='danger'>Cancel</Button>
