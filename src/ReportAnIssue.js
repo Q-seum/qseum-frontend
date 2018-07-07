@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
-import { Title, Box, Field, Label, Control, Input, Button, TextArea } from 'bloomer'
+import { Title, Box, Field, Control, Button, TextArea } from 'bloomer'
 
 class ReportAnIssue extends Component {
   constructor () {

@@ -122,7 +122,7 @@ class Profile extends Component {
             {!this.state.editProfile ? (
               <div>
                 <Title className='Raleway'>Your Profile</Title>
-                <img src={this.state.selfie} className='avi' />
+                <img src={this.state.selfie} className='avi' alt='Your Selfie' />
                 <div className='profile-details'>
                   <Field>
                     <Label htmlFor='username'><i className='fas fa-user' /> Username</Label>
@@ -171,7 +171,7 @@ class Profile extends Component {
               <div>
                 <form onSubmit={this.handleSubmit}>
                   <Title className='Raleway'>Edit Profile</Title>
-                  <img src={this.state.selfie} className='avi' />
+                  <img src={this.state.selfie} className='avi' alt='Your Selfie' />
                   <div className='profile-details'>
                     <Field>
                       <Label htmlFor='username'><i class='fas fa-user' /> Username</Label>

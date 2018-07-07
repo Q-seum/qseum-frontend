@@ -1,9 +1,6 @@
-/* global localStorage */
-
 import React, { Component } from 'react'
 import './App.css'
-import QRCode from 'qrcode.react'
-import { Box, Content, Title, Field, Control, Input, Label, Button } from 'bloomer'
+import { Box, Content, Field, Control, Input, Label, Button } from 'bloomer'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
 

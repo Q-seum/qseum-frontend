@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import './App.css'
-import { Box, Content, Title, Checkbox } from 'bloomer'
+import { Box, Checkbox } from 'bloomer'
 import request from 'superagent'
 import moment from 'moment'
 

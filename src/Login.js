@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
-import { Title, Box, Field, Label, Control, Input, Button } from 'bloomer'
+import { Title, Field, Label, Control, Input } from 'bloomer'
 
 class Login extends Component {
   constructor () {

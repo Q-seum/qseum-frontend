@@ -93,7 +93,7 @@ class Dashboard extends Component {
         ) : (
           <Box className='transparent-box'>
             <Content>
-              <img src={this.state.selfie} className='avi' />
+              <img src={this.state.selfie} className='avi' alt='Your Selfie' />
               <div><strong>Member of the Museum of Life and Science</strong></div>
               <div>Durham, North Carolina</div>
               <div>

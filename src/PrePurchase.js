@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import './App.css'
 // import { Link } from 'react-router-dom'
 // import request from 'superagent'
-import { Title, Box, Field, Label, Control, Input, Button, Container, Checkbox, Select } from 'bloomer'
+import { Title, Box, Field, Label, Control, Input, Button, Container, Checkbox } from 'bloomer'
 import { injectStripe, CardElement } from 'react-stripe-elements'
 import request from 'superagent'
 
@@ -164,12 +164,12 @@ class PrePurchase extends Component {
               <Control>
                 {/* <Input className='numberInput' pattern='[0-9]*' name='general' id='general' onChange={this.handleChange} /> */}
                 {this.state.general ? (
-                  <div>{this.state.general}</div>
+                  <Label>{this.state.general}</Label>
                 ) : (
-                  <div>0</div>
+                  <Label>0</Label>
                 )}
-                <Button onClick={this.addGeneralTicket}>+</Button>
-                <Button onClick={this.subtractGeneralTicket}>-</Button>
+                <Button onClick={this.addGeneralTicket}><i class='fas fa-plus'/></Button>
+                <Button onClick={this.subtractGeneralTicket}><i class='fas fa-minus' /></Button>
               </Control>
             </Field>
 
@@ -181,8 +181,8 @@ class PrePurchase extends Component {
                 ) : (
                   <div>0</div>
                 )}
-                <Button onClick={this.addChildTicket}>+</Button>
-                <Button onClick={this.subtractChildTicket}>-</Button>
+                <Button onClick={this.addChildTicket}><i class='fas fa-plus' /></Button>
+                <Button onClick={this.subtractChildTicket}><i class='fas fa-minus' /></Button>
                 {/* <Input className='numberInput' pattern='[0-9]*' name='child' id='child' onChange={this.handleChange} /> */}
               </Control>
             </Field>
@@ -196,8 +196,8 @@ class PrePurchase extends Component {
                 ) : (
                   <div>0</div>
                 )}
-                <Button onClick={this.addSeniorTicket}>+</Button>
-                <Button onClick={this.subtractSeniorTicket}>-</Button>
+                <Button className='button' onClick={this.addSeniorTicket}><i class='fas fa-plus' /></Button>
+                <Button onClick={this.subtractSeniorTicket}><i class='fas fa-minus' /></Button>
                 {/* <Input className='numberInput' pattern='[0-9]*' name='senior' id='senior' onChange={this.handleChange} /> */}
               </Control>
             </Field>
@@ -205,13 +205,13 @@ class PrePurchase extends Component {
             <Field>
               <Label htmlFor='military'>Military Ticket ($18)</Label>
               <Control>
-                {this.state.miltary ? (
-                  <div>{this.state.miltary}</div>
+                {this.state.military ? (
+                  <div>{this.state.military}</div>
                 ) : (
                   <div>0</div>
                 )}
-                <Button onClick={this.addMilitaryTicket}>+</Button>
-                <Button onClick={this.subtractMilitaryTicket}>-</Button>
+                <Button onClick={this.addMilitaryTicket} isColor='success'><i class='fas fa-plus' /></Button>
+                <Button onClick={this.subtractMilitaryTicket} isColor='warning'><i class='fas fa-minus' /></Button>
                 {/* <Input className='numberInput' pattern='[0-9]*' name='military' id='military' onChange={this.handleChange} /> */}
               </Control>
             </Field>
