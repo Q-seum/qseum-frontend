@@ -6448,7 +6448,8 @@ a {
   color: #f7f7f0; }
 
 Button {
-  margin: 1rem 0 1rem 0; }
+  margin: 1rem 0 1rem 0;
+  font-weight: 600; }
 
 .title {
   margin: 0;
@@ -6489,11 +6490,14 @@ Button {
   font-weight: bold; }
 
 .danger-input {
-  border: 2px solid #2e5767; }
+  border: 3px solid rgb(238, 255, 0); }
 
 .danger-text {
-  color: #2e5767;
-  font-weight: 700; }
+  color: rgb(238, 255, 0);
+  font-weight: 700;
+  text-align:left;
+  border-radius: 20px;
+ }
 
 Label {
   color: #f7f7f0; }
@@ -6505,19 +6509,19 @@ Label {
   background: rgba(0, 208, 178, 0.9);
   color: #f7f7f0;
   font-weight: 600;
-  border: rgba(247, 247, 240, 0.8) solid 1px; }
+  border: none; }
 
 .register {
   background: rgba(247, 247, 240, 0.8);
   color: #4a4a4a;
   font-weight: 600;
-  border: #00d1b2 solid 1px; }
+  border: none; }
 
 .prepurchase {
-  background: #00917a;
+  background: #f17918;
   color: #f7f7f0;
   font-weight: 600;
-  border: rgba(247, 247, 240, 0.8) solid 1px; }
+  border: none; }
 
 .hidden {
   display: none; }
