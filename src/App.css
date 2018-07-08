@@ -6733,3 +6733,56 @@ i {
   margin: 1rem;
   font-weight: 500;
   text-align: center; }
+
+@media (max-width: 320px) {
+  .Profile {
+    margin: .5rem;
+    text-align: center; }
+  .LandingPage {
+    margin: 0 auto;
+    margin-top: 30px;
+    font-size: 1.5rem; }
+  .landingpage-title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Raleway', sans-serif;
+    color: #f7f7f0; }
+  .Login {
+    margin: .5rem; }
+  .Register {
+    margin: .5rem; }
+  .ReportAnIssue {
+    margin: .5rem;
+    font-weight: 500; }
+  .ScanProfile {
+    margin: .5rem; }
+  .PrePurchase {
+    margin: .5rem; }
+  .Map {
+    margin: 2rem auto 2rem auto;
+    width: 95%;
+    text-align: center; }
+  .Dashboard {
+    text-align: center;
+    margin: .5rem;
+    font-weight: 500; }
+  .Map .title {
+    margin: .25rem; }
+  .RecoverPassword {
+    margin: .5rem; }
+  .rounded-button {
+    border-radius: 50px;
+    margin: .25rem;
+    width: 70%;
+    padding: 7px 0;
+    font-size: 1rem; }
+  .button-container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10px; }
+  .landingpage-title {
+    font-size: 30px; }
+  .slogan {
+    font-size: 20px; } }
