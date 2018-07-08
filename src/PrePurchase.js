@@ -167,13 +167,15 @@ class PrePurchase extends Component {
               <Label htmlFor='general'>General Admission ($20)</Label>
               <Control>
                 {/* <Input className='numberInput' pattern='[0-9]*' name='general' id='general' onChange={this.handleChange} /> */}
-                {this.state.general ? (
-                  <Label>{this.state.general}</Label>
-                ) : (
-                  <Label>0</Label>
-                )}
-                <Button onClick={this.addGeneralTicket}><i class='fas fa-plus'/></Button>
-                <Button onClick={this.subtractGeneralTicket}><i class='fas fa-minus' /></Button>
+                <div className='ticketNumber'>
+                  {this.state.general ? (
+                    <div>{this.state.general}</div>
+                  ) : (
+                    <div>0</div>
+                  )}
+                  <Button onClick={this.addGeneralTicket}><i class='fas fa-plus'/></Button>
+                  <Button onClick={this.subtractGeneralTicket}><i class='fas fa-minus' /></Button>
+                </div>
               </Control>
             </Field>
 

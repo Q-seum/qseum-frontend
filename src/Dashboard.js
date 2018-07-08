@@ -23,7 +23,9 @@ class Dashboard extends Component {
       selfie: '',
       resolvedIssues: [],
       resolvedExpanded: false,
-      issueExpanded: false
+      issueExpanded: false,
+      primaryUser: '',
+      seconaryUser: ''
     }
 
     this.apiCall = this.apiCall.bind(this)
@@ -62,7 +64,9 @@ class Dashboard extends Component {
             accommodations: res.body.data.attributes.accommodations,
             joinDate: res.body.data.attributes.joinDate,
             expirationDate: res.body.data.attributes.expirationDate,
-            selfie: res.body.data.attributes.selfie
+            selfie: res.body.data.attributes.selfie,
+            primaryUser: res.body.data.attributes.primaryUser,
+            secondaryUser: res.body.data.attributes.secondaryUser
           })
         })
     }
@@ -108,6 +112,12 @@ class Dashboard extends Component {
               <img src={this.state.selfie} className='avi' alt='Your Selfie' />
               <div><strong>Member of the Museum of Life and Science</strong></div>
               <div>Durham, North Carolina</div>
+              {this.state.secondaryUser ? (
+                <div>Membership held by {this.state.primaryUser} & {this.state.secondaryUser}</div>
+              ) : (
+                <div>Membership held by: {this.state.primaryUser}</div>
+
+              )}
               <div>
                 <QRCode className='QRCode-container' value={`https://q-seum.firebaseapp.com/users/${localStorage.id}`} />
               </div>
