@@ -6757,8 +6757,14 @@ i {
     font-weight: 500; }
   .ScanProfile {
     margin: .5rem; }
-  .PrePurchase {
-    margin: .5rem; }
+  .ticketForm {
+    width: 100%; }
+  .ticketNumber .fas {
+    margin: .4rem;
+    font-size: 1.1rem; }
+  .ticketNumber button {
+    margin: 0 1.5rem 1rem 1.5rem;
+    border-radius: 20%; }
   .Map {
     margin: 2rem auto 2rem auto;
     width: 95%;
