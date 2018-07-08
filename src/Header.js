@@ -46,7 +46,7 @@ class Header extends Component {
             <img className='logo' src={logo} />
           </NavbarItem> */}
           <NavbarItem className='navtitle raleway'>
-            <img className='icon'src={require('./logo-separated.png')} />
+            <img className='icon'src={require('./logo-separated.png')} alt='' />
             <strong>Q-seum</strong>
           </NavbarItem>
           <NavbarBurger isActive={this.state.isActive} onClick={this.onClickNav} />

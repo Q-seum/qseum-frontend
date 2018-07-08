@@ -72,6 +72,8 @@ a {
 
 Button{
   margin:1rem 0 1rem 0;
+  font-weight: 600;
+
 }
 
 .title{
@@ -94,9 +96,10 @@ Button{
 .rounded-button{
   border-radius:50px;
   margin:.25rem;
-  width:75%;
+  width:70%;
   padding: 10px 0;
   font-size: 1.25rem;
+  
 }
 
 .logout-button {
@@ -107,6 +110,7 @@ Button{
   font-size: 1.25rem;
   border: #00d1b2 solid 1px;
   color: #00d1b2;
+  
 }
 
 .rounded-button:hover {
@@ -121,11 +125,11 @@ Button{
 }
 
 .danger-input {
-  border: 2px solid #2e5767;
+  border: 2px solid rgb(238, 255, 0);
 }
 
 .danger-text {
-  color: #2e5767;
+  color: rgb(238, 255, 0);
   font-weight: 700;
 }
 
@@ -138,28 +142,40 @@ Label {
 }
 
 .login {
-  background: rgba(0,208,178,.9);
+  background: rgba(0,208,178,.7);
   // color: rgb(247,240,240);
   color: rgb(247,247,240);
   font-weight: 600;
-  border: rgba(247,247,240, .8) solid 1px;
+  // border:#4a4a4a solid 1px;
+  // border: none;
+  border: rgba(247,240,240, .5) solid 2px;
+
+
 }
 
 .register {
-  background: rgba(247,247,240,.8);
+  background: rgba(238, 255, 0,.7);
   // color: #00d1b2;
   color: #4a4a4a;
+  // color: rgba(247,247,240, 1);
+
   font-weight: 600;
-  border: #00d1b2 solid 1px;
+  border: rgba(247,240,240, .5) solid 2px;
+  // border: none;
+
   // margin-bottom: 15px;
 }
 
 .prepurchase {
-  background: rgba(0, 145, 122, 1);
+  // background: rgba(0, 145, 122, 1);
+  background: rgba(241,121,24,.9);
   // color: #00d1b2;
   color: rgba(247,247,240, 1);
   font-weight: 600;
-  border: rgba(247,247,240, .8) solid 1px;
+  // border:#4a4a4a solid 1px;
+  // border: none;
+  border: rgba(247,240,240, .5) solid 2px;
+
     // margin-bottom: 15px;
 }
 
@@ -248,6 +264,8 @@ Label {
   opacity: .9;
   // color: #00d1b2;
   border: none;
+  border: rgba(247,240,240, .5) solid 2px;
+
 }
 
 .link-container {
@@ -335,6 +353,7 @@ i{
 
 .Register{
   margin:2rem;
+
 }
 .ReportAnIssue{
   margin:2rem;
@@ -343,6 +362,10 @@ i{
 
 .ScanProfile{
   margin: 2rem;
+}
+
+.PrePurchase{
+  margin: 1rem;
 }
 
 .Map{
@@ -419,6 +442,11 @@ i{
 
 .totalCost {
   text-align:left;
+  font-weight:600;
+}
+
+.totalCost-summary{
+  margin-top:1rem;
 }
 
 .PrePurchase {
@@ -428,3 +456,4 @@ i{
 // .emailGift{
 //   width:80%
 // }
+

@@ -113,7 +113,7 @@ class ScanProfile extends Component {
           <Box className='transparent-box'>
             <Title className='raleway'>Check In {this.state.username}</Title>
             <Content>
-              <img src={this.state.selfie} className='avi' />
+              <img src={this.state.selfie} className='avi' alt='User Selfie' />
               <div><strong>Username: </strong>{this.state.username}</div>
               <div><strong>Email: </strong>{this.state.email}</div>
               <div><strong>Account #: </strong>{this.state.account}</div>
