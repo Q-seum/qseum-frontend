@@ -19,7 +19,9 @@ class Profile extends Component {
       joinDate: '',
       expirationDate: '',
       selfie: '',
-      editProfile: false
+      editProfile: false,
+      primaryUser: '',
+      secondaryUser: ''
       // newSelfie: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -53,8 +55,9 @@ class Profile extends Component {
     task
       .then(snapshot => console.log(snapshot))
     request
-      .post('https://secure-temple-21963.herokuapp.com/api/v1/users')
+      .patch(`https://secure-temple-21963.herokuapp.com/api/v1/users/${localStorage.id}`)
       // .set('X-Requested-With', 'XMLHttpRequest')
+      .set('Authorization', `Bearer ${localStorage.token}`)
       .send({
         selfie: `https://firebasestorage.googleapis.com/v0/b/q-seum.appspot.com/o/${name}?alt=media&token=d84cc00a-df11-4a4c-ba3d-d0f979456873`
       })
@@ -108,7 +111,9 @@ class Profile extends Component {
           selfie: res.body.data.attributes.selfie,
           expirationDate: res.body.data.attributes.expirationDate,
           joinDate: res.body.data.attributes.joinDate,
-          membershipType: res.body.data.attributes.membershipType
+          membershipType: res.body.data.attributes.membershipType,
+          primaryUser: res.body.data.attributes.primaryUser,
+          secondaryUser: res.body.data.attributes.secondaryUser
 
         })
       })
@@ -124,6 +129,17 @@ class Profile extends Component {
                 <Title className='Raleway'>Your Profile</Title>
                 <img src={this.state.selfie} className='avi' alt='Your Selfie' />
                 <div className='profile-details'>
+                  {this.state.secondaryUser ? (
+                    <Field>
+                      <Label>Membership Holders:</Label>
+                      <div>{this.state.primaryUser} & {this.state.secondaryUser}</div>
+                    </Field>
+                  ) : (
+                    <Field>
+                      <Label>Membership Holder:</Label>
+                      <div>{this.state.primaryUser}</div>
+                    </Field>
+                  )}
                   <Field>
                     <Label htmlFor='username'><i className='fas fa-user' /> Username</Label>
                     <div>{this.state.username}</div>
@@ -135,7 +151,7 @@ class Profile extends Component {
                   </Field>
 
                   <Field className='accommodations-field'>
-                    <Label className='label'><i className='fas fa-wheelchair' /> Accommodations</Label>
+                    <Label htmlFor='accommodations' className='label'><i className='fas fa-wheelchair' /> Accommodations</Label>
                     {this.state.accommodations ? (
                       <div>{this.state.accommodations}</div>
                     ) : (
