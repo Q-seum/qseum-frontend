@@ -6,6 +6,7 @@ import QRCode from 'qrcode.react'
 import { Box, Content, Title } from 'bloomer'
 import request from 'superagent'
 import Issue from './Issue'
+import IssueResolved from './IssueResolved'
 
 class Dashboard extends Component {
   constructor () {
@@ -20,6 +21,9 @@ class Dashboard extends Component {
       joinDate: '',
       expirationDate: '',
       selfie: '',
+      resolvedIssues: [],
+      resolvedExpanded: false,
+      issueExpanded: false,
       primaryUser: '',
       seconaryUser: ''
     }
@@ -34,9 +38,10 @@ class Dashboard extends Component {
         .get('https://secure-temple-21963.herokuapp.com/api/v1/issues')
         .set('Authorization', `Bearer ${localStorage.token}`)
         .then(res => {
-          // console.log(res)
+          console.log(res)
           this.setState({
-            issues: res.body
+            issues: res.body.issues_new,
+            resolvedIssues: res.body.issues_resolved
           })
         })
     }
@@ -78,6 +83,7 @@ class Dashboard extends Component {
   }
 
   render () {
+    console.log(this.state.resolvedIssues)
     return (
       <div className='Dashboard'>
         {this.props.admin === 'true' ? (
@@ -91,6 +97,12 @@ class Dashboard extends Component {
             {this.state.issues.map((issue, idx) => (
               <div className='issue' key={idx}>
                 <Issue issue={issue} />
+              </div>
+            ))}
+            <Title>Resolved Issues</Title>
+            {this.state.resolvedIssues.map((issue, idx) => (
+              <div className='issue' key={idx}>
+                <IssueResolved issue={issue} />
               </div>
             ))}
           </div>

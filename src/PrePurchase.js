@@ -22,7 +22,8 @@ class PrePurchase extends Component {
       new_token: null,
       gift: false,
       recip_name: null,
-      recip_email: null
+      recip_email: null,
+      purchaseSubmitted: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -69,6 +70,9 @@ class PrePurchase extends Component {
           })
           .then(res => {
             console.log(res)
+            this.setState({
+              purchaseSubmitted: true
+            })
           })
           .catch(err => {
             console.log(err)

@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import './App.css'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import { Box, Title, Button } from 'bloomer'
 import request from 'superagent'
 // import logo from './logo3.png'
@@ -16,7 +16,8 @@ class RedeemTicket extends Component {
       milTickets: '',
       senTickets: '',
       recipEmail: '',
-      redeemed: false
+      redeemed: false,
+      error: false
     }
 
     this.confirmVisit = this.confirmVisit.bind(this)
@@ -36,6 +37,9 @@ class RedeemTicket extends Component {
       })
       .catch(err => {
         console.log(err.response)
+        this.setState({
+          error: true
+        })
       })
   }
 
@@ -47,12 +51,15 @@ class RedeemTicket extends Component {
       })
       .then(res => {
         console.log(res)
+        this.setState({
+          redeemed: true
+        })
       })
   }
 
   render () {
     console.log(this.props.match)
-    if (this.props.admin === 'true') {
+    if (this.props.admin === 'true' && this.state.redeemed === false && this.state.error === false) {
       return (
         <div className='RedeemTicket'>
           <Box className='transparent-box'>
@@ -61,10 +68,24 @@ class RedeemTicket extends Component {
             <div><strong>Children Tickets: </strong>{this.state.childTickets ? (this.state.childTickets) : (0)}</div>
             <div><strong>Military Tickets: </strong>{this.state.milTickets ? (this.state.milTickets) : (0)}</div>
             <div><strong>Senior Tickets: </strong>{this.state.senTickets ? (this.state.senTickets) : (0)}</div>
-            <div><strong>Email: </strong>{this.state.recipEmail}</div>
             {/* <div><strong>Last Visit: </strong>{lastVisit}</div> */}
             <Button onClick={this.confirmVisit}>Confirm Visit</Button>
           </Box>
+        </div>
+      )
+    } else if (this.props.admin === 'true' && this.state.redeemed === true && this.state.error === false) {
+      return (
+        <div className='RedeemTicket'>
+          <Box className='transparent-box'>
+            <Title>Visit successfully confirmed!</Title>
+            <Link to='/'><Button>Return Home</Button></Link>
+          </Box>
+        </div>
+      )
+    } else if (this.props.admin === 'true' && this.state.error === true) {
+      return (
+        <div className='RedeemTicket'>
+          <Title>This ticket has already been used.</Title>
         </div>
       )
     } else {
