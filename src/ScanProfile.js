@@ -22,7 +22,9 @@ class ScanProfile extends Component {
       visitors: '',
       selfie: '',
       validSelfie: false,
-      lastVisit: []
+      lastVisit: [],
+      primaryUser: '',
+      secondaryUser: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -48,7 +50,9 @@ class ScanProfile extends Component {
           selfie: res.body.data.attributes.selfie,
           validSelfie: res.body.data.attributes.validSelfie,
           // lastVisit: moment(res.body.data.attributes.visits[0].date).format('MMMM Do YYYY, h:mm a')
-          lastVisit: res.body.data.attributes.visits
+          lastVisit: res.body.data.attributes.visits,
+          primaryUser: res.body.data.attributes.primaryUser,
+          secondaryUser: res.body.data.attributes.secondaryUser
         })
       })
   }
@@ -114,7 +118,13 @@ class ScanProfile extends Component {
             <Title className='raleway'>Check In {this.state.username}</Title>
             <Content>
               <img src={this.state.selfie} className='avi' alt='User Selfie' />
-              <div><strong>Username: </strong>{this.state.username}</div>
+              {this.state.secondaryUser ? (
+                <div><strong>Membership Holders: </strong>{this.state.primaryUser} & {this.state.secondaryUser}</div>
+              ) : (
+                <div><strong>Membership Holder: </strong>{this.state.primaryUser} </div>
+
+              )}
+              {/* <div><strong>Username: </strong>{this.state.username}</div> */}
               <div><strong>Email: </strong>{this.state.email}</div>
               <div><strong>Account #: </strong>{this.state.account}</div>
               <div><strong>Membership Type: </strong>{this.state.membershipType}</div>
