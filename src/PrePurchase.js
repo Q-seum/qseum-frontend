@@ -4,7 +4,8 @@ import React, { Component } from 'react'
 import './App.css'
 // import { Link } from 'react-router-dom'
 // import request from 'superagent'
-import { Title, Box, Field, Label, Control, Input, Button, Container, Checkbox } from 'bloomer'
+import { Link } from 'react-router-dom'
+import { Title, Box, Field, Label, Control, Input, Button, Container, Checkbox, Content } from 'bloomer'
 import { injectStripe, CardElement } from 'react-stripe-elements'
 import request from 'superagent'
 
@@ -21,7 +22,7 @@ class PrePurchase extends Component {
       email: null,
       new_token: null,
       gift: false,
-      recip_name: null,
+      // recip_name: null,
       recip_email: null,
       purchaseSubmitted: false
     }
@@ -159,110 +160,140 @@ class PrePurchase extends Component {
 
   render () {
     return (
-      <div className='PrePurchase'>
-        <div className='ticketForm'>
-          <Title className='raleway'>Pre-Purchase Tickets</Title>
-          <form>
-            <Field>
-              <Label htmlFor='general'>General Admission ($20)</Label>
-              <Control>
-                {/* <Input className='numberInput' pattern='[0-9]*' name='general' id='general' onChange={this.handleChange} /> */}
-                <div className='ticketNumber'>
-                  {this.state.general ? (
-                    <div>{this.state.general}</div>
-                  ) : (
-                    <div>0</div>
-                  )}
-                  <Button onClick={this.addGeneralTicket}><i class='fas fa-plus'/></Button>
-                  <Button onClick={this.subtractGeneralTicket}><i class='fas fa-minus' /></Button>
-                </div>
-              </Control>
-            </Field>
+      <div>
+        {!this.state.purchaseSubmitted ? (
+          <div className='PrePurchase'>
+            <div className='ticketForm'>
+              <Title className='raleway'>Pre-Purchase Tickets</Title>
+              <form>
+                <Box className='transparent-box'>
+                  <Field>
+                    <Label className='ticket-label' htmlFor='general'>General Admission ($20)</Label>
+                    <Control>
+                      {/* <Input className='numberInput' pattern='[0-9]*' name='general' id='general' onChange={this.handleChange} /> */}
+                      <div className='ticketNumber'>
+                      {/* How many tickets? */}
+                      
+                        <button type='button' onClick={this.subtractGeneralTicket}><i class='fas fa-minus' /></button>
+                        {this.state.general ? (
+                          this.state.general
+                        ) : (
+                          0
+                        )}
+                        <button type='button' onClick={this.addGeneralTicket}><i class='fas fa-plus' /></button>
+                      </div>
+                    </Control>
+                  </Field>
 
-            <Field>
-              <Label htmlFor='child'>Children ages 3-12 ($15)</Label>
-              <Control>
-                {this.state.child ? (
-                  <div>{this.state.child}</div>
-                ) : (
-                  <div>0</div>
-                )}
-                <Button onClick={this.addChildTicket}><i class='fas fa-plus' /></Button>
-                <Button onClick={this.subtractChildTicket}><i class='fas fa-minus' /></Button>
-                {/* <Input className='numberInput' pattern='[0-9]*' name='child' id='child' onChange={this.handleChange} /> */}
-              </Control>
-            </Field>
+                  <Field>
+                    <Label className='ticket-label' htmlFor='child'>Children ages 3-12 ($15)</Label>
+                    <Control>
+                      <div className='ticketNumber'>
+                        <button type='button' onClick={this.subtractChildTicket}><i class='fas fa-minus' /></button>
+                        {this.state.child ? (
+                          this.state.child
+                        ) : (
+                          0
+                        )}
+                        <button type='button' onClick={this.addChildTicket}><i class='fas fa-plus' /></button>
+                      </div>
+                    </Control>
+                  </Field>
 
 
-            <Field>
-              <Label htmlFor='senior'>Senior Ticket ($18)</Label>
-              <Control>
-                {this.state.senior ? (
-                  <div>{this.state.senior}</div>
-                ) : (
-                  <div>0</div>
-                )}
-                <Button className='button' onClick={this.addSeniorTicket}><i class='fas fa-plus' /></Button>
-                <Button onClick={this.subtractSeniorTicket}><i class='fas fa-minus' /></Button>
-                {/* <Input className='numberInput' pattern='[0-9]*' name='senior' id='senior' onChange={this.handleChange} /> */}
-              </Control>
-            </Field>
+                  <Field>
+                    <Label className='ticket-label' htmlFor='senior'>Senior Ticket ($18)</Label>
+                    <Control>
+                      <div className='ticketNumber'>
+                        <button type='button' onClick={this.subtractSeniorTicket}><i class='fas fa-minus' /></button>
+                        {this.state.senior ? (
+                          this.state.senior
+                        ) : (
+                          0
+                        )}
+                        <button type='button' onClick={this.addSeniorTicket}><i class='fas fa-plus' /></button>
+                      </div>
+                    </Control>
+                  </Field>
 
-            <Field>
-              <Label htmlFor='military'>Military Ticket ($18)</Label>
-              <Control>
-                {this.state.military ? (
-                  <div>{this.state.military}</div>
-                ) : (
-                  <div>0</div>
-                )}
-                <Button onClick={this.addMilitaryTicket} isColor='success'><i class='fas fa-plus' /></Button>
-                <Button onClick={this.subtractMilitaryTicket} isColor='warning'><i class='fas fa-minus' /></Button>
-                {/* <Input className='numberInput' pattern='[0-9]*' name='military' id='military' onChange={this.handleChange} /> */}
-              </Control>
-            </Field>
+                  <Field>
+                    <Label className='ticket-label' htmlFor='military'>Military Ticket ($18)</Label>
+                    <Control>
+                      <div className='ticketNumber'>
+                        <button type='button' onClick={this.subtractMilitaryTicket}><i class='fas fa-minus' /></button>
+                        {this.state.military ? (
+                          this.state.military
+                        ) : (
+                          0
+                        )}
+                        <button type='button' onClick={this.addMilitaryTicket}><i class='fas fa-plus' /></button>
+                      </div>
+                    </Control>
+                  </Field>
 
-            {/* <Field>
-              <Label htmlFor='password'><i className='fas fa-key' /> Password</Label>
-              <Control>
-                <Input type='password' name='password' onChange={this.handleChange} id='password' />
-                <div className='error-msg hidden danger-text'>password is required</div>
-              </Control>
-            </Field> */}
-            <Field>
-              <Label className='raleway totalCost'>Total: ${(Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.senior) * 18) + (Number(this.state.military) * 18)}</Label>
-            </Field>
-            <Field>
-              <Label>Your Name</Label>
-              <Input type='text' name='name' id='name' onChange={this.handleChange} />
-              <Label>Your Email</Label>
-              <Input type='email' name='email' id='email' onChange={this.handleChange} />
-            </Field>
-            <Checkbox className='checkbox' onChange={this.gift}> Is this a gift?</Checkbox>
-            {this.state.gift && (
-              <div className='emailGift'>
+                  {/* <Field>
+                    <Label htmlFor='password'><i className='fas fa-key' /> Password</Label>
+                    <Control>
+                      <Input type='password' name='password' onChange={this.handleChange} id='password' />
+                      <div className='error-msg hidden danger-text'>password is required</div>
+                    </Control>
+                  </Field> */}
+                  <Field>
+                    <Label className='ticket-label total-cost'>Total: ${(Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.senior) * 18) + (Number(this.state.military) * 18)}</Label>
+                  </Field>
+                </Box>
                 <Field>
-                  <Label>Recipient Name</Label>
-                  <Input type='text' name='recipientName' id='recipientName' onChange={this.handleChange} />
-                  <Label>Recipient Email</Label>
-                  <Input type='email' name='recip_email' id='recip_email' onChange={this.handleChange} />
+                  <Label>Your Name</Label>
+                  <Input type='text' name='name' id='name' onChange={this.handleChange} />
+                  <Label>Your Email</Label>
+                  <Input type='email' name='email' id='email' onChange={this.handleChange} />
                 </Field>
-              </div>
-            )}
-          </form>
-        </div>
-        <div className='PrePurchase'>
-          <Container hasTextAlign='centered'>
-            <Box className='transparent-box'>
-              <form onSubmit={this.handleSubmit}>
-                <Title>Card details</Title>
-                <CardElement style={{base: {fontSize: '18px'}}} />
-                <Label className='raleway totalCost-summary'>Your card will be charged ${(Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.senior) * 18) + (Number(this.state.military) * 18)}.00</Label>
-                <Button type='submit'>Submit payment</Button>
+                <Checkbox className='checkbox' onChange={this.gift}> Send tickets as a gift</Checkbox>
+                {this.state.gift && (
+                  <div className='emailGift'>
+                    <Field>
+                      {/* <Label>Recipient Name</Label>
+                      <Input type='text' name='recipientName' id='recipientName' onChange={this.handleChange} /> */}
+                      <Label>Recipient Email</Label>
+                      <Input type='email' name='recip_email' id='recip_email' onChange={this.handleChange} />
+                    </Field>
+                  </div>
+                )}
               </form>
+            </div>
+            <div className='PrePurchase-card'>
+              <Container hasTextAlign='centered'>
+                <Box className='transparent-box'>
+                  <form onSubmit={this.handleSubmit}>
+                    <Title>Card details</Title>
+                    <CardElement style={{base: {fontSize: '18px'}}} />
+                    <Label className='ticket-label totalCost-summary'>Your card will be charged ${(Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.senior) * 18) + (Number(this.state.military) * 18)}.00</Label>
+                    <Button type='submit'>Submit payment</Button>
+                  </form>
+                </Box>
+              </Container>
+            </div>
+          </div>
+
+        ) : (
+          <Content className='purchase-success'>
+            <Box className='transparent-box'>
+              <p>
+                Thank you for your purchase! If you purchased tickets for yourself, 
+                you will recieve an email containing a QR-Code containing the tickets 
+                you have purchased. When you arrive at the museum, show your QR-Code 
+                to a museum staff member to check-in.
+              </p>
+              <p>
+                If you have purchased tickets as a gift, your recipient should recieve an email 
+                containing the QR-Code ticket.
+              </p>
+              <Link to='/'>
+                <Button >Back to home page</Button>
+              </Link>
             </Box>
-          </Container>
-        </div>
+          </Content>
+        )}
       </div>
     )
   }
