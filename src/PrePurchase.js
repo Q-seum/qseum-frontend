@@ -168,13 +168,15 @@ class PrePurchase extends Component {
               <Control>
                 {/* <Input className='numberInput' pattern='[0-9]*' name='general' id='general' onChange={this.handleChange} /> */}
                 <div className='ticketNumber'>
+                How many tickets?
+                 
+                  <button type='button' onClick={this.subtractGeneralTicket}><i class='fas fa-minus' /></button>
                   {this.state.general ? (
-                    <div>{this.state.general}</div>
+                    this.state.general
                   ) : (
-                    <div>0</div>
+                    0
                   )}
-                  <Button onClick={this.addGeneralTicket}><i class='fas fa-plus'/></Button>
-                  <Button onClick={this.subtractGeneralTicket}><i class='fas fa-minus' /></Button>
+                  <button type='button' onClick={this.addGeneralTicket}><i class='fas fa-plus' /></button>
                 </div>
               </Control>
             </Field>
@@ -182,14 +184,17 @@ class PrePurchase extends Component {
             <Field>
               <Label htmlFor='child'>Children ages 3-12 ($15)</Label>
               <Control>
-                {this.state.child ? (
-                  <div>{this.state.child}</div>
-                ) : (
-                  <div>0</div>
-                )}
-                <Button onClick={this.addChildTicket}><i class='fas fa-plus' /></Button>
-                <Button onClick={this.subtractChildTicket}><i class='fas fa-minus' /></Button>
-                {/* <Input className='numberInput' pattern='[0-9]*' name='child' id='child' onChange={this.handleChange} /> */}
+                <div className='ticketNumber'>
+                  How many tickets?
+                  
+                  <button type='button' onClick={this.subtractChildTicket}><i class='fas fa-minus' /></button>
+                  {this.state.child ? (
+                    this.state.child
+                  ) : (
+                    0
+                  )}
+                  <button type='button' onClick={this.addChildTicket}><i class='fas fa-plus' /></button>
+                </div>
               </Control>
             </Field>
 
@@ -197,28 +202,33 @@ class PrePurchase extends Component {
             <Field>
               <Label htmlFor='senior'>Senior Ticket ($18)</Label>
               <Control>
-                {this.state.senior ? (
-                  <div>{this.state.senior}</div>
-                ) : (
-                  <div>0</div>
-                )}
-                <Button className='button' onClick={this.addSeniorTicket}><i class='fas fa-plus' /></Button>
-                <Button onClick={this.subtractSeniorTicket}><i class='fas fa-minus' /></Button>
-                {/* <Input className='numberInput' pattern='[0-9]*' name='senior' id='senior' onChange={this.handleChange} /> */}
+                <div className='ticketNumber'>
+                  How many tickets?
+                  
+                  <button type='button' onClick={this.subtractSeniorTicket}><i class='fas fa-minus' /></button>
+                  {this.state.senior ? (
+                    this.state.senior
+                  ) : (
+                    0
+                  )}
+                  <button type='button' onClick={this.addSeniorTicket}><i class='fas fa-plus' /></button>
+                </div>
               </Control>
             </Field>
 
             <Field>
               <Label htmlFor='military'>Military Ticket ($18)</Label>
               <Control>
-                {this.state.military ? (
-                  <div>{this.state.military}</div>
-                ) : (
-                  <div>0</div>
-                )}
-                <Button onClick={this.addMilitaryTicket} isColor='success'><i class='fas fa-plus' /></Button>
-                <Button onClick={this.subtractMilitaryTicket} isColor='warning'><i class='fas fa-minus' /></Button>
-                {/* <Input className='numberInput' pattern='[0-9]*' name='military' id='military' onChange={this.handleChange} /> */}
+                <div className='ticketNumber'>
+                    How many tickets?
+                  <button type='button' onClick={this.subtractMilitaryTicket}><i class='fas fa-minus' /></button>
+                  {this.state.military ? (
+                    this.state.military
+                  ) : (
+                    0
+                  )}
+                  <button type='button' onClick={this.addMilitaryTicket}><i class='fas fa-plus' /></button>
+                </div>
               </Control>
             </Field>
 

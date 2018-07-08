@@ -453,6 +453,21 @@ i{
   // margin-top:20px;
 }
 
+.ticketNumber {
+  color:white;
+  text-align:left;
+  // align-items:center;
+}
+
+.ticketNumber .fas {
+  margin:0;
+  // padding:0;
+}
+
+.ticketNumber button {
+  margin:1rem;
+}
+
 // .emailGift{
 //   width:80%
 // }

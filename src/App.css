@@ -6702,3 +6702,13 @@ i {
 
 .totalCost-summary {
   margin-top: 1rem; }
+
+.ticketNumber {
+  color: white;
+  text-align: left; }
+
+.ticketNumber .fas {
+  margin: 0; }
+
+.ticketNumber button {
+  margin: 1rem; }
