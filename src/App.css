@@ -6608,7 +6608,8 @@ i {
   align-items: center;
   font-size: 1.5rem;
   font-family: 'Raleway', sans-serif;
-  margin-left: 0; }
+  margin-left: 0;
+  cursor: pointer; }
 
 .Profile {
   margin: 2rem;
