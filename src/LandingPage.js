@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
-import { Title, Box, Field, Label, Control, Input, Button, Container } from 'bloomer'
+import { Container } from 'bloomer'
 
 class LandingPage extends Component {
   constructor () {
@@ -54,7 +54,7 @@ class LandingPage extends Component {
         <Container hasTextAlign='centered'>
           <div>
             <div className='logo-title'>
-              <img width='150px' src={require('./logo-separated.png')} />
+              <img width='150px' src={require('./logo-separated.png')} alt='' />
               <h1 className='landingpage-title'>Q-seum</h1>
               <div className='slogan'>Hop through the lines</div>
             </div>
@@ -69,7 +69,7 @@ class LandingPage extends Component {
                 <button className='rounded-button prepurchase'>Pre-purchase Admission</button>
               </Link>
               <div>
-                <a href='https://www.lifeandscience.org/purchase' target='_blank' className='museum-membership'>Sign up for a museum membership here!</a>
+                <a href='https://www.lifeandscience.org/purchase' target='_blank' rel='noopener noreferrer' className='museum-membership'>Sign up for a museum membership here!</a>
               </div>
             </div>
           </div>

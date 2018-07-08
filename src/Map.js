@@ -2,8 +2,7 @@
 
 import React, { Component } from 'react'
 import './App.css'
-import QRCode from 'qrcode.react'
-import { Box, Content, Title, Image } from 'bloomer'
+import { Box, Title } from 'bloomer'
 
 class Map extends Component {
   render () {
@@ -14,8 +13,8 @@ class Map extends Component {
           <div>
             Download PDF <a href='https://www.speakcdn.com/assets/2348/museum_map_updated.pdf'> here!</a>
           </div>
-          <img src={require('./museum-map1.jpg')} />
-          <img src={require('./museum-map2.jpg')} />
+          <img src={require('./museum-map1.jpg')} alt='Museum Map' />
+          <img src={require('./museum-map2.jpg')} alt='Museum Map' />
         </Box>
       </div>
     )

@@ -1,9 +1,6 @@
-/* global localStorage */
-
 import React, { Component } from 'react'
 import './App.css'
-import QRCode from 'qrcode.react'
-import { Box, Content, Title, Field, Control, Input, Label, Button } from 'bloomer'
+import { Box, Content, Field, Control, Input, Label, Button } from 'bloomer'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
 
@@ -57,9 +54,15 @@ class RecoverPassword extends Component {
                 </Field>
 
                 <Field isGrouped>
-                  <Control>
-                    <Button type='submit'>Submit</Button>
-                  </Control>
+                  {this.state.email ? (
+                    <Control>
+                      <Button type='submit'>Submit</Button>
+                    </Control>
+                  ) : (
+                    <Control>
+                      <Button disabled>Submit</Button>
+                    </Control>
+                  )}
                   <Control>
                     <Link to='/'>
                       <Button isColor='danger'>Cancel</Button>
