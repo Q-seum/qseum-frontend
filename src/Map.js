@@ -11,7 +11,7 @@ class Map extends Component {
         <Box className='transparent-box'>
           <Title>Museum Map</Title>
           <div>
-            Download PDF <a href='https://www.speakcdn.com/assets/2348/museum_map_updated.pdf'> here!</a>
+            <a href='https://www.speakcdn.com/assets/2348/museum_map_updated.pdf'>Download PDF</a>
           </div>
           <img src={require('./museum-map1.jpg')} alt='' />
           <img src={require('./museum-map2.jpg')} alt='' />
