@@ -22,14 +22,15 @@ class Dashboard extends Component {
       expirationDate: '',
       selfie: '',
       resolvedIssues: [],
-      resolvedExpanded: false,
-      issueExpanded: false,
+      currentIssues: true,
       primaryUser: '',
       seconaryUser: ''
     }
 
     this.apiCall = this.apiCall.bind(this)
     this.handleLogout = this.handleLogout.bind(this)
+    this.toggleResolved = this.toggleResolved.bind(this)
+    this.toggleCurrent = this.toggleCurrent.bind(this)
   }
 
   apiCall () {
@@ -38,13 +39,30 @@ class Dashboard extends Component {
         .get('https://secure-temple-21963.herokuapp.com/api/v1/issues')
         .set('Authorization', `Bearer ${localStorage.token}`)
         .then(res => {
-          console.log(res)
+          // console.log(res)
           this.setState({
             issues: res.body.issues_new,
             resolvedIssues: res.body.issues_resolved
           })
         })
     }
+  }
+
+  toggleResolved (e) {
+    this.setState({
+      currentIssues: false
+    })
+    e.target.classList.add('is-active')
+    console.log(e.target.previousElementSibling)
+    e.target.previousElementSibling.classList.remove('is-active')
+  }
+
+  toggleCurrent (e) {
+    this.setState({
+      currentIssues: true
+    })
+    e.target.classList.add('is-active')
+    e.target.nextElementSibling.classList.remove('is-active')
   }
 
   componentDidMount () {
@@ -83,7 +101,7 @@ class Dashboard extends Component {
   }
 
   render () {
-    console.log(this.state.resolvedIssues)
+    // console.log(this.state.resolvedIssues)
     return (
       <div className='Dashboard'>
         {this.props.admin === 'true' ? (
@@ -93,18 +111,24 @@ class Dashboard extends Component {
                 <Title>No issues at the moment</Title>
               </Box>
             )}
-            <Title>Current Issues</Title>
-            {this.state.issues.map((issue, idx) => (
-              <div className='issue' key={idx}>
-                <Issue issue={issue} />
+            <Title><span className='issues-title is-active' onClick={this.toggleCurrent}>Current Issues</span> | <span className='issues-title' onClick={this.toggleResolved}>Resolved Issues</span></Title>
+            {this.state.currentIssues ? (
+              <div>
+                {this.state.issues.map((issue, idx) => (
+                  <div className='issue' key={idx}>
+                    <Issue issue={issue} />
+                  </div>
+                ))}
               </div>
-            ))}
-            <Title>Resolved Issues</Title>
-            {this.state.resolvedIssues.map((issue, idx) => (
-              <div className='issue' key={idx}>
-                <IssueResolved issue={issue} />
+            ) : (
+              <div>
+                {this.state.resolvedIssues.map((issue, idx) => (
+                  <div className='issue' key={idx}>
+                    <IssueResolved issue={issue} />
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
         ) : (
           <Box className='transparent-box'>

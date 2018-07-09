@@ -299,6 +299,18 @@ Label {
 
 }
 
+.is-active {
+  color: gainsboro;
+}
+
+.issues-title {
+  cursor: pointer;
+
+  &:hover {
+    color: lightgray;
+  }
+}
+
 .header-links:hover{
   // background-color: #fd8204;
   // transition: background-color 0.2s linear;
