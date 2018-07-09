@@ -10,7 +10,7 @@
 
 body{
   background-size:cover;
-  background: no-repeat center center fixed url(./bg_image.jpg);
+  background: no-repeat center center fixed url(./bg_image800.jpg);
   min-height: 100vh;
 }
 
@@ -359,14 +359,15 @@ i{
 }
 
 .Map{
-  padding:2rem auto 2rem auto;
-  width:95%;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 95%;
   text-align:center;
   // height:700px;
   // overflow:auto;
 }
 
-.Map .title{
+.title{
   margin:.25rem;
 }
 
