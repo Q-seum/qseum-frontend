@@ -41,7 +41,7 @@ class RecoverPassword extends Component {
   }
   render () {
     return (
-      <div className='RecoverPassword'>
+      <div className='RecoverPassword contain'>
         <Box className='transparent-box'>
           {!this.state.recoverPassword ? (
             <Content>

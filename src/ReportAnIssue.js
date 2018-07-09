@@ -42,7 +42,7 @@ class ReportAnIssue extends Component {
 
   render () {
     return (
-      <div className='ReportAnIssue'>
+      <div className='ReportAnIssue contain'>
         <Box className='transparent-box'>
           <Title className='raleway'>Report an issue</Title>
           <p className='issue-text'>We always hope that your visit to the museum is perfect. 

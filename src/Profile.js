@@ -121,7 +121,7 @@ class Profile extends Component {
 
   render () {
     return (
-      <div className='Profile'>
+      <div className='Profile contain'>
         <Box className='transparent-box'>
           <Content>
             <div>

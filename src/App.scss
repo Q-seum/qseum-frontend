@@ -8,18 +8,10 @@
 // 0099a8
 
 
-html{
-  // background: url(./leafbg.jpg);
-  // background: linear-gradient(rgba(247,240,240, 0.8),rgba(247,240,240, .8)),
-  // no-repeat center center fixed url(./forestbg.jpg);
+body{
   background-size:cover;
-  // background-repeat: repeat;
-  // width:100%;
-  height:100%;
-  background: linear-gradient(rgba(0, 145, 122, .7),rgba(0, 145, 122, .7)),
-  no-repeat center center fixed url(./forestbg.jpg);
-  // background-color:rgba(247,240,240,1);
-  // background-color:rgba(214, 134, 55, 0.7);
+  background: no-repeat center center fixed url(./bg_image.jpg);
+  min-height: 100vh;
 }
 
 .label {
@@ -189,7 +181,7 @@ Label {
 
 .LandingPage{
   margin:0 auto;
-  margin-top: 75px;
+  padding-top: 75px;
   font-size:1.5rem;
 }
 
@@ -224,7 +216,6 @@ Label {
 
 .Dashboard{
   text-align:center;
-  margin:2rem;
   font-weight:500;
 }
 
@@ -338,7 +329,6 @@ i{
 
 
 .Profile{
-  margin:2rem;
   text-align:center;
 }
 
@@ -356,31 +346,20 @@ i{
   padding:0;
 }
 
-.Login {
-  margin: 2rem;
+.PrePurchase {
+  padding: 1rem;
 }
 
 
-
-.Register{
-  margin:2rem;
-
+.contain {
+  padding:2rem;
 }
 .ReportAnIssue{
-  margin:2rem;
   font-weight:500;
 }
 
-.ScanProfile{
-  margin: 2rem;
-}
-
-.PrePurchase{
-  margin: 1rem;
-}
-
 .Map{
-  margin:2rem auto 2rem auto;
+  padding:2rem auto 2rem auto;
   width:95%;
   text-align:center;
   // height:700px;
@@ -389,11 +368,6 @@ i{
 
 .Map .title{
   margin:.25rem;
-}
-
-.RecoverPassword{
-  margin:2rem;
-
 }
 
 .tagline{
@@ -514,7 +488,7 @@ i{
   }
   .LandingPage{
     margin:0 auto;
-    margin-top: 30px;
+    padding-top: 30px;
     font-size:1.5rem;
   }
   
