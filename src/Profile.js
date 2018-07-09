@@ -171,7 +171,7 @@ class Profile extends Component {
 
                 <Field>
                   <Label><i className='far fa-calendar-times' /> Expiration Date</Label>
-                  <div>{this.state.joinDate}</div>
+                  <div>{this.state.expirationDate}</div>
                 </Field>
               </div>
             </div>

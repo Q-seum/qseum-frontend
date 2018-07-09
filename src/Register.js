@@ -160,7 +160,7 @@ class Register extends Component {
             </Control>
           </Field>
           <Field>
-            <Label htmlFor='accommodations' className='label'><i class='fas fa-wheelchair' /> Accommodations(Optional)</Label>
+            <Label htmlFor='accommodations' className='label'><i class='fas fa-wheelchair' /> Accommodations (optional)</Label>
             <Control>
               <Input value={this.state.accommodations} type='text' name='accommodations' onChange={this.handleChange} id='accommodations' />
             </Control>
