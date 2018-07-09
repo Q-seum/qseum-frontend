@@ -124,122 +124,57 @@ class Profile extends Component {
       <div className='Profile'>
         <Box className='transparent-box'>
           <Content>
-            {!this.state.editProfile ? (
-              <div>
-                <Title className='Raleway'>Your Profile</Title>
-                <img src={this.state.selfie} className='avi' alt='Your Selfie' />
-                <div className='profile-details'>
-                  {this.state.secondaryUser ? (
-                    <Field>
-                      <Label>Membership Holders:</Label>
-                      <div>{this.state.primaryUser} & {this.state.secondaryUser}</div>
-                    </Field>
+            <div>
+              <Title className='Raleway'>Your Account</Title>
+              <img src={this.state.selfie} className='avi' alt='' />
+              <div className='profile-details'>
+                {this.state.secondaryUser ? (
+                  <Field>
+                    <Label><i class='far fa-address-card' /> Membership Holders:</Label>
+                    <div>{this.state.primaryUser} & {this.state.secondaryUser}</div>
+                  </Field>
+                ) : (
+                  <Field>
+                    <Label><i class='far fa-address-card' /> Membership Holder:</Label>
+                    <div>{this.state.primaryUser}</div>
+                  </Field>
+                )}
+                <Field>
+                  <Label htmlFor='username'><i className='fas fa-user' /> Username</Label>
+                  <div>{this.state.username}</div>
+                </Field>
+
+                <Field>
+                  <Label className='label'><i className='fas fa-envelope' /> Email</Label>
+                  <div>{this.state.email}</div>
+                </Field>
+
+                <Field className='accommodations-field'>
+                  <Label htmlFor='accommodations' className='label'><i className='fas fa-wheelchair' /> Accommodations</Label>
+                  {this.state.accommodations ? (
+                    <div>{this.state.accommodations}</div>
                   ) : (
-                    <Field>
-                      <Label>Membership Holder:</Label>
-                      <div>{this.state.primaryUser}</div>
-                    </Field>
-                  )}
-                  <Field>
-                    <Label htmlFor='username'><i className='fas fa-user' /> Username</Label>
-                    <div>{this.state.username}</div>
-                  </Field>
+                    <div>None</div>
+                  )
+                  }
+                </Field>
 
-                  <Field>
-                    <Label className='label'><i className='fas fa-envelope' /> Email</Label>
-                    <div>{this.state.email}</div>
-                  </Field>
+                <Field>
+                  <Label><i className='fas fa-users' /> Membership Type</Label>
+                  <div>{this.state.membershipType} person admission</div>
+                </Field>
 
-                  <Field className='accommodations-field'>
-                    <Label htmlFor='accommodations' className='label'><i className='fas fa-wheelchair' /> Accommodations</Label>
-                    {this.state.accommodations ? (
-                      <div>{this.state.accommodations}</div>
-                    ) : (
-                      <div>None</div>
-                    )
-                    }
-                  </Field>
+                <Field>
+                  <Label><i className='far fa-calendar-alt' /> Join Date</Label>
+                  <div>{this.state.joinDate}</div>
+                </Field>
 
-                  <Field>
-                    <Label><i className='fas fa-users' /> Membership Type</Label>
-                    <div>{this.state.membershipType} person admission</div>
-                  </Field>
-
-                  <Field>
-                    <Label><i className='far fa-calendar-alt' /> Join Date</Label>
-                    <div>{this.state.joinDate}</div>
-                  </Field>
-
-                  <Field>
-                    <Label><i className='far fa-calendar-times' /> Expiration Date</Label>
-                    <div>{this.state.joinDate}</div>
-                  </Field>
-                </div>
-
-                <Field isGrouped hasAddons='centered'>
-                  <Control>
-                    <Button isColor='primary' onClick={this.editProfile}><i class='fas fa-edit' /> Edit Profile</Button>
-                    <div id='modal' />
-                  </Control>
+                <Field>
+                  <Label><i className='far fa-calendar-times' /> Expiration Date</Label>
+                  <div>{this.state.joinDate}</div>
                 </Field>
               </div>
-            ) : (
-              <div>
-                <form onSubmit={this.handleSubmit}>
-                  <Title className='Raleway'>Edit Profile</Title>
-                  <img src={this.state.selfie} className='avi' alt='Your Selfie' />
-                  <div className='profile-details'>
-                    <Field>
-                      <Label htmlFor='username'><i class='fas fa-user' /> Username</Label>
-                      <Control>
-                        <Input value={this.state.username} type='text' name='username' onChange={this.handleChange} id='username' />
-                      </Control>
-                    </Field>
-
-                    <Field className='password-field'>
-                      <Label htmlFor='password' className='label'><i className='fas fa-key' /> Password</Label>
-                      <Control>
-                        <Input type='password' name='password' onChange={this.handleChange} id='password' />
-                      </Control>
-                    </Field>
-
-                    <Field className='email-field'>
-                      <Label htmlFor='email' className='label'><i className='fas fa-envelope' /> Email</Label>
-                      <Control>
-                        <Input value={this.state.email} type='email' name='email' onChange={this.handleChange} id='email' />
-                      </Control>
-                    </Field>
-
-                    <Field className='accommodations-field'>
-                      <Label htmlFor='accommodations' className='label'><i class='fas fa-wheelchair' /> Accommodations</Label>
-                      <Control>
-                        <Input value={this.state.accommodations} type='text' name='accommodations' onChange={this.handleChange} id='accommodations' />
-                      </Control>
-                    </Field>
-
-                    <Field>
-                      <Label><i class='fas fa-camera' /> Profile Picture</Label>
-                      <Control>
-                        <Input type='file' name='newSelfie' accept='image/*;capture=camera' onChange={this.handleChange} />
-                      </Control>
-                      <Button onClick={this.changeSelfie}>Change profile picture</Button>
-                    </Field>
-                  </div>
-
-                  <Field isGrouped hasAddons='centered'>
-                    <Control>
-                      {/* <Link to='/'> */}
-                      <Button isColor='primary' type='submit'>Update</Button>
-                      {/* </Link> */}
-                    </Control>
-                    <Control>
-                      <Button isColor='danger' onClick={this.editProfile}>Cancel</Button>
-                      <div id='modal' />
-                    </Control>
-                  </Field>
-                </form>
-              </div>
-            )}
+            </div>
           </Content>
         </Box>
       </div>

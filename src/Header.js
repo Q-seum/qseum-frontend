@@ -75,7 +75,7 @@ class Header extends Component {
                 </Link>
               )}
               <Link to='/profile'>
-                <NavbarItem isHoverable><i class='far fa-address-card' /> Your Profile</NavbarItem>
+                <NavbarItem isHoverable><i class='far fa-address-card' /> Your Account</NavbarItem>
               </Link>
               <Link to='/'>
                 <NavbarItem isHoverable onClick={this.handleLogout}><i className='fas fa-sign-out-alt' /> Logout</NavbarItem>
