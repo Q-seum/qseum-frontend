@@ -14,6 +14,7 @@ class Register extends Component {
       password: '',
       account: '',
       email: '',
+      accommodations: '',
       selfie: ''
     }
     this.handleChange = this.handleChange.bind(this)
@@ -35,7 +36,7 @@ class Register extends Component {
     const username = document.querySelector('Input[name="username"]')
     const account = document.querySelector('Input[name="account"]')
     const email = document.querySelector('Input[name="email"]')
-    const inputs = document.querySelectorAll('Input')
+    const inputs = document.querySelectorAll('.required')
     let name
     inputs.forEach(input => {
       if (!input.value) {
@@ -65,6 +66,7 @@ class Register extends Component {
         password: this.state.password,
         account: this.state.account,
         email: this.state.email,
+        accommodations: this.state.accommodations,
         selfie: `https://firebasestorage.googleapis.com/v0/b/q-seum.appspot.com/o/${name}?alt=media&token=d84cc00a-df11-4a4c-ba3d-d0f979456873`
       })
       .then(res => {
@@ -125,7 +127,7 @@ class Register extends Component {
           <Field>
             <Label htmlFor='username'><i class='fas fa-user' /> Username</Label>
             <Control>
-              <Input type='text' name='username' onChange={this.handleChange} id='username' />
+              <Input type='text' name='username' onChange={this.handleChange} id='username' className='required' />
               <div className='error-msg hidden danger-text'>username is required</div>
               <div className='error-msg danger-text hidden username-taken'>username already taken</div>
             </Control>
@@ -134,7 +136,7 @@ class Register extends Component {
           <Field>
             <Label htmlFor='password'><i className='fas fa-key' /> Password</Label>
             <Control>
-              <Input type='password' name='password' onChange={this.handleChange} id='password' />
+              <Input className='required' type='password' name='password' onChange={this.handleChange} id='password' />
               <div className='error-msg hidden danger-text'>password is required</div>
             </Control>
           </Field>
@@ -142,7 +144,7 @@ class Register extends Component {
           <Field>
             <Label htmlFor='account'><i className='fas fa-address-card' /> Museum Account Number</Label>
             <Control>
-              <Input type='text' name='account' onChange={this.handleChange} id='account' />
+              <Input className='required' type='text' name='account' onChange={this.handleChange} id='account' />
               <div className='error-msg hidden danger-text'>account number is required</div>
               <div className='error-msg danger-text hidden account-taken'>2 users already exist for this membership account</div>
               <div className='error-msg danger-text hidden account-invalid'>not a valid account number</div>
@@ -152,15 +154,21 @@ class Register extends Component {
           <Field>
             <Label htmlFor='email'><i className='fas fa-envelope' /> Email Address</Label>
             <Control>
-              <Input type='email' name='email' onChange={this.handleChange} id='email' />
+              <Input className='required' type='email' name='email' onChange={this.handleChange} id='email' />
               <div className='error-msg hidden danger-text'>email is required</div>
               <div className='error-msg hidden danger-text email-taken'>email has already been taken</div>
             </Control>
           </Field>
           <Field>
+            <Label htmlFor='accommodations' className='label'><i class='fas fa-wheelchair' /> Accommodations(Optional)</Label>
+            <Control>
+              <Input value={this.state.accommodations} type='text' name='accommodations' onChange={this.handleChange} id='accommodations' />
+            </Control>
+          </Field>
+          <Field>
             <Label><i class='fas fa-camera' /> Profile Picture</Label>
             <Control>
-              <Input type='file' name='selfie' accept='image/*;capture=camera' onChange={this.handleChange} />
+              <Input className='required' type='file' name='selfie' accept='image/*;capture=camera' onChange={this.handleChange} />
               <div className='error-msg hidden danger-text'>photo is required</div>
             </Control>
           </Field>
