@@ -4,13 +4,14 @@ import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import request from 'superagent'
-import { Title, Box, Field, Control, Button, TextArea } from 'bloomer'
+import { Title, Box, Field, Control, Button, TextArea, Content } from 'bloomer'
 
 class ReportAnIssue extends Component {
   constructor () {
     super()
     this.state = {
-      text: ''
+      text: '',
+      issueSubmitted: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -33,8 +34,14 @@ class ReportAnIssue extends Component {
       })
       .then(res => {
         console.log(res)
-        this.props.history.push('/')
+        this.setState({
+          issueSubmitted: true
+        })
       })
+      // .then(res => {
+      //   console.log(res)
+      //   this.props.history.push('/')
+      // })
       .catch(err => {
         console.log(err)
       })
@@ -44,10 +51,12 @@ class ReportAnIssue extends Component {
     return (
       <div className='ReportAnIssue'>
         <Box className='transparent-box'>
+        {!this.state.issueSubmitted ? (
+          <div>
           <Title className='raleway'>Report an issue</Title>
           <p className='issue-text'>We always hope that your visit to the museum is perfect. 
             If you notice something that needs our attention, please use this form to let us know.
-            The museum is a big place, so be sure to be specific about the location of your issue. 
+            {/* The museum is a big place, so be sure to be specific about the location of your issue.  */}
           <strong> Remember to dial 911 in an emergency.</strong>
           </p>
           <form onSubmit={this.handleSubmit}>
@@ -73,6 +82,17 @@ class ReportAnIssue extends Component {
               </Control>
             </Field>
           </form>
+          </div>
+        ) : ( 
+          <Content>
+            <div>
+              Thank you for submitting your issue! Our staff has been alerted to your concern.
+            </div>
+            <Link to='/'>
+                <Button >Back to home page</Button>
+              </Link>          
+          </Content>
+        )}
         </Box>
       </div>
     )
