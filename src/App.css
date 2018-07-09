@@ -6595,6 +6595,14 @@ Label {
   font-size: 1.1rem;
   background-color: #f7f7f0; }
 
+.is-active {
+  color: gainsboro; }
+
+.issues-title {
+  cursor: pointer; }
+  .issues-title:hover {
+    color: lightgray; }
+
 .active {
   background-color: #fd8204; }
 
