@@ -121,7 +121,7 @@ class Register extends Component {
   render () {
     // console.log(this.state.selfie)
     return (
-      <div className='Register'>
+      <div className='Register contain'>
         <Title className='raleway login-title'>Register</Title>
         <form onSubmit={this.handleSubmit} className='register-form'>
           <Field>

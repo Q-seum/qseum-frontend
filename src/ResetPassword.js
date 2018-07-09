@@ -48,7 +48,7 @@ class ResetPassword extends Component {
     console.log(this.props)
     console.log(this.props.match.params.id)
     return (
-      <div className='ResetPassword'>
+      <div className='ResetPassword contain'>
         <Box className='transparent-box'>
           {!this.state.clickReset ? (
             <Content>

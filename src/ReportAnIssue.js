@@ -49,7 +49,7 @@ class ReportAnIssue extends Component {
 
   render () {
     return (
-      <div className='ReportAnIssue'>
+      <div className='ReportAnIssue contain'>
         <Box className='transparent-box'>
         {!this.state.issueSubmitted ? (
           <div>

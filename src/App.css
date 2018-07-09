@@ -6419,10 +6419,10 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
-html {
+body {
   background-size: cover;
-  height: 100%;
-  background: linear-gradient(rgba(0, 145, 122, 0.7), rgba(0, 145, 122, 0.7)), no-repeat center center fixed url(./forestbg.jpg); }
+  background: no-repeat center center fixed url(./bg_image.jpg);
+  min-height: 100vh; }
 
 .label {
   color: #f7f7f0;
@@ -6528,7 +6528,7 @@ Label {
 
 .LandingPage {
   margin: 0 auto;
-  margin-top: 75px;
+  padding-top: 75px;
   font-size: 1.5rem; }
 
 .landingpage-title {
@@ -6548,7 +6548,6 @@ Label {
 
 .Dashboard {
   text-align: center;
-  margin: 2rem;
   font-weight: 500; }
 
 .QRCode-container {
@@ -6623,7 +6622,6 @@ i {
   cursor: pointer; }
 
 .Profile {
-  margin: 2rem;
   text-align: center; }
 
 .profile-details {
@@ -6637,32 +6635,22 @@ i {
 .Profile .Label {
   padding: 0; }
 
-.Login {
-  margin: 2rem; }
+.PrePurchase {
+  padding: 1rem; }
 
-.Register {
-  margin: 2rem; }
+.contain {
+  padding: 2rem; }
 
 .ReportAnIssue {
-  margin: 2rem;
   font-weight: 500; }
 
-.ScanProfile {
-  margin: 2rem; }
-
-.PrePurchase {
-  margin: 1rem; }
-
 .Map {
-  margin: 2rem auto 2rem auto;
+  padding: 2rem auto 2rem auto;
   width: 95%;
   text-align: center; }
 
 .Map .title {
   margin: .25rem; }
-
-.RecoverPassword {
-  margin: 2rem; }
 
 .tagline {
   color: #fd8204;
@@ -6751,7 +6739,7 @@ i {
     text-align: center; }
   .LandingPage {
     margin: 0 auto;
-    margin-top: 30px;
+    padding-top: 30px;
     font-size: 1.5rem; }
   .landingpage-title {
     margin: 0;

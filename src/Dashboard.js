@@ -103,7 +103,7 @@ class Dashboard extends Component {
   render () {
     // console.log(this.state.resolvedIssues)
     return (
-      <div className='Dashboard'>
+      <div className='Dashboard contain'>
         {this.props.admin === 'true' ? (
           <div className='issues'>
             {this.state.issues.length === 0 && (

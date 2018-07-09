@@ -61,7 +61,7 @@ class RedeemTicket extends Component {
     console.log(this.props.match)
     if (this.props.admin === 'true' && this.state.redeemed === false && this.state.error === false) {
       return (
-        <div className='RedeemTicket'>
+        <div className='RedeemTicket contain'>
           <Box className='transparent-box'>
             <Title>Guest Ticket</Title>
             <div><strong>General Tickets: </strong>{this.state.genTickets ? (this.state.genTickets) : (0)}</div>
@@ -75,7 +75,7 @@ class RedeemTicket extends Component {
       )
     } else if (this.props.admin === 'true' && this.state.redeemed === true && this.state.error === false) {
       return (
-        <div className='RedeemTicket'>
+        <div className='RedeemTicket contain'>
           <Box className='transparent-box'>
             <Title>Visit successfully confirmed!</Title>
             <Link to='/'><Button>Return Home</Button></Link>
@@ -84,7 +84,7 @@ class RedeemTicket extends Component {
       )
     } else if (this.props.admin === 'true' && this.state.error === true) {
       return (
-        <div className='RedeemTicket'>
+        <div className='RedeemTicket contain'>
           <Title>This ticket has already been used.</Title>
         </div>
       )

@@ -113,7 +113,7 @@ class ScanProfile extends Component {
     }
     if (this.props.admin === 'true') {
       return (
-        <div className='ScanProfile'>
+        <div className='ScanProfile contain'>
           <Box className='transparent-box'>
             <Title className='raleway'>Check In {this.state.username}</Title>
             <Content>
