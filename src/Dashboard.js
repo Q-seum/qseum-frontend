@@ -111,7 +111,8 @@ class Dashboard extends Component {
                 <Title>No issues at the moment</Title>
               </Box>
             )}
-            <Title><span className='issues-title is-active' onClick={this.toggleCurrent}>Current Issues</span> | <span className='issues-title' onClick={this.toggleResolved}>Resolved Issues</span></Title>
+            <Title>Issues</Title>
+            <Title isSize={4}><span className='issues-title is-active' onClick={this.toggleCurrent}>Current</span> | <span className='issues-title' onClick={this.toggleResolved}>Resolved</span></Title>
             {this.state.currentIssues ? (
               <div>
                 {this.state.issues.map((issue, idx) => (
