@@ -31,8 +31,10 @@ class Register extends Component {
     const usernameError = document.querySelector('.username-taken')
     const accountError = document.querySelector('.account-taken')
     const accountInvalid = document.querySelector('.account-invalid')
+    const emailTaken = document.querySelector('.email-taken')
     const username = document.querySelector('Input[name="username"]')
     const account = document.querySelector('Input[name="account"]')
+    const email = document.querySelector('Input[name="email"]')
     const inputs = document.querySelectorAll('Input')
     let name
     inputs.forEach(input => {
@@ -100,6 +102,17 @@ class Register extends Component {
         } else {
           accountInvalid.classList.add('hidden')
         }
+
+        if (err.response.body.email && err.response.body.email[0] === 'has already been taken' && this.state.email) {
+          emailTaken.classList.remove('hidden')
+          email.classList.add('danger-input')
+          console.log(err.response.body.email[0])
+        } else if (this.state.account) {
+          email.classList.remove('danger-input')
+          emailTaken.classList.add('hidden')
+        } else {
+          emailTaken.classList.add('hidden')
+        }
       })
   }
 
@@ -141,6 +154,7 @@ class Register extends Component {
             <Control>
               <Input type='email' name='email' onChange={this.handleChange} id='email' />
               <div className='error-msg hidden danger-text'>email is required</div>
+              <div className='error-msg hidden danger-text email-taken'>email has already been taken</div>
             </Control>
           </Field>
           <Field>
