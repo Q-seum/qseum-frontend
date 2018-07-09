@@ -112,12 +112,12 @@ class Dashboard extends Component {
               <img src={this.state.selfie} className='avi' alt='Your Selfie' />
               <div><strong>Member of the Museum of Life and Science</strong></div>
               <div>Durham, North Carolina</div>
-              {this.state.secondaryUser ? (
+              {/* {this.state.secondaryUser ? (
                 <div>Membership held by {this.state.primaryUser} & {this.state.secondaryUser}</div>
               ) : (
                 <div>Membership held by: {this.state.primaryUser}</div>
 
-              )}
+              )} */}
               <div>
                 <QRCode className='QRCode-container' value={`https://q-seum.firebaseapp.com/users/${localStorage.id}`} />
               </div>
