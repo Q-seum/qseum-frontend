@@ -6419,6 +6419,9 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+html {
+  background-color: #00917a; }
+
 body {
   background-size: cover;
   background: no-repeat center center fixed url(./bg_image800.jpg);
@@ -6585,6 +6588,9 @@ Label {
 
 .logo {
   margin-left: 1rem; }
+
+.top-logo {
+  margin-right: .25rem; }
 
 .Header {
   margin: 0 auto 0 auto;

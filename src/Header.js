@@ -47,7 +47,7 @@ class Header extends Component {
           </NavbarItem> */}
           <Link to='/'>
             <NavbarItem className='navtitle raleway'>
-              <img className='icon'src={require('./logo-separated.png')} alt='' />
+              <img className='icon top-logo'src={require('./logo-separated.png')} alt='' />
               <strong>Q-seum</strong>
             </NavbarItem>
           </Link>
