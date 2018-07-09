@@ -51,7 +51,7 @@ class Login extends Component {
 
   render () {
     return (
-      <div className='Login'>
+      <div className='Login contain'>
         <Title className='raleway login-title'>Login</Title>
         <form onSubmit={this.handleSubmit} className='login-form'>
           <Field>
