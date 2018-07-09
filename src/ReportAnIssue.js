@@ -65,14 +65,14 @@ class ReportAnIssue extends Component {
                 <TextArea placeholder='Report your issue here' name='text' onChange={this.handleChange} />
               </Control>
             </Field>
-            <Field isGrouped hasAddons='centered'>
+            <Field hasAddons='centered'>
               {this.state.text ? (
                 <Control>
-                  <Button isColor='primary' type='submit'>Submit Issue</Button>
+                  <Button type='submit'>Submit Issue</Button>
                 </Control>
               ) : (
                 <Control>
-                  <Button isColor='primary' disabled>Submit Issue</Button>
+                  <Button disabled rounded>Submit Issue</Button>
                 </Control>
               )}
               <Control>

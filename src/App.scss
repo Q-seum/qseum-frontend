@@ -123,7 +123,7 @@ Button{
 }
 
 .danger-text {
-  color: rgb(238, 255, 0);
+  color: rgba(238, 255, 0, .9);
   font-weight: 700;
 }
 
@@ -132,7 +132,7 @@ Label {
 }
 
 .Login {
-  color: white;
+  color: rgb(247,247,240);
 }
 
 .login {
@@ -148,9 +148,11 @@ Label {
 }
 
 .register {
-  background: rgba(238, 255, 0,.7);
+  background: rgba(238, 255, 0,.4);
   // color: #00d1b2;
-  color: #4a4a4a;
+  // color: #4a4a4a;
+  color: rgb(247,247,240);
+
   // color: rgba(247,247,240, 1);
 
   font-weight: 600;
@@ -444,7 +446,7 @@ i{
 .ticketNumber {
   color:#4a4a4a;
   text-align:center;
-  font-size:1.2rem;
+  font-size:1.5rem;
   font-weight:600;
 
   // align-items:center;
@@ -460,6 +462,7 @@ i{
 .ticketNumber button {
   margin:0 1.5rem 1rem 1.5rem;
   border-radius:20%;
+  padding:.7rem;
 }
 
 .ticket-label{
@@ -468,6 +471,7 @@ i{
 
 .PrePurchase-card {
   margin-top:1rem;
+  
 }
 
 .PrePurchase .input {
@@ -487,7 +491,11 @@ i{
 //   width:80%
 // }
 
+
 @media (max-width: 320px) {
+  .contain {
+    padding:.5rem;
+  }
   .Profile{
     margin:.5rem;
     text-align:center;

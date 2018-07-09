@@ -265,7 +265,7 @@ class PrePurchase extends Component {
               <Container hasTextAlign='centered'>
                 <Box className='transparent-box'>
                   <form onSubmit={this.handleSubmit}>
-                    <Title>Card details</Title>
+                    <Label>Please enter your payment information</Label>
                     <CardElement style={{base: {fontSize: '18px'}}} />
                     <Label className='ticket-label totalCost-summary'>Your card will be charged ${(Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.senior) * 18) + (Number(this.state.military) * 18)}.00</Label>
                     <Button type='submit'>Submit payment</Button>
