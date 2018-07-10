@@ -6466,6 +6466,9 @@ body {
 .resolved-box {
   background: #f7f7f0; }
 
+.no-issues {
+  margin-top: 150px; }
+
 a {
   color: #f7f7f0; }
 

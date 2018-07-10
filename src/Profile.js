@@ -6,6 +6,7 @@ import './App.css'
 import request from 'superagent'
 import { Content, Box, Button, Field, Control, Label, Input, Title } from 'bloomer'
 import firebase from './firebase'
+import moment from 'moment'
 
 class Profile extends Component {
   constructor () {
@@ -166,12 +167,12 @@ class Profile extends Component {
 
                 <Field>
                   <Label><i className='far fa-calendar-alt' /> Join Date</Label>
-                  <div>{this.state.joinDate}</div>
+                  <div>{moment(this.state.joinDate).format('MMMM Do, YYYY')}</div>
                 </Field>
 
                 <Field>
                   <Label><i className='far fa-calendar-times' /> Expiration Date</Label>
-                  <div>{this.state.expirationDate}</div>
+                  <div>{moment(this.state.expirationDate).format('MMMM Do, YYYY')}</div>
                 </Field>
               </div>
             </div>

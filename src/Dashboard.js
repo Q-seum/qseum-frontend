@@ -107,7 +107,7 @@ class Dashboard extends Component {
         {this.props.admin === 'true' ? (
           <div className='issues'>
             {this.state.issues.length === 0 ? (
-              <Box className='transparent-box'>
+              <Box className='transparent-box no-issues'>
                 <Title>No issues at the moment</Title>
               </Box>
             ) : (
