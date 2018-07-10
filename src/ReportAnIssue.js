@@ -51,48 +51,48 @@ class ReportAnIssue extends Component {
     return (
       <div className='ReportAnIssue contain'>
         <Box className='transparent-box'>
-        {!this.state.issueSubmitted ? (
-          <div>
-          <Title className='raleway'>Report an issue</Title>
-          <p className='issue-text'>We always hope that your visit to the museum is perfect. 
-            If you notice something that needs our attention, please use this form to let us know.
-            {/* The museum is a big place, so be sure to be specific about the location of your issue.  */}
-          <strong> Remember to dial 911 in an emergency.</strong>
-          </p>
-          <form onSubmit={this.handleSubmit}>
-            <Field>
-              <Control>
-                <TextArea placeholder='Report your issue here' name='text' onChange={this.handleChange} />
-              </Control>
-            </Field>
-            <Field hasAddons='centered'>
-              {this.state.text ? (
-                <Control>
-                  <Button type='submit'>Submit Issue</Button>
-                </Control>
-              ) : (
-                <Control>
-                  <Button disabled rounded>Submit Issue</Button>
-                </Control>
-              )}
-              <Control>
-                <Link to='/'>
-                  <Button isColor='danger'>Cancel</Button>
-                </Link>
-              </Control>
-            </Field>
-          </form>
-          </div>
-        ) : ( 
-          <Content>
+          {!this.state.issueSubmitted ? (
             <div>
-              Thank you for submitting your issue! Our staff has been alerted to your concern.
+              <Title className='raleway'>Report an issue</Title>
+              <p className='issue-text'>We always hope that your visit to the museum is perfect. 
+                If you notice something that needs our attention, please use this form to let us know.
+                {/* The museum is a big place, so be sure to be specific about the location of your issue.  */}
+              <strong> Remember to dial 911 in an emergency.</strong>
+              </p>
+              <form onSubmit={this.handleSubmit}>
+                <Field>
+                  <Control>
+                    <TextArea placeholder='Report your issue here' name='text' onChange={this.handleChange} />
+                  </Control>
+                </Field>
+                <Field hasAddons='centered'>
+                  {this.state.text ? (
+                    <Control>
+                      <Button type='submit'>Submit Issue</Button>
+                    </Control>
+                  ) : (
+                    <Control>
+                      <Button disabled rounded>Submit Issue</Button>
+                    </Control>
+                  )}
+                  {/* <Control>
+                    <Link to='/'>
+                      <Button isColor='danger'>Cancel</Button>
+                    </Link>
+                  </Control> */}
+                </Field>
+              </form>
             </div>
-            <Link to='/'>
+          ) : (
+            <Content>
+              <div>
+                Thank you for submitting your issue! Our staff has been alerted to your concern.
+              </div>
+              <Link to='/'>
                 <Button >Back to home page</Button>
               </Link>          
-          </Content>
-        )}
+            </Content>
+          )}
         </Box>
       </div>
     )
