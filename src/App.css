@@ -6432,6 +6432,13 @@ body {
   font-weight: 500;
   font-size: 1.1rem; }
 
+.card {
+  background: #f7f7f0;
+  padding: 10px;
+  border-radius: 25px;
+  margin: 0 auto;
+  width: 90%; }
+
 .img-container {
   text-align: center; }
 

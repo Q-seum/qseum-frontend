@@ -172,8 +172,6 @@ class PrePurchase extends Component {
                     <Control>
                       {/* <Input className='numberInput' pattern='[0-9]*' name='general' id='general' onChange={this.handleChange} /> */}
                       <div className='ticketNumber'>
-                      {/* How many tickets? */}
-                      
                         <button type='button' onClick={this.subtractGeneralTicket}><i class='fas fa-minus' /></button>
                         {this.state.general ? (
                           this.state.general
@@ -266,7 +264,7 @@ class PrePurchase extends Component {
                 <Box className='transparent-box'>
                   <form onSubmit={this.handleSubmit}>
                     <Label>Please enter your payment information</Label>
-                    <CardElement style={{base: {fontSize: '18px'}}} />
+                    <CardElement style={{base: {fontSize: '18px'}}} className='card' />
                     <Label className='ticket-label totalCost-summary'>Your card will be charged ${(Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.senior) * 18) + (Number(this.state.military) * 18)}.00</Label>
                     <Button type='submit'>Submit payment</Button>
                   </form>
