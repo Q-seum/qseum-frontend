@@ -131,12 +131,12 @@ class Profile extends Component {
               <div className='profile-details'>
                 {this.state.secondaryUser ? (
                   <Field>
-                    <Label><i class='far fa-address-card' /> Membership Holders:</Label>
+                    <Label><i class='far fa-address-card' /> Membership Holders</Label>
                     <div>{this.state.primaryUser} & {this.state.secondaryUser}</div>
                   </Field>
                 ) : (
                   <Field>
-                    <Label><i class='far fa-address-card' /> Membership Holder:</Label>
+                    <Label><i class='far fa-address-card' /> Membership Holder</Label>
                     <div>{this.state.primaryUser}</div>
                   </Field>
                 )}

@@ -6539,6 +6539,10 @@ Label {
   font-weight: 600;
   border: rgba(247, 240, 240, 0.5) solid 2px; }
 
+.register-success {
+  font-weight: 600;
+  text-align: center; }
+
 .prepurchase {
   background: rgba(241, 121, 24, 0.9);
   color: #f7f7f0;

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import './App.css'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import QRCode from 'qrcode.react'
 import request from 'superagent'
-import { Title, Field, Label, Control, Input } from 'bloomer'
+import { Title, Field, Label, Control, Input, Box, Content, Button } from 'bloomer'
 import firebase from './firebase'
 
 class Register extends Component {
@@ -15,7 +15,8 @@ class Register extends Component {
       account: '',
       email: '',
       accommodations: '',
-      selfie: ''
+      selfie: '',
+      registered: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -71,7 +72,9 @@ class Register extends Component {
       })
       .then(res => {
         console.log(res)
-        this.props.history.push('/')
+        this.setState({
+          registered: true
+        })
       })
       .catch((err) => {
         console.log(err.response.body)
@@ -121,67 +124,87 @@ class Register extends Component {
   render () {
     // console.log(this.state.selfie)
     return (
-      <div className='Register contain'>
-        <Title className='raleway login-title'>Register</Title>
-        <form onSubmit={this.handleSubmit} className='register-form'>
-          <Field>
-            <Label htmlFor='username'><i class='fas fa-user' /> Username</Label>
-            <Control>
-              <Input type='text' name='username' onChange={this.handleChange} id='username' className='required' />
-              <div className='error-msg hidden danger-text'>username is required</div>
-              <div className='error-msg danger-text hidden username-taken'>username already taken</div>
-            </Control>
-          </Field>
+      <div>
+        {!this.state.registered ? (
+          <div className='Register contain'>
+            <Title className='raleway login-title'>Register</Title>
+            <form onSubmit={this.handleSubmit} className='register-form'>
+              <Field>
+                <Label htmlFor='username'><i class='fas fa-user' /> Username</Label>
+                <Control>
+                  <Input type='text' name='username' onChange={this.handleChange} id='username' className='required' />
+                  <div className='error-msg hidden danger-text'>username is required</div>
+                  <div className='error-msg danger-text hidden username-taken'>username already taken</div>
+                </Control>
+              </Field>
 
-          <Field>
-            <Label htmlFor='password'><i className='fas fa-key' /> Password</Label>
-            <Control>
-              <Input className='required' type='password' name='password' onChange={this.handleChange} id='password' />
-              <div className='error-msg hidden danger-text'>password is required</div>
-            </Control>
-          </Field>
+              <Field>
+                <Label htmlFor='password'><i className='fas fa-key' /> Password</Label>
+                <Control>
+                  <Input className='required' type='password' name='password' onChange={this.handleChange} id='password' />
+                  <div className='error-msg hidden danger-text'>password is required</div>
+                </Control>
+              </Field>
 
-          <Field>
-            <Label htmlFor='account'><i className='fas fa-address-card' /> Museum Account Number</Label>
-            <Control>
-              <Input className='required' type='text' name='account' onChange={this.handleChange} id='account' />
-              <div className='error-msg hidden danger-text'>account number is required</div>
-              <div className='error-msg danger-text hidden account-taken'>2 users already exist for this membership account</div>
-              <div className='error-msg danger-text hidden account-invalid'>not a valid account number</div>
-            </Control>
-          </Field>
+              <Field>
+                <Label htmlFor='account'><i className='fas fa-address-card' /> Museum Membership Number</Label>
+                <Control>
+                  <Input className='required' type='text' name='account' onChange={this.handleChange} id='account' />
+                  <div className='error-msg hidden danger-text'>account number is required</div>
+                  <div className='error-msg danger-text hidden account-taken'>2 users already exist for this membership account</div>
+                  <div className='error-msg danger-text hidden account-invalid'>not a valid account number</div>
+                </Control>
+              </Field>
 
-          <Field>
-            <Label htmlFor='email'><i className='fas fa-envelope' /> Email Address</Label>
-            <Control>
-              <Input className='required' type='email' name='email' onChange={this.handleChange} id='email' />
-              <div className='error-msg hidden danger-text'>email is required</div>
-              <div className='error-msg hidden danger-text email-taken'>email has already been taken</div>
-            </Control>
-          </Field>
-          <Field>
-            <Label htmlFor='accommodations' className='label'><i class='fas fa-wheelchair' /> Accommodations (optional)</Label>
-            <Control>
-              <Input value={this.state.accommodations} type='text' name='accommodations' onChange={this.handleChange} id='accommodations' />
-            </Control>
-          </Field>
-          <Field>
-            <Label><i class='fas fa-camera' /> Profile Picture</Label>
-            <Control>
-              <Input className='required' type='file' name='selfie' accept='image/*;capture=camera' onChange={this.handleChange} />
-              <div className='error-msg hidden danger-text'>photo is required</div>
-            </Control>
-          </Field>
+              <Field>
+                <Label htmlFor='email'><i className='fas fa-envelope' /> Email Address</Label>
+                <Control>
+                  <Input className='required' type='email' name='email' onChange={this.handleChange} id='email' />
+                  <div className='error-msg hidden danger-text'>email is required</div>
+                  <div className='error-msg hidden danger-text email-taken'>email has already been taken</div>
+                </Control>
+              </Field>
+              <Field>
+                <Label htmlFor='accommodations' className='label'><i class='fas fa-wheelchair' /> Accommodations (optional)</Label>
+                <Control>
+                  <Input value={this.state.accommodations} type='text' name='accommodations' onChange={this.handleChange} id='accommodations' />
+                </Control>
+              </Field>
+              <Field>
+                <Label><i class='fas fa-camera' /> Profile Picture</Label>
+                <Control>
+                  <Input className='required' type='file' name='selfie' accept='image/*;capture=camera' onChange={this.handleChange} />
+                  <div className='error-msg hidden danger-text'>photo is required</div>
+                </Control>
+              </Field>
 
-          <div className='button-container'>
-            <button className='login-button' type='submit'>Register</button>
+              <div className='button-container'>
+                <button className='login-button' type='submit'>Register</button>
+              </div>
+              {/* <Control>
+              <Link to='/'>
+                <Button isColor='danger'>Cancel</Button>
+              </Link>
+            </Control> */}
+            </form>
           </div>
-          {/* <Control>
-            <Link to='/'>
-              <Button isColor='danger'>Cancel</Button>
-            </Link>
-          </Control> */}
-        </form>
+        ) : (
+          <div className='contain'>
+            <Box className='transparent-box'>
+              <Content className='register-success'>
+                <div>
+                  <Title>Successful Registration!</Title>
+                  <p>
+                    Thank you for registering. Please login to start using Q-seum!
+                  </p>
+                  <Link to='/Login'>
+                    <Button>Login</Button>
+                  </Link>
+                </div>
+              </Content>
+            </Box>
+          </div>
+        )}
       </div>
     )
   }
