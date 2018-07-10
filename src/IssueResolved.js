@@ -51,11 +51,12 @@ class IssueResolved extends Component {
     return (
       <div>
         <div className='IssueResolved'>
-          <Box className='transparent-box'>
-            <p><strong>{issue.username}</strong> submitted an issue:</p>
-            <p>Issue: <strong>{issue.text}</strong></p>
-            <p>Issue #{issue.id}</p>
-            <p>Date submitted: {moment(issue.created_at).format('MMMM Do YYYY, h:mm a')}</p>
+          <Box className='resolved-box'>
+            <p className='issue-content'><strong>{issue.username}</strong> submitted an issue:</p>
+            <p className='issue-content'>Issue: <strong>{issue.text}</strong></p>
+            <p className='issue-content'>Issue #{issue.id}</p>
+            <p className='issue-content'>{issue.username}'s email: <strong>{issue.email}</strong></p>
+            <p className='issue-content'>Date submitted: {moment(issue.created_at).format('MMMM Do YYYY, h:mm a')}</p>
           </Box>
         </div>
       </div>

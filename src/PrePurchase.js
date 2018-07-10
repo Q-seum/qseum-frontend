@@ -76,7 +76,26 @@ class PrePurchase extends Component {
             })
           })
           .catch(err => {
-            console.log(err)
+            console.log(err.response)
+            const inputs = document.querySelectorAll('.required')
+            const gift = document.querySelector('.gift')
+            inputs.forEach(input => {
+              if (!input.value) {
+                input.classList.add('danger-input')
+                // console.log(input.name)
+                input.nextElementSibling.classList.remove('hidden')
+              } else {
+                input.classList.remove('danger-input')
+                input.nextElementSibling.classList.add('hidden')
+              }
+            })
+            if (this.state.gift && !gift.value) {
+              gift.classList.add('danger-input')
+              gift.nextElementSibling.classList.remove('hidden')
+            } else if (this.state.gift) {
+              gift.classList.remove('danger-input')
+              gift.nextElementSibling.classList.add('hidden')
+            }
           })
       })
   }
@@ -172,8 +191,6 @@ class PrePurchase extends Component {
                     <Control>
                       {/* <Input className='numberInput' pattern='[0-9]*' name='general' id='general' onChange={this.handleChange} /> */}
                       <div className='ticketNumber'>
-                      {/* How many tickets? */}
-                      
                         <button type='button' onClick={this.subtractGeneralTicket}><i class='fas fa-minus' /></button>
                         {this.state.general ? (
                           this.state.general
@@ -199,7 +216,6 @@ class PrePurchase extends Component {
                       </div>
                     </Control>
                   </Field>
-
 
                   <Field>
                     <Label className='ticket-label' htmlFor='senior'>Senior Ticket ($18)</Label>
@@ -244,9 +260,11 @@ class PrePurchase extends Component {
                 </Box>
                 <Field>
                   <Label>Your Name</Label>
-                  <Input type='text' name='name' id='name' onChange={this.handleChange} />
+                  <Input className='required' type='text' name='name' id='name' onChange={this.handleChange} />
+                  <div className='error-msg hidden danger-text'>name is required</div>
                   <Label>Your Email</Label>
-                  <Input type='email' name='email' id='email' onChange={this.handleChange} />
+                  <Input className='required' type='email' name='email' id='email' onChange={this.handleChange} />
+                  <div className='error-msg hidden danger-text'>email is required</div>
                 </Field>
                 <Checkbox className='checkbox' onChange={this.gift}> Send tickets as a gift</Checkbox>
                 {this.state.gift && (
@@ -255,7 +273,8 @@ class PrePurchase extends Component {
                       {/* <Label>Recipient Name</Label>
                       <Input type='text' name='recipientName' id='recipientName' onChange={this.handleChange} /> */}
                       <Label>Recipient Email</Label>
-                      <Input type='email' name='recip_email' id='recip_email' onChange={this.handleChange} />
+                      <Input className='gift' type='email' name='recip_email' id='recip_email' onChange={this.handleChange} />
+                      <div className='error-msg hidden danger-text'>recipient email is required if you wish to send as a gift</div>
                     </Field>
                   </div>
                 )}
@@ -266,9 +285,13 @@ class PrePurchase extends Component {
                 <Box className='transparent-box'>
                   <form onSubmit={this.handleSubmit}>
                     <Label>Please enter your payment information</Label>
-                    <CardElement style={{base: {fontSize: '18px'}}} />
+                    <CardElement style={{base: {fontSize: '18px'}}} className='card' />
                     <Label className='ticket-label totalCost-summary'>Your card will be charged ${(Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.senior) * 18) + (Number(this.state.military) * 18)}.00</Label>
-                    <Button type='submit'>Submit payment</Button>
+                    {(Number(this.state.general) * 20) + (Number(this.state.child) * 15) + (Number(this.state.senior) * 18) + (Number(this.state.military) * 18) === 0 ? (
+                      <Button type='submit' disabled>Submit payment</Button>
+                    ) : (
+                      <Button type='submit'>Submit payment</Button>
+                    )}
                   </form>
                 </Box>
               </Container>
