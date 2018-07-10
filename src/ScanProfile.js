@@ -66,6 +66,13 @@ class ScanProfile extends Component {
   handleChange (e) {
     // console.log(e.target.name)
     // console.log(e.target.value)
+    console.log(e.target.parentNode.childNodes)
+    e.target.parentNode.childNodes.forEach(button => {
+      if (button.classList.contains('selected')) {
+        button.classList.remove('selected')
+      }
+    })
+    e.target.classList.add('selected')
     this.setState({
       [e.target.name]: Number(e.target.value)
     })
