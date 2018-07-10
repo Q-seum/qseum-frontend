@@ -6604,7 +6604,8 @@ Label {
   color: gainsboro; }
 
 .issues-title {
-  cursor: pointer; }
+  cursor: pointer;
+  margin: 0 1rem; }
   .issues-title:hover {
     color: lightgray; }
 
@@ -6737,6 +6738,10 @@ i {
   margin: 1rem;
   font-weight: 500;
   text-align: center; }
+
+.dark-button {
+  background-color: #4a4a4a;
+  color: #f7f7f0; }
 
 @media (max-width: 320px) {
   .contain {

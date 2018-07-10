@@ -302,6 +302,7 @@ Label {
 
 .issues-title {
   cursor: pointer;
+  margin: 0 1rem;
 
   &:hover {
     color: lightgray;
@@ -490,7 +491,10 @@ i{
 // .emailGift{
 //   width:80%
 // }
-
+.dark-button{
+  background-color:#4a4a4a;
+  color:rgb(247,247,240);
+}
 
 @media (max-width: 320px) {
   .contain {

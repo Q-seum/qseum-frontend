@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import QRCode from 'qrcode.react'
-import { Box, Content, Title } from 'bloomer'
+import { Box, Content, Title, Button } from 'bloomer'
 import request from 'superagent'
 import Issue from './Issue'
 import IssueResolved from './IssueResolved'
@@ -52,17 +52,17 @@ class Dashboard extends Component {
     this.setState({
       currentIssues: false
     })
-    e.target.classList.add('is-active')
+    e.target.classList.add('dark-button')
     console.log(e.target.previousElementSibling)
-    e.target.previousElementSibling.classList.remove('is-active')
+    e.target.previousElementSibling.classList.remove('dark-button')
   }
 
   toggleCurrent (e) {
     this.setState({
       currentIssues: true
     })
-    e.target.classList.add('is-active')
-    e.target.nextElementSibling.classList.remove('is-active')
+    e.target.classList.add('dark-button')
+    e.target.nextElementSibling.classList.remove('dark-button')
   }
 
   componentDidMount () {
@@ -112,7 +112,9 @@ class Dashboard extends Component {
               </Box>
             )}
             <Title>Issues</Title>
-            <Title isSize={4}><span className='issues-title is-active' onClick={this.toggleCurrent}>Current</span> | <span className='issues-title' onClick={this.toggleResolved}>Resolved</span></Title>
+            {/* <Title isSize={4}> */}
+            <Button className='issues-title dark-button' onClick={this.toggleCurrent}>Current</Button>
+            <Button className='issues-title' onClick={this.toggleResolved}>Resolved</Button>
             {this.state.currentIssues ? (
               <div>
                 {this.state.issues.map((issue, idx) => (
@@ -134,7 +136,7 @@ class Dashboard extends Component {
         ) : (
           <Box className='transparent-box'>
             <Content>
-              <img src={this.state.selfie} className='avi' alt='Your Selfie' />
+              <img src={this.state.selfie} className='avi' alt='' />
               <div><strong>Member of the Museum of Life and Science</strong></div>
               <div>Durham, North Carolina</div>
               {/* {this.state.secondaryUser ? (
