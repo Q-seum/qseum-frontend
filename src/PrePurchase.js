@@ -300,17 +300,18 @@ class PrePurchase extends Component {
 
         ) : (
           <Content className='purchase-success'>
-            <Box className='transparent-box'>
-              <p>
-              Thank you for your purchase! If you purchased admission for yourself, you will receive an email containing a unique ticket QR-Code. When you arrive at the museum, show your QR-Code to a museum staff member to check-in.
-              </p>
-              <p>
-              If you have purchased admission as a gift, your recipient will receive an email containing the QR-Code ticket.
-              </p>
-              <Link to='/'>
-                <Button >Back to home page</Button>
-              </Link>
-            </Box>
+            <div className='success-div'>
+              <Box className='transparent-box success-box'>
+                {this.state.recip_email ? (
+                  <p>Thank you for your purchase! Your recipient will receive an email containing the QR-Code ticket.</p>
+                ) : (
+                  <p>Thank you for your purchase! You will receive an email containing a unique ticket QR-Code. When you arrive at the museum, show your QR-Code to a museum staff member to check-in.</p>
+                )}
+                <Link to='/'>
+                  <Button>Home</Button>
+                </Link>
+              </Box>
+            </div>
           </Content>
         )}
       </div>

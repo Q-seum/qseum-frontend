@@ -54,6 +54,11 @@ class RecoverPassword extends Component {
                 </Field>
 
                 <Field isGrouped>
+                  <Control>
+                    <Link to='/'>
+                      <Button isColor='danger'>Cancel</Button>
+                    </Link>
+                  </Control>
                   {this.state.email ? (
                     <Control>
                       <Button type='submit'>Submit</Button>
@@ -63,11 +68,6 @@ class RecoverPassword extends Component {
                       <Button disabled>Submit</Button>
                     </Control>
                   )}
-                  <Control>
-                    <Link to='/'>
-                      <Button isColor='danger'>Cancel</Button>
-                    </Link>
-                  </Control>
                 </Field>
               </form>
             </Content>
