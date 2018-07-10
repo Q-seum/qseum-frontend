@@ -6552,6 +6552,9 @@ Label {
   margin-left: .5rem;
   text-align: left; }
 
+.issue-content {
+  margin: .5rem 0; }
+
 .LandingPage {
   margin: 0 auto;
   padding-top: 75px;
