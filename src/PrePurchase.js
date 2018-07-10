@@ -183,7 +183,7 @@ class PrePurchase extends Component {
         {!this.state.purchaseSubmitted ? (
           <div className='PrePurchase'>
             <div className='ticketForm'>
-              <Title className='raleway'>Pre-Purchase Tickets</Title>
+              <Title className='raleway'>Purchase Admission</Title>
               <form>
                 <Box className='transparent-box'>
                   <Field>
@@ -203,7 +203,7 @@ class PrePurchase extends Component {
                   </Field>
 
                   <Field>
-                    <Label className='ticket-label' htmlFor='child'>Children ages 3-12 ($15)</Label>
+                    <Label className='ticket-label' htmlFor='child'>Children Ages 3-12 ($15)</Label>
                     <Control>
                       <div className='ticketNumber'>
                         <button type='button' onClick={this.subtractChildTicket}><i class='fas fa-minus' /></button>
@@ -218,7 +218,7 @@ class PrePurchase extends Component {
                   </Field>
 
                   <Field>
-                    <Label className='ticket-label' htmlFor='senior'>Senior Ticket ($18)</Label>
+                    <Label className='ticket-label' htmlFor='senior'>Senior Admission ($18)</Label>
                     <Control>
                       <div className='ticketNumber'>
                         <button type='button' onClick={this.subtractSeniorTicket}><i class='fas fa-minus' /></button>
@@ -233,7 +233,7 @@ class PrePurchase extends Component {
                   </Field>
 
                   <Field>
-                    <Label className='ticket-label' htmlFor='military'>Military Ticket ($18)</Label>
+                    <Label className='ticket-label' htmlFor='military'>Military Admission ($18)</Label>
                     <Control>
                       <div className='ticketNumber'>
                         <button type='button' onClick={this.subtractMilitaryTicket}><i class='fas fa-minus' /></button>

@@ -84,13 +84,13 @@ class ReportAnIssue extends Component {
               </form>
             </div>
           ) : (
-            <Content>
+            <Content className='centered'>
               <div>
-                Thank you for submitting your issue! Our staff has been alerted to your concern.
+                Thank you for submitting your issue! Our staff has been notified of your concern.
               </div>
               <Link to='/'>
-                <Button >Back to home page</Button>
-              </Link>          
+                <Button >Home</Button>
+              </Link>
             </Content>
           )}
         </Box>

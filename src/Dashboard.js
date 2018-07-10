@@ -149,7 +149,7 @@ class Dashboard extends Component {
               <div>
                 <QRCode className='QRCode-container' value={`https://q-seum.firebaseapp.com/users/${localStorage.id}`} />
               </div>
-              <div>Hi, <strong>{this.state.username}!</strong> Present this code to a museum employee to enter the museum!</div>
+              <div>Hi, <strong>{this.state.username}!</strong> Present this code to enter the museum!</div>
               {/* <div className='user-info'>
                 <div>Membership type: <strong>{this.state.membershipType} person admission</strong></div>
                 <div>Expiration Date: <strong>{this.state.expirationDate}</strong></div>
