@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import request from 'superagent'
 import { Title, Box, Field, Label, Control, Button, Content, Checkbox } from 'bloomer'
 import moment from 'moment'
@@ -24,7 +25,8 @@ class ScanProfile extends Component {
       validSelfie: false,
       lastVisit: [],
       primaryUser: '',
-      secondaryUser: ''
+      secondaryUser: '',
+      scanned: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -92,6 +94,9 @@ class ScanProfile extends Component {
       })
       .then(res => {
         console.log(res)
+        this.setState({
+          scanned: true
+        })
       })
       .catch(err => {
         console.log(err)
@@ -121,100 +126,111 @@ class ScanProfile extends Component {
     if (this.props.admin === 'true') {
       return (
         <div className='ScanProfile contain'>
-          <Box className='transparent-box'>
-            <Title className='raleway'>Check In {this.state.username}</Title>
-            <Content>
-              <div className='img-container'>
-                <img src={this.state.selfie} className='avi' alt='User Selfie' />
-              </div>
-              {this.state.secondaryUser ? (
-                <div><strong>Membership Holders: </strong>{this.state.primaryUser} & {this.state.secondaryUser}</div>
-              ) : (
-                <div><strong>Membership Holder: </strong>{this.state.primaryUser} </div>
-
-              )}
-              {/* <div><strong>Username: </strong>{this.state.username}</div> */}
-              <div><strong>Email: </strong>{this.state.email}</div>
-              <div><strong>Account #: </strong>{this.state.account}</div>
-              <div><strong>Membership Type: </strong>{this.state.membershipType}</div>
-              <div><strong>Last Visit: </strong>{lastVisit}</div>
-              {/* <div><strong>Accommodations: </strong>{this.state.accommodations}</div> */}
-              {/* <div><strong>Date Joined: </strong>{this.state.joinData}</div> */}
-              {/* <div><strong>Membership Expiration Date: </strong>{this.state.expirationDate}</div> */}
-            </Content>
-            <form onSubmit={this.handleSubmit}>
-              <Field className='checkin'>
-                {Number(this.state.membershipType) === 2 && (
-                  <Field>
-                    <Label>Number of visitors:</Label>
-                    <Control>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='1'>1</Button>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='2'>2</Button>
-                    </Control>
-                  </Field>
-                )}
-                {Number(this.state.membershipType) === 4 && (
-                  <Field>
-                    <Label>Number of visitors</Label>
-                    <Control>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='1'>1</Button>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='2'>2</Button>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='3'>3</Button>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='4'>4</Button>
-                    </Control>
-                  </Field>
-                )}
-                {Number(this.state.membershipType) === 6 && (
-                  <Field>
-                    <Label>Number of visitors</Label>
-                    <Control>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='1'>1</Button>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='2'>2</Button>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='3'>3</Button>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='4'>4</Button>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='5'>5</Button>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='6'>6</Button>
-                    </Control>
-                  </Field>
-                )}
-                {Number(this.state.membershipType) === 8 && (
-                  <Field>
-                    <Label>Number of visitors:</Label>
-                    <Control>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='1'>1</Button>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='2'>2</Button>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='3'>3</Button>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='4'>4</Button>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='5'>5</Button>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='6'>6</Button>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='7'>7</Button>
-                      <Button name='visitors' onClick={this.handleChange} id='visitors' value='8'>8</Button>
-                    </Control>
-                  </Field>
-                )}
-              </Field>
-              {this.state.validSelfie === false ? (
-                <Field>
-                  <Control>
-                    <Label>Validate user identity by checking driver's license photo</Label>
-                    <Checkbox type='submit' onChange={this.validateSelfie}> Validate Selife</Checkbox>
-                  </Control>
-                </Field>
-              ) : (
-                <div>
-                  <div>
-                    <div>Selfie has been validated!</div>
-                    <a onClick={this.validateSelfie}>Undo Validation</a>
-                  </div>
-                  <Field>
-                    <Control>
-                      <Button type='submit' isColor='primary'>Check In</Button>
-                    </Control>
-                  </Field>
+          {!this.state.scanned ? (
+            <Box className='transparent-box'>
+              <Title className='raleway'>Check In {this.state.username}</Title>
+              <Content>
+                <div className='img-container'>
+                  <img src={this.state.selfie} className='avi' alt='User Selfie' />
                 </div>
-              )}
-            </form>
-          </Box>
+                {this.state.secondaryUser ? (
+                  <div><strong>Membership Holders: </strong>{this.state.primaryUser} & {this.state.secondaryUser}</div>
+                ) : (
+                  <div><strong>Membership Holder: </strong>{this.state.primaryUser} </div>
+
+                )}
+                {/* <div><strong>Username: </strong>{this.state.username}</div> */}
+                <div><strong>Email: </strong>{this.state.email}</div>
+                <div><strong>Account #: </strong>{this.state.account}</div>
+                <div><strong>Membership Type: </strong>{this.state.membershipType}</div>
+                <div><strong>Last Visit: </strong>{lastVisit}</div>
+                {/* <div><strong>Accommodations: </strong>{this.state.accommodations}</div> */}
+                {/* <div><strong>Date Joined: </strong>{this.state.joinData}</div> */}
+                {/* <div><strong>Membership Expiration Date: </strong>{this.state.expirationDate}</div> */}
+              </Content>
+              <form onSubmit={this.handleSubmit}>
+                <Field className='checkin'>
+                  {Number(this.state.membershipType) === 2 && (
+                    <Field>
+                      <Label>Number of visitors:</Label>
+                      <Control>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='1'>1</Button>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='2'>2</Button>
+                      </Control>
+                    </Field>
+                  )}
+                  {Number(this.state.membershipType) === 4 && (
+                    <Field>
+                      <Label>Number of visitors</Label>
+                      <Control>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='1'>1</Button>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='2'>2</Button>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='3'>3</Button>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='4'>4</Button>
+                      </Control>
+                    </Field>
+                  )}
+                  {Number(this.state.membershipType) === 6 && (
+                    <Field>
+                      <Label>Number of visitors</Label>
+                      <Control>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='1'>1</Button>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='2'>2</Button>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='3'>3</Button>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='4'>4</Button>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='5'>5</Button>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='6'>6</Button>
+                      </Control>
+                    </Field>
+                  )}
+                  {Number(this.state.membershipType) === 8 && (
+                    <Field>
+                      <Label>Number of visitors:</Label>
+                      <Control>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='1'>1</Button>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='2'>2</Button>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='3'>3</Button>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='4'>4</Button>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='5'>5</Button>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='6'>6</Button>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='7'>7</Button>
+                        <Button name='visitors' onClick={this.handleChange} id='visitors' value='8'>8</Button>
+                      </Control>
+                    </Field>
+                  )}
+                </Field>
+                {this.state.validSelfie === false ? (
+                  <Field>
+                    <Control>
+                      <Label>Validate user identity by checking driver's license photo</Label>
+                      <Checkbox type='submit' onChange={this.validateSelfie}> Validate Selife</Checkbox>
+                    </Control>
+                  </Field>
+                ) : (
+                  <div>
+                    <div>
+                      <div>Selfie has been validated!</div>
+                      <a onClick={this.validateSelfie}>Undo Validation</a>
+                    </div>
+                    <Field>
+                      <Control>
+                        <Button type='submit' isColor='primary'>Check In</Button>
+                      </Control>
+                    </Field>
+                  </div>
+                )}
+              </form>
+            </Box>
+          ) : (
+            <Box className='transparent-box centered'>
+              <Content>
+                <Title>Check-in Successful!</Title>
+                <Link to='/'>
+                  <Button isColor='danger'>Home</Button>
+                </Link>
+              </Content>
+            </Box>
+          )}
         </div>
       )
     } else {
