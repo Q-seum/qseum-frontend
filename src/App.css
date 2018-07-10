@@ -6432,6 +6432,9 @@ body {
   font-weight: 500;
   font-size: 1.1rem; }
 
+.img-container {
+  text-align: center; }
+
 .input {
   border-radius: 25px;
   opacity: .5; }
@@ -6440,6 +6443,9 @@ body {
   color: #f7f7f0;
   font-weight: 600;
   margin-bottom: 1rem; }
+
+.selected {
+  background: #fd8204; }
 
 .App {
   height: 100%; }

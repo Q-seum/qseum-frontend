@@ -22,6 +22,10 @@ body{
   font-size: 1.1rem;
 }
 
+.img-container {
+  text-align: center;
+}
+
 .input {
   border-radius: 25px;
   opacity: .5;
@@ -31,6 +35,10 @@ body{
   color:rgb(247,247,240);
   font-weight:600;
   margin-bottom:1rem;
+}
+
+.selected {
+  background: #fd8204;
 }
 
 body{
