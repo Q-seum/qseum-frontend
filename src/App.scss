@@ -3,9 +3,7 @@
 @import "bulma/sass/utilities/functions";
 @import "bulma/sass/utilities/derived-variables";
 @import "bulma/bulma";
-//FAAB35 light orange
-//FC6021 dark orange
-// 0099a8
+
 html{
   background-color:rgb(0, 145, 122);
 }
@@ -50,28 +48,10 @@ body{
   background: #fd8204;
 }
 
-body{
-  // background:url(https://images.pexels.com/photos/67221/water-lily-flower-aquatic-plant-bloom-67221.jpeg?cs=srgb&dl=aquatic-plant-bloom-blossom-67221.jpg&fm=jpg);
-  // background-size:cover;
-  // background-repeat: no-repeat;
-  // height:100%;
-  
-}
-
 .App{
   height: 100%;
   
 }
-
-.page-container{
-  // display:flex;
-  // align-items:center;
-  // align-content:center;
-  // justify-content:center;
-  // height:100%;
-}
-//0099a8
-//c8bfc7
 
 .transparent-box{
   background-color: rgba(247,247,240,.4);
@@ -170,11 +150,8 @@ Label {
 
 .login {
   background: rgba(0,208,178,.7);
-  // color: rgb(247,240,240);
   color: rgb(247,247,240);
   font-weight: 600;
-  // border:#4a4a4a solid 1px;
-  // border: none;
   border: rgba(247,240,240, .5) solid 2px;
 
 
@@ -182,17 +159,9 @@ Label {
 
 .register {
   background: rgba(238, 255, 0,.4);
-  // color: #00d1b2;
-  // color: #4a4a4a;
   color: rgb(247,247,240);
-
-  // color: rgba(247,247,240, 1);
-
   font-weight: 600;
   border: rgba(247,240,240, .5) solid 2px;
-  // border: none;
-
-  // margin-bottom: 15px;
 }
 
 .register-success{
@@ -201,16 +170,10 @@ Label {
 }
 
 .prepurchase {
-  // background: rgba(0, 145, 122, 1);
   background: rgba(241,121,24,.9);
-  // color: #00d1b2;
   color: rgba(247,247,240, 1);
   font-weight: 600;
-  // border:#4a4a4a solid 1px;
-  // border: none;
   border: rgba(247,240,240, .5) solid 2px;
-
-    // margin-bottom: 15px;
 }
 
 .hidden {
@@ -246,19 +209,9 @@ Label {
   color: rgb(247,247,240);
 }
 
-// .signup{
-//   background-color:white;
-// }
-
 .logo-title{
   margin:0;
-  // background-color: rgb(34,208,178);
-  // border-top:4px solid rgb(34,208,178);
-  // border-bottom:4px solid rgb(34,208,178);
-  // background-color:rgba(247,240,240,1);
-  // padding:2rem;
   width:100%;
-
 }
 
 .Dashboard{
@@ -267,27 +220,18 @@ Label {
 }
 
 .QRCode-container{
-  // padding:1rem;
   margin:.5rem;
 }
-
-// QRCode{
-//   width:700px;
-// }
 
 .museum-membership {
   font-size: 1rem;
   color: rgb(247,247,240);
-  // text-decoration: underline;
-  // color: #fd8204;
 }
 
 
 .museum-membership:hover{
   font-size: 1rem;  
   color: rgb(247,247,240)
-  // color:#fd8204
-  // color: #fd8204;
 }
 
 .login-button {
@@ -296,11 +240,9 @@ Label {
   width:75%;
   padding: 15px 0;
   font-size: 1.25rem;
-  // background: rgb(247,240,240);
   background: #00d1b2;
   color: rgb(247,247,240);
   opacity: .9;
-  // color: #00d1b2;
   border: none;
   border: rgba(247,240,240, .5) solid 2px;
 }
@@ -311,7 +253,6 @@ Label {
 }
 
 .login-links {
-  // color: #00d1b2;
   font-weight: 600;
 }
 
@@ -332,11 +273,7 @@ Label {
   align-items:center;
   border-bottom: solid 2px #fd8204;
   font-size: 1.1rem;
-  // background-color: rgba(0,153,168,.95);
   background-color: rgba(247,247,240,1);
-
-
-
 }
 
 .is-active {
@@ -352,12 +289,6 @@ Label {
   }
 }
 
-.header-links:hover{
-  // background-color: #fd8204;
-  // transition: background-color 0.2s linear;
-
-}
-
 .active {
   background-color: #fd8204;
 }
@@ -369,6 +300,7 @@ Label {
 i{
   margin-right:.25rem;
 }
+
 .navtitle{
   align-items:center;
   font-size: 1.5rem;
@@ -377,7 +309,6 @@ i{
   cursor: pointer;
 
 }
-
 
 .Profile{
   text-align:center;
@@ -401,10 +332,10 @@ i{
   padding: 1rem;
 }
 
-
 .contain {
   padding:2rem;
 }
+
 .ReportAnIssue{
   font-weight:500;
 }
@@ -414,8 +345,6 @@ i{
   padding: 1rem;
   width: 95%;
   text-align:center;
-  // height:700px;
-  // overflow:auto;
 }
 
 .title{
@@ -486,19 +415,15 @@ i{
   margin-top:1rem;
 }
 
-
 .ticketNumber {
   color:#4a4a4a;
   text-align:center;
   font-size:1.5rem;
   font-weight:600;
-
-  // align-items:center;
 }
 
 .ticketNumber .fas {
   margin:.4rem;
-  // padding:0;
   font-size:1.1rem;
 
 }
@@ -531,9 +456,7 @@ i{
   font-weight: 500;
   text-align:center;
 }
-// .emailGift{
-//   width:80%
-// }
+
 .dark-button{
   background-color:#4a4a4a;
   color:rgb(247,247,240);
@@ -588,7 +511,6 @@ i{
 
   .ticketNumber .fas {
     margin:.4rem;
-    // padding:0;
     font-size:1.1rem;
   
   }
@@ -602,8 +524,6 @@ i{
     margin:2rem auto 2rem auto;
     width:95%;
     text-align:center;
-    // height:700px;
-    // overflow:auto;
   }
 
   .Dashboard{
@@ -612,14 +532,8 @@ i{
     font-weight:500;
   }
 
-  
-  // .Map .title{
-  //   margin:.25rem;
-  // }
-  
   .RecoverPassword{
     margin:.5rem;
-  
   }
 
   .rounded-button{
@@ -634,7 +548,6 @@ i{
     width:100%;
     margin:0 auto;
     text-align:center;
-    // margin-top:150px;
     margin-top:10px;
   }
 
