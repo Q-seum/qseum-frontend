@@ -6447,7 +6447,7 @@ body {
   opacity: .5; }
 
 .checkbox {
-  color: #f7f7f0;
+  color: black;
   font-weight: 600;
   margin-bottom: 1rem; }
 
@@ -6459,6 +6459,12 @@ body {
 
 .transparent-box {
   background-color: rgba(247, 247, 240, 0.4); }
+
+.current-box {
+  background: #f7f7f0; }
+
+.resolved-box {
+  background: #f7f7f0; }
 
 a {
   color: #f7f7f0; }

@@ -52,7 +52,7 @@ class Issue extends Component {
       <div>
         {this.state.showIssue && (
           <div className='Issue'>
-            <Box className='transparent-box'>
+            <Box className='current-box'>
               <p><strong>{issue.username}</strong> submitted an issue:</p>
               <p>Issue: <strong>{issue.text}</strong></p>
               <p>Issue #{issue.id}</p>

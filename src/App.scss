@@ -40,7 +40,7 @@ body{
 }
 
 .checkbox {
-  color:rgb(247,247,240);
+  color: black;
   font-weight:600;
   margin-bottom:1rem;
 }
@@ -74,6 +74,14 @@ body{
 
 .transparent-box{
   background-color: rgba(247,247,240,.4);
+}
+
+.current-box {
+  background: rgb(247,247,240);
+}
+
+.resolved-box {
+  background: rgb(247,247,240);
 }
 
 a {

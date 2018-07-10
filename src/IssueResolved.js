@@ -51,7 +51,7 @@ class IssueResolved extends Component {
     return (
       <div>
         <div className='IssueResolved'>
-          <Box className='transparent-box'>
+          <Box className='resolved-box'>
             <p><strong>{issue.username}</strong> submitted an issue:</p>
             <p>Issue: <strong>{issue.text}</strong></p>
             <p>Issue #{issue.id}</p>

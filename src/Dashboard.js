@@ -106,15 +106,17 @@ class Dashboard extends Component {
       <div className='Dashboard contain'>
         {this.props.admin === 'true' ? (
           <div className='issues'>
-            {this.state.issues.length === 0 && (
+            {this.state.issues.length === 0 ? (
               <Box className='transparent-box'>
                 <Title>No issues at the moment</Title>
               </Box>
+            ) : (
+              <div>
+                <Title>Issues</Title>
+                <Button className='issues-title dark-button' onClick={this.toggleCurrent}>Current</Button>
+                <Button className='issues-title' onClick={this.toggleResolved}>Resolved</Button>
+              </div>
             )}
-            <Title>Issues</Title>
-            {/* <Title isSize={4}> */}
-            <Button className='issues-title dark-button' onClick={this.toggleCurrent}>Current</Button>
-            <Button className='issues-title' onClick={this.toggleResolved}>Resolved</Button>
             {this.state.currentIssues ? (
               <div>
                 {this.state.issues.map((issue, idx) => (
