@@ -6432,6 +6432,13 @@ body {
   font-weight: 500;
   font-size: 1.1rem; }
 
+.card {
+  background: #f7f7f0;
+  padding: 10px;
+  border-radius: 25px;
+  margin: 0 auto;
+  width: 90%; }
+
 .img-container {
   text-align: center; }
 
@@ -6440,7 +6447,7 @@ body {
   opacity: .5; }
 
 .checkbox {
-  color: #f7f7f0;
+  color: black;
   font-weight: 600;
   margin-bottom: 1rem; }
 
@@ -6452,6 +6459,15 @@ body {
 
 .transparent-box {
   background-color: rgba(247, 247, 240, 0.4); }
+
+.current-box {
+  background: #f7f7f0; }
+
+.resolved-box {
+  background: #f7f7f0; }
+
+.no-issues {
+  margin-top: 150px; }
 
 a {
   color: #f7f7f0; }
@@ -6537,7 +6553,11 @@ Label {
   display: none; }
 
 .error-msg {
-  margin-left: .5rem; }
+  margin-left: .5rem;
+  text-align: left; }
+
+.issue-content {
+  margin: .5rem 0; }
 
 .LandingPage {
   margin: 0 auto;
