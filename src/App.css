@@ -6773,6 +6773,9 @@ i {
   background-color: #4a4a4a;
   color: #f7f7f0; }
 
+.centered {
+  text-align: center; }
+
 @media (max-width: 320px) {
   .contain {
     padding: .5rem; }
