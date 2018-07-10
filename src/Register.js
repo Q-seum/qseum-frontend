@@ -165,16 +165,16 @@ class Register extends Component {
                 </Control>
               </Field>
               <Field>
-                <Label htmlFor='accommodations' className='label'><i class='fas fa-wheelchair' /> Accommodations (optional)</Label>
-                <Control>
-                  <Input value={this.state.accommodations} type='text' name='accommodations' onChange={this.handleChange} id='accommodations' />
-                </Control>
-              </Field>
-              <Field>
-                <Label><i class='fas fa-camera' /> Profile Picture</Label>
+                <Label><i class='fas fa-camera' /> Selfie</Label>
                 <Control>
                   <Input className='required' type='file' name='selfie' accept='image/*;capture=camera' onChange={this.handleChange} />
                   <div className='error-msg hidden danger-text'>photo is required</div>
+                </Control>
+              </Field>
+              <Field>
+                <Label htmlFor='accommodations' className='label'><i class='fas fa-wheelchair' /> Accommodations (optional)</Label>
+                <Control>
+                  <Input value={this.state.accommodations} type='text' name='accommodations' onChange={this.handleChange} id='accommodations' />
                 </Control>
               </Field>
 
