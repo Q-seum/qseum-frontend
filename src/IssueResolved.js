@@ -54,7 +54,7 @@ class IssueResolved extends Component {
           <Box className='transparent-box'>
             <p><strong>{issue.username}</strong> submitted an issue:</p>
             <p>Issue: <strong>{issue.text}</strong></p>
-            <p>{issue.id}</p>
+            <p>Issue #{issue.id}</p>
             <p>Date submitted: {moment(issue.created_at).format('MMMM Do YYYY, h:mm a')}</p>
           </Box>
         </div>
