@@ -245,7 +245,7 @@ class PrePurchase extends Component {
                   <Input className='required' type='email' name='email' id='email' onChange={this.handleChange} />
                   <div className='error-msg hidden danger-text'>email is required</div>
                 </Field>
-                <Checkbox className='checkbox' onChange={this.gift}> Send tickets as a gift</Checkbox>
+                <Checkbox className='checkbox' onChange={this.gift}><span className='gift-checkbox'> Send tickets as a gift</span></Checkbox>
                 {this.state.gift && (
                   <div className='emailGift'>
                     <Field>
