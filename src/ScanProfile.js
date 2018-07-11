@@ -141,7 +141,7 @@ class ScanProfile extends Component {
                 )}
                 {/* <div><strong>Username: </strong>{this.state.username}</div> */}
                 <div><strong>Email: </strong>{this.state.email}</div>
-                <div><strong>Account #: </strong>{this.state.account}</div>
+                <div><strong>Membership Number: </strong>{this.state.account}</div>
                 <div><strong>Membership Type: </strong>{this.state.membershipType}</div>
                 <div><strong>Last Visit: </strong>{lastVisit}</div>
                 {/* <div><strong>Accommodations: </strong>{this.state.accommodations}</div> */}
