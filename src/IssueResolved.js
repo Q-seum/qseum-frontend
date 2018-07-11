@@ -45,8 +45,6 @@ class IssueResolved extends Component {
   }
 
   render () {
-    // console.log(this.props.issue)
-    // console.log(this.props)
     const issue = this.props.issue
     return (
       <div>

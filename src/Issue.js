@@ -50,7 +50,6 @@ class Issue extends Component {
     const issue = this.props.issue
     return (
       <div>
-        {/* {this.state.showIssue && ( */}
         <div className='Issue'>
           <Box className='current-box'>
             <p className='issue-content'>Issue #{issue.id}</p>

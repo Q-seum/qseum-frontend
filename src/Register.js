@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
-// import QRCode from 'qrcode.react'
 import request from 'superagent'
 import { Title, Field, Label, Control, Input, Box, Content, Button } from 'bloomer'
 import firebase from './firebase'
@@ -42,7 +41,6 @@ class Register extends Component {
     inputs.forEach(input => {
       if (!input.value) {
         input.classList.add('danger-input')
-        // console.log(input.name)
         input.nextElementSibling.classList.remove('hidden')
       } else {
         input.classList.remove('danger-input')
@@ -61,7 +59,6 @@ class Register extends Component {
     console.log(name)
     request
       .post('https://secure-temple-21963.herokuapp.com/api/v1/users')
-      // .set('X-Requested-With', 'XMLHttpRequest')
       .send({
         username: this.state.username,
         password: this.state.password,

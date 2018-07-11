@@ -68,7 +68,6 @@ class RedeemTicket extends Component {
             <div><strong>Children Tickets: </strong>{this.state.childTickets ? (this.state.childTickets) : (0)}</div>
             <div><strong>Military Tickets: </strong>{this.state.milTickets ? (this.state.milTickets) : (0)}</div>
             <div><strong>Senior Tickets: </strong>{this.state.senTickets ? (this.state.senTickets) : (0)}</div>
-            {/* <div><strong>Last Visit: </strong>{lastVisit}</div> */}
             <Button onClick={this.confirmVisit}>Confirm Visit</Button>
           </Box>
         </div>

@@ -11,5 +11,4 @@ var config = {
 }
 
 firebase.initializeApp(config)
-// var storage = firebase.storage()
 export default firebase

@@ -39,7 +39,6 @@ class Dashboard extends Component {
         .get('https://secure-temple-21963.herokuapp.com/api/v1/issues')
         .set('Authorization', `Bearer ${localStorage.token}`)
         .then(res => {
-          // console.log(res)
           this.setState({
             issues: res.body.issues_new,
             resolvedIssues: res.body.issues_resolved
@@ -101,7 +100,6 @@ class Dashboard extends Component {
   }
 
   render () {
-    // console.log(this.state.resolvedIssues)
     return (
       <div className='Dashboard contain'>
         {this.props.admin === 'true' ? (
@@ -140,20 +138,10 @@ class Dashboard extends Component {
               <img src={this.state.selfie} className='avi' alt='' />
               <div><strong>Member of the Museum of Life and Science</strong></div>
               <div>Durham, North Carolina</div>
-              {/* {this.state.secondaryUser ? (
-                <div>Membership held by {this.state.primaryUser} & {this.state.secondaryUser}</div>
-              ) : (
-                <div>Membership held by: {this.state.primaryUser}</div>
-
-              )} */}
               <div>
                 <QRCode className='QRCode-container' value={`https://q-seum.firebaseapp.com/users/${localStorage.id}`} />
               </div>
               <div>Hi, <strong>{this.state.username}!</strong> Present this code to enter the museum!</div>
-              {/* <div className='user-info'>
-                <div>Membership type: <strong>{this.state.membershipType} person admission</strong></div>
-                <div>Expiration Date: <strong>{this.state.expirationDate}</strong></div>
-              </div> */}
             </Content>
           </Box>
         )}
