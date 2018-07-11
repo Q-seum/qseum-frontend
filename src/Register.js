@@ -14,7 +14,7 @@ class Register extends Component {
       account: '',
       email: '',
       accommodations: '',
-      selfie: '',
+      selfie: null,
       registered: false
     }
     this.handleChange = this.handleChange.bind(this)
@@ -38,6 +38,7 @@ class Register extends Component {
     const email = document.querySelector('Input[name="email"]')
     const inputs = document.querySelectorAll('.required')
     let name
+    let url = null
     inputs.forEach(input => {
       if (!input.value) {
         input.classList.add('danger-input')
@@ -51,6 +52,7 @@ class Register extends Component {
       const file = document.querySelector('input[type=file]').files[0]
       const ref = firebase.storage().ref()
       name = (+new Date()) + '-' + file.name
+      url = `https://firebasestorage.googleapis.com/v0/b/q-seum.appspot.com/o/${name}?alt=media&token=d84cc00a-df11-4a4c-ba3d-d0f979456873`
       const metadata = { contentType: file.type }
       const task = ref.child(name).put(file, metadata).catch(err => console.log(err))
       task
@@ -65,7 +67,7 @@ class Register extends Component {
         account: this.state.account,
         email: this.state.email,
         accommodations: this.state.accommodations,
-        selfie: `https://firebasestorage.googleapis.com/v0/b/q-seum.appspot.com/o/${name}?alt=media&token=d84cc00a-df11-4a4c-ba3d-d0f979456873`
+        selfie: url
       })
       .then(res => {
         console.log(res)
