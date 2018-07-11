@@ -2,9 +2,8 @@
 
 import React, { Component } from 'react'
 import './App.css'
-// import { Link } from 'react-router-dom'
 import request from 'superagent'
-import { Content, Box, Button, Field, Control, Label, Input, Title } from 'bloomer'
+import { Content, Box, Field, Label, Title } from 'bloomer'
 import firebase from './firebase'
 import moment from 'moment'
 
@@ -23,7 +22,6 @@ class Profile extends Component {
       editProfile: false,
       primaryUser: '',
       secondaryUser: ''
-      // newSelfie: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.editProfile = this.editProfile.bind(this)
@@ -47,7 +45,6 @@ class Profile extends Component {
 
   changeSelfie (e) {
     e.preventDefault()
-    // if (this.state.newSelfie) {
     const file = document.querySelector('input[type=file]').files[0]
     const ref = firebase.storage().ref()
     const name = (+new Date()) + '-' + file.name
@@ -57,7 +54,6 @@ class Profile extends Component {
       .then(snapshot => console.log(snapshot))
     request
       .patch(`https://secure-temple-21963.herokuapp.com/api/v1/users/${localStorage.id}`)
-      // .set('X-Requested-With', 'XMLHttpRequest')
       .set('Authorization', `Bearer ${localStorage.token}`)
       .send({
         selfie: `https://firebasestorage.googleapis.com/v0/b/q-seum.appspot.com/o/${name}?alt=media&token=d84cc00a-df11-4a4c-ba3d-d0f979456873`
@@ -80,8 +76,6 @@ class Profile extends Component {
       .patch(`https://secure-temple-21963.herokuapp.com/api/v1/users/${localStorage.id}`)
       .set('Authorization', `Bearer ${localStorage.token}`)
       .send({
-        // new_token: this.props.match.params.new_token,
-        // password: this.state.password
         username: this.state.username,
         accommodations: this.state.accommodations
       })

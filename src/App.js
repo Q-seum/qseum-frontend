@@ -17,9 +17,7 @@ import LandingPage from './LandingPage'
 import PrePurchase from './PrePurchase'
 import RedeemTicket from './RedeemTicket'
 import { Elements } from 'react-stripe-elements'
-// import PageFooter from './PageFooter'
 import { Container } from 'bloomer'
-// import firebase from './firebase'
 
 class App extends Component {
   constructor () {
@@ -103,7 +101,6 @@ class App extends Component {
             )} />
 
           </Container>
-          {/* <PageFooter /> */}
         </div>
       </Router>
     )

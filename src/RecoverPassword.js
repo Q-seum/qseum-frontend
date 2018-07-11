@@ -19,13 +19,11 @@ class RecoverPassword extends Component {
     e.preventDefault()
     request
       .post('https://secure-temple-21963.herokuapp.com/api/v1/password_resets')
-      // .set('X-Requested-With', 'XMLHttpRequest')
       .send({
         email: this.state.email
       })
       .then(res => {
         console.log(res)
-        // this.props.history.push('/')
         this.setState({
           recoverPassword: true
         })

@@ -38,10 +38,6 @@ class ReportAnIssue extends Component {
           issueSubmitted: true
         })
       })
-      // .then(res => {
-      //   console.log(res)
-      //   this.props.history.push('/')
-      // })
       .catch(err => {
         console.log(err)
       })
@@ -56,8 +52,7 @@ class ReportAnIssue extends Component {
               <Title className='raleway'>Report an Issue</Title>
               <p className='issue-text'>We always hope that your visit to the museum is perfect. 
                 If you notice something that needs our attention, please use this form to let us know.
-                {/* The museum is a big place, so be sure to be specific about the location of your issue.  */}
-              <strong> Remember to dial 911 in an emergency.</strong>
+                <strong> Remember to dial 911 in an emergency.</strong>
               </p>
               <form onSubmit={this.handleSubmit}>
                 <Field>
