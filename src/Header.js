@@ -54,9 +54,9 @@ class Header extends Component {
           <NavbarBurger isActive={this.state.isActive} onClick={this.onClickNav} />
         </NavbarBrand>
         <NavbarMenu isActive={this.state.isActive} onClick={this.onClickNav}>
-          <NavbarStart>
+          {/* <NavbarStart>
             <NavbarItem className='tagline'>Hop through the lines</NavbarItem>
-          </NavbarStart>
+          </NavbarStart> */}
           {this.props.token && (
             <NavbarEnd className='header-links'>
               <Link to='/'>

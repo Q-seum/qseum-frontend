@@ -52,10 +52,10 @@ class IssueResolved extends Component {
       <div>
         <div className='IssueResolved'>
           <Box className='resolved-box'>
-            <p className='issue-content'><strong>{issue.username}</strong> submitted an issue:</p>
-            <p className='issue-content'>Issue: <strong>{issue.text}</strong></p>
             <p className='issue-content'>Issue #{issue.id}</p>
-            <p className='issue-content'>{issue.username}'s email: <strong>{issue.email}</strong></p>
+            <p className='issue-content'><strong>{issue.username}</strong> submitted an issue:</p>
+            <p className='issue-content'><strong>{issue.text}</strong></p>
+            <p className='issue-content'>{issue.username}'s email: {issue.email}</p>
             <p className='issue-content'>Date submitted: {moment(issue.created_at).format('MMMM Do YYYY, h:mm a')}</p>
           </Box>
         </div>

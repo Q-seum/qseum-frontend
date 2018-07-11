@@ -53,7 +53,7 @@ class ReportAnIssue extends Component {
         <Box className='transparent-box'>
           {!this.state.issueSubmitted ? (
             <div>
-              <Title className='raleway'>Report an issue</Title>
+              <Title className='raleway'>Report an Issue</Title>
               <p className='issue-text'>We always hope that your visit to the museum is perfect. 
                 If you notice something that needs our attention, please use this form to let us know.
                 {/* The museum is a big place, so be sure to be specific about the location of your issue.  */}
@@ -84,13 +84,13 @@ class ReportAnIssue extends Component {
               </form>
             </div>
           ) : (
-            <Content>
+            <Content className='centered'>
               <div>
-                Thank you for submitting your issue! Our staff has been alerted to your concern.
+                Thank you for submitting your issue! Our staff has been notified of your concern.
               </div>
               <Link to='/'>
-                <Button >Back to home page</Button>
-              </Link>          
+                <Button >Home</Button>
+              </Link>
             </Content>
           )}
         </Box>

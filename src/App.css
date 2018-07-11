@@ -6458,7 +6458,8 @@ body {
   height: 100%; }
 
 .transparent-box {
-  background-color: rgba(247, 247, 240, 0.4); }
+  background-color: rgba(247, 247, 240, 0.4);
+  color: #2a2a2a; }
 
 .current-box {
   background: #f7f7f0; }
@@ -6817,8 +6818,6 @@ i {
     text-align: center;
     margin: .5rem;
     font-weight: 500; }
-  .Map .title {
-    margin: .25rem; }
   .RecoverPassword {
     margin: .5rem; }
   .rounded-button {
