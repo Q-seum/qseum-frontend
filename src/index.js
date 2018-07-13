@@ -7,6 +7,5 @@ import {StripeProvider} from 'react-stripe-elements'
 // import { process.env.API_KEY }
 const token = process.env.REACT_APP_API_KEY
 
-console.log(token)
 ReactDOM.render(<StripeProvider apiKey={token}><App /></StripeProvider>, document.getElementById('root'))
 registerServiceWorker()
